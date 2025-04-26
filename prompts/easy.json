@@ -1,0 +1,72 @@
+[
+    {
+      "task_id": "HumanEval/2",
+      "prompt": "\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n",
+      "entry_point": "truncate_number",
+      "canonical_solution": "    return number % 1.0\n",
+      "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate(3.5) == 0.5\n    assert abs(candidate(1.33) - 0.33) < 1e-6\n    assert abs(candidate(123.456) - 0.456) < 1e-6\n"
+    },
+    {
+        "task_id": "HumanEval/27",
+        "prompt": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n",
+        "entry_point": "flip_case",
+        "canonical_solution": "    return string.swapcase()\n",
+        "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('') == ''\n    assert candidate('Hello!') == 'hELLO!'\n    assert candidate('These violent delights have violent ends') == 'tHESE VIOLENT DELIGHTS HAVE VIOLENT ENDS'\n"
+    },
+    {
+        "task_id": "HumanEval/30",
+        "prompt": "\n\ndef get_positive(l: list):\n    \"\"\"Return only positive numbers in the list.\n    >>> get_positive([-1, 2, -4, 5, 6])\n    [2, 5, 6]\n    >>> get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    [5, 3, 2, 3, 9, 123, 1]\n    \"\"\"\n",
+        "entry_point": "get_positive",
+        "canonical_solution": "    return [e for e in l if e > 0]\n",
+        "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([-1, -2, 4, 5, 6]) == [4, 5, 6]\n    assert candidate([5, 3, -5, 2, 3, 3, 9, 0, 123, 1, -10]) == [5, 3, 2, 3, 3, 9, 123, 1]\n    assert candidate([-1, -2]) == []\n    assert candidate([]) == []\n\n"
+    },
+    {
+        "task_id": "HumanEval/45",
+        "prompt": "\n\ndef triangle_area(a, h):\n    \"\"\"Given length of a side and high return area for a triangle.\n    >>> triangle_area(5, 3)\n    7.5\n    \"\"\"\n",
+        "entry_point": "triangle_area",
+        "canonical_solution": "    return a * h / 2.0\n",
+        "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(5, 3) == 7.5\n    assert candidate(2, 2) == 2.0\n    assert candidate(10, 8) == 40.0\n\n"
+    },
+    {
+        "task_id": "HumanEval/70",
+        "prompt": "\ndef strange_sort_list(lst):\n    '''\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n\n    Examples:\n    strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]\n    strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]\n    strange_sort_list([]) == []\n    '''\n",
+        "entry_point": "strange_sort_list",
+        "canonical_solution": "    res, switch = [], True\n    while lst:\n        res.append(min(lst) if switch else max(lst))\n        lst.remove(res[-1])\n        switch = not switch\n    return res\n",
+        "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([1, 2, 3, 4]) == [1, 4, 2, 3]\n    assert candidate([5, 6, 7, 8, 9]) == [5, 9, 6, 8, 7]\n    assert candidate([1, 2, 3, 4, 5]) == [1, 5, 2, 4, 3]\n    assert candidate([5, 6, 7, 8, 9, 1]) == [1, 9, 5, 8, 6, 7]\n    assert candidate([5, 5, 5, 5]) == [5, 5, 5, 5]\n    assert candidate([]) == []\n    assert candidate([1,2,3,4,5,6,7,8]) == [1, 8, 2, 7, 3, 6, 4, 5]\n    assert candidate([0,2,2,2,5,5,-5,-5]) == [-5, 5, -5, 5, 0, 2, 2, 2]\n    assert candidate([111111]) == [111111]\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True\n\n"
+    },
+    {
+        "task_id": "HumanEval/86",
+        "prompt": "\ndef anti_shuffle(s):\n    \"\"\"\n    Write a function that takes a string and returns an ordered version of it.\n    Ordered version of string, is a string where all words (separated by space)\n    are replaced by a new word where all the characters arranged in\n    ascending order based on ascii value.\n    Note: You should keep the order of words and blank spaces in the sentence.\n\n    For example:\n    anti_shuffle('Hi') returns 'Hi'\n    anti_shuffle('hello') returns 'ehllo'\n    anti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'\n    \"\"\"\n",
+        "entry_point": "anti_shuffle",
+        "canonical_solution": "    return ' '.join([''.join(sorted(list(i))) for i in s.split(' ')])\n",
+        "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate('Hi') == 'Hi'\n    assert candidate('hello') == 'ehllo'\n    assert candidate('number') == 'bemnru'\n    assert candidate('abcd') == 'abcd'\n    assert candidate('Hello World!!!') == 'Hello !!!Wdlor'\n    assert candidate('') == ''\n    assert candidate('Hi. My name is Mister Robot. How are you?') == '.Hi My aemn is Meirst .Rboot How aer ?ouy'\n    # Check some edge cases that are easy to work out by hand.\n    assert True\n\n"
+    },
+    {
+        "task_id": "HumanEval/98",
+        "prompt": "\ndef count_upper(s):\n    \"\"\"\n    Given a string s, count the number of uppercase vowels in even indices.\n    \n    For example:\n    count_upper('aBCdEf') returns 1\n    count_upper('abcdefg') returns 0\n    count_upper('dBBE') returns 0\n    \"\"\"\n",
+        "entry_point": "count_upper",
+        "canonical_solution": "    count = 0\n    for i in range(0,len(s),2):\n        if s[i] in \"AEIOU\":\n            count += 1\n    return count\n",
+        "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate('aBCdEf')  == 1\n    assert candidate('abcdefg') == 0\n    assert candidate('dBBE') == 0\n    assert candidate('B')  == 0\n    assert candidate('U')  == 1\n    assert candidate('') == 0\n    assert candidate('EEEE') == 2\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True\n\n"
+    },
+    {
+        "task_id": "HumanEval/103",
+        "prompt": "\ndef rounded_avg(n, m):\n    \"\"\"You are given two positive integers n and m, and your task is to compute the\n    average of the integers from n through m (including n and m). \n    Round the answer to the nearest integer and convert that to binary.\n    If n is greater than m, return -1.\n    Example:\n    rounded_avg(1, 5) => \"0b11\"\n    rounded_avg(7, 5) => -1\n    rounded_avg(10, 20) => \"0b1111\"\n    rounded_avg(20, 33) => \"0b11010\"\n    \"\"\"\n",
+        "entry_point": "rounded_avg",
+        "canonical_solution": "    if m < n:\n        return -1\n    summation = 0\n    for i in range(n, m+1):\n        summation += i\n    return bin(round(summation/(m - n + 1)))\n",
+        "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(1, 5) == \"0b11\"\n    assert candidate(7, 13) == \"0b1010\"\n    assert candidate(964,977) == \"0b1111001010\"\n    assert candidate(996,997) == \"0b1111100100\"\n    assert candidate(560,851) == \"0b1011000010\"\n    assert candidate(185,546) == \"0b101101110\"\n    assert candidate(362,496) == \"0b110101101\"\n    assert candidate(350,902) == \"0b1001110010\"\n    assert candidate(197,233) == \"0b11010111\"\n\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate(7, 5) == -1\n    assert candidate(5, 1) == -1\n    assert candidate(5, 5) == \"0b101\"\n\n"
+    },
+    {
+        "task_id": "HumanEval/125",
+        "prompt": "\ndef split_words(txt):\n    '''\n    Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you\n    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the\n    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25\n    Examples\n    split_words(\"Hello world!\") \u279e [\"Hello\", \"world!\"]\n    split_words(\"Hello,world!\") \u279e [\"Hello\", \"world!\"]\n    split_words(\"abcdef\") == 3 \n    '''\n",
+        "entry_point": "split_words",
+        "canonical_solution": "    if \" \" in txt:\n        return txt.split()\n    elif \",\" in txt:\n        return txt.replace(',',' ').split()\n    else:\n        return len([i for i in txt if i.islower() and ord(i)%2 == 0])\n",
+        "test": "def check(candidate):\n\n    assert candidate(\"Hello world!\") == [\"Hello\",\"world!\"]\n    assert candidate(\"Hello,world!\") == [\"Hello\",\"world!\"]\n    assert candidate(\"Hello world,!\") == [\"Hello\",\"world,!\"]\n    assert candidate(\"Hello,Hello,world !\") == [\"Hello,Hello,world\",\"!\"]\n    assert candidate(\"abcdef\") == 3\n    assert candidate(\"aaabb\") == 2\n    assert candidate(\"aaaBb\") == 1\n    assert candidate(\"\") == 0\n"
+    },
+    {
+        "task_id": "HumanEval/131",
+        "prompt": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n",
+        "entry_point": "digits",
+        "canonical_solution": "    product = 1\n    odd_count = 0\n    for digit in str(n):\n        int_digit = int(digit)\n        if int_digit%2 == 1:\n            product= product*int_digit\n            odd_count+=1\n    if odd_count ==0:\n        return 0\n    else:\n        return product\n",
+        "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(5) == 5\n    assert candidate(54) == 5\n    assert candidate(120) ==1\n    assert candidate(5014) == 5\n    assert candidate(98765) == 315\n    assert candidate(5576543) == 2625\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate(2468) == 0\n\n"
+    }
+]
