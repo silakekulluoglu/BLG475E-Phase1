@@ -6,6 +6,7 @@ The project focuses on evaluating Large Language Models (LLMs) for code and test
 
 ## Current Progress
 - 30 prompts are randomly selected from HumanEval dataset, 10 from each difficulty level.
+- Generated source code and unit tests of easy prompt using 1 LLM.
 
 ## Next Steps
 - Generate code for the selected prompts using the selected LLMs.
