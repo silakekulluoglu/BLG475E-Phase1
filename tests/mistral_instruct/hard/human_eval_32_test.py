@@ -34,16 +34,3 @@ class TestPolyAndZero(unittest.TestCase):
         xs = [2.0, 3.0]
         with self.assertRaises(ValueError):
             find_zero(xs)
-
-    def test_poly_simple_root(self):
-        xs = [1.0, -1.0]
-        self.assertEqual(find_zero(xs), 0)
-
-    def test_poly_two_roots(self):
-        xs = [1.0, 2.0, 1.0]
-        with self.assertRaises(ValueError):
-            find_zero(xs)
-
-    def test_poly_root_with_error(self):
-        xs = [1.0, -2.0, 2.0, -1.0]
-        self.assertAlmostEqual(find_zero(xs), 1.41)

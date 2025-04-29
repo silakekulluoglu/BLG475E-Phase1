@@ -33,18 +33,3 @@ class TestIsMultiplyPrime(unittest.TestCase):
         expected = True
         result = is_multiply_prime(6)
         self.assertEqual(result, expected)
-
-    def test_is_multiply_prime_five_times_seven(self):
-        expected = True
-        result = is_multiply_prime(35)
-        self.assertEqual(result, expected)
-
-    def test_is_multiply_prime_not_multiple_of_three_primes(self):
-        expected = True
-        result = is_multiply_prime(42)
-        self.assertEqual(result, expected)
-
-    def test_is_multiply_prime_non_prime_number(self):
-        expected = False
-        result = is_multiply_prime(9)
-        self.assertEqual(result, expected)

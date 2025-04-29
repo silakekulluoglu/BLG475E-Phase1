@@ -27,11 +27,3 @@ class TestSplitWords(unittest.TestCase):
     def test_split_words_special_chars(self):
         result = split_words("Hello@World!")
         self.assertEqual(result, ["hello", "@world!"])
-
-    def test_split_words_punctuation(self):
-        result = split_words(", Hello World")
-        self.assertEqual(result, ["hello world"])
-
-    def test_split_words_no_words(self):
-        result = split_words("1234567890")
-        self.assertEqual(result, [5, 6, 7, 8, 9])

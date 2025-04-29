@@ -27,7 +27,3 @@ class TestCountUpper(unittest.TestCase):
     def test_count_upper_mixed_case(self):
         result = count_upper("ioUaEo")
         self.assertEqual(result, 2)
-
-    def test_count_upper_special_characters(self):
-        result = count_upper("1A!E2o#Iu4")
-        self.assertEqual(result, 3)

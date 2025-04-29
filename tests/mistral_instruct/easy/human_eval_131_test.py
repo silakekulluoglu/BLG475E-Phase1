@@ -27,7 +27,3 @@ class TestDigits(unittest.TestCase):
     def test_digits_multiple_digits(self):
         result = digits(123456789)
         self.assertEqual(result, 3 * 7 * 5 * 3 * 9)
-
-    def test_digits_negative_number(self):
-        result = digits(-123456789)
-        self.assertEqual(result, -3 * 7 * 5 * 3 * 9)

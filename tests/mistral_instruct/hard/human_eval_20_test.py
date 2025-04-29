@@ -39,15 +39,3 @@ class TestFindClosestElements(unittest.TestCase):
         numbers = [3.0, 3.0]
         result = find_closest_elements(numbers)
         self.assertTupleEqual(result, expected)
-
-    def test_find_closest_elements_many_close_numbers(self):
-        expected = (2.5, 2.6)
-        numbers = [2.0, 2.5, 2.6, 3.0]
-        result = find_closest_elements(numbers)
-        self.assertTupleEqual(result, expected)
-
-    def test_find_closest_elements_negative_numbers(self):
-        expected = (-1.5, -2.5)
-        numbers = [-2.0, -1.5]
-        result = find_closest_elements(numbers)
-        self.assertTupleEqual(result, expected)

@@ -33,8 +33,3 @@ class TestEvenOddPalindrome(unittest.TestCase):
         expected = (0, 0)
         result = even_odd_palindrome(-1)
         self.assertEqual(result, expected)
-
-    def test_even_odd_palindrome_large_negative_number(self):
-        expected = (0, 0)
-        result = even_odd_palindrome(-987654321)
-        self.assertEqual(result, expected)

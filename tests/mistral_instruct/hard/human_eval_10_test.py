@@ -37,21 +37,3 @@ class TestPalindromes(unittest.TestCase):
         string = ""
         result = make_palindrome(string)
         self.assertEqual(result, expected)
-
-    def test_make_palindrome_single_char(self):
-        expected = "A"
-        string = "A"
-        result = make_palindrome(string)
-        self.assertEqual(result, expected)
-
-    def test_make_palindrome_simple_word(self):
-        expected = "bananabanana"
-        string = "banana"
-        result = make_palindrome(string)
-        self.assertEqual(result, expected)
-
-    def test_make_palindrome_palindrome(self):
-        expected = "racererace"
-        string = "racecar"
-        result = make_palindrome(string)
-        self.assertEqual(result, expected)

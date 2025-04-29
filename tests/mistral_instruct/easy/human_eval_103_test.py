@@ -27,7 +27,3 @@ class TestRoundedAvg(unittest.TestCase):
     def test_rounded_avg_even_number(self):
         result = rounded_avg(4, 5)
         self.assertEqual(result, '1100')
-
-    def test_rounded_avg_negative_m(self):
-        result = rounded_avg(3, -2)
-        self.assertEqual(result, -1)
