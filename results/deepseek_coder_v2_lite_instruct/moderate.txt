@@ -1,0 +1,101 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.0, pytest-8.3.5, pluggy-1.5.0
+rootdir: C:\Users\Neti\Documents\GitHub\BLG475E-Phase1
+plugins: anyio-3.6.2
+collected 31 items
+
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_107.py .. [  6%]
+                                                                         [  6%]
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_115.py .. [ 12%]
+                                                                         [ 12%]
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_13.py ... [ 22%]
+.                                                                        [ 25%]
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_132.py F. [ 32%]
+                                                                         [ 32%]
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_148.py .. [ 38%]
+                                                                         [ 38%]
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_21.py FFF [ 48%]
+FF                                                                       [ 54%]
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_36.py ... [ 64%]
+..                                                                       [ 70%]
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_51.py ... [ 80%]
+..                                                                       [ 87%]
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_68.py ..  [ 93%]
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_75.py .F  [100%]
+
+================================== FAILURES ===================================
+________________________ TestIsNested.test_edge_cases _________________________
+
+self = <Moderate.test_Human_Eval_132.TestIsNested testMethod=test_edge_cases>
+
+    def test_edge_cases(self):
+        self.assertFalse(is_nested(''))
+>       self.assertFalse(is_nested('[[[[[[[[') == False)
+E       AssertionError: True is not false
+
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_132.py:22: AssertionError
+________________________ TestRescaleToUnit.test_case_1 ________________________
+
+self = <Moderate.test_Human_Eval_21.TestRescaleToUnit testMethod=test_case_1>
+
+    def test_case_1(self):
+>       self.assertEqual(rescale_to_unit([2.0, 49.9]), [0.0, 1.0])
+E       NameError: name 'rescale_to_unit' is not defined
+
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_21.py:5: NameError
+________________________ TestRescaleToUnit.test_case_2 ________________________
+
+self = <Moderate.test_Human_Eval_21.TestRescaleToUnit testMethod=test_case_2>
+
+    def test_case_2(self):
+>       self.assertEqual(rescale_to_unit([100.0, 49.9]), [1.0, 0.0])
+E       NameError: name 'rescale_to_unit' is not defined
+
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_21.py:8: NameError
+________________________ TestRescaleToUnit.test_case_3 ________________________
+
+self = <Moderate.test_Human_Eval_21.TestRescaleToUnit testMethod=test_case_3>
+
+    def test_case_3(self):
+>       self.assertEqual(rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0]), [0.0, 0.25, 0.5, 0.75, 1.0])
+E       NameError: name 'rescale_to_unit' is not defined
+
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_21.py:11: NameError
+________________________ TestRescaleToUnit.test_case_4 ________________________
+
+self = <Moderate.test_Human_Eval_21.TestRescaleToUnit testMethod=test_case_4>
+
+    def test_case_4(self):
+>       self.assertEqual(rescale_to_unit([2.0, 1.0, 5.0, 3.0, 4.0]), [0.25, 0.0, 1.0, 0.5, 0.75])
+E       NameError: name 'rescale_to_unit' is not defined
+
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_21.py:14: NameError
+________________________ TestRescaleToUnit.test_case_5 ________________________
+
+self = <Moderate.test_Human_Eval_21.TestRescaleToUnit testMethod=test_case_5>
+
+    def test_case_5(self):
+>       self.assertEqual(rescale_to_unit([12.0, 11.0, 15.0, 13.0, 14.0]), [0.25, 0.0, 1.0, 0.5, 0.75])
+E       NameError: name 'rescale_to_unit' is not defined
+
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_21.py:17: NameError
+_____________________ TestIsMultiplyPrime.test_true_cases _____________________
+
+self = <Moderate.test_Human_Eval_75.TestIsMultiplyPrime testMethod=test_true_cases>
+
+    def test_true_cases(self):
+        self.assertTrue(is_multiply_prime(30))
+        self.assertTrue(is_multiply_prime(8))
+>       self.assertTrue(is_multiply_prime(11 * 9 * 9))
+E       AssertionError: False is not true
+
+tests\deepseek-coder-v2-lite-instruct\Moderate\test_Human_Eval_75.py:22: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/deepseek-coder-v2-lite-instruct/Moderate/test_Human_Eval_132.py::TestIsNested::test_edge_cases
+FAILED tests/deepseek-coder-v2-lite-instruct/Moderate/test_Human_Eval_21.py::TestRescaleToUnit::test_case_1
+FAILED tests/deepseek-coder-v2-lite-instruct/Moderate/test_Human_Eval_21.py::TestRescaleToUnit::test_case_2
+FAILED tests/deepseek-coder-v2-lite-instruct/Moderate/test_Human_Eval_21.py::TestRescaleToUnit::test_case_3
+FAILED tests/deepseek-coder-v2-lite-instruct/Moderate/test_Human_Eval_21.py::TestRescaleToUnit::test_case_4
+FAILED tests/deepseek-coder-v2-lite-instruct/Moderate/test_Human_Eval_21.py::TestRescaleToUnit::test_case_5
+FAILED tests/deepseek-coder-v2-lite-instruct/Moderate/test_Human_Eval_75.py::TestIsMultiplyPrime::test_true_cases
+======================== 7 failed, 24 passed in 0.32s =========================

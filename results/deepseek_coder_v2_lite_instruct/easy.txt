@@ -1,0 +1,68 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.0, pytest-8.3.5, pluggy-1.5.0
+rootdir: C:\Users\Neti\Documents\GitHub\BLG475E-Phase1
+plugins: anyio-3.6.2
+collected 31 items
+
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_103.py FF     [  6%]
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_125.py ...    [ 16%]
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_131.py ..     [ 22%]
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_2.py ...F.    [ 38%]
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_27.py .....   [ 54%]
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_30.py .....   [ 70%]
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_45.py ...F.   [ 87%]
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_70.py .       [ 90%]
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_86.py .       [ 93%]
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_98.py ..      [100%]
+
+================================== FAILURES ===================================
+_______________________ TestRoundedAvg.test_edge_cases ________________________
+
+self = <Easy.test_Human_Eval_103.TestRoundedAvg testMethod=test_edge_cases>
+
+    def test_edge_cases(self):
+        self.assertEqual(rounded_avg(7, 5), -1)
+        self.assertEqual(rounded_avg(5, 1), -1)
+>       self.assertEqual(rounded_avg(5, 5), "0b101")
+E       AssertionError: '101' != '0b101'
+E       - 101
+E       + 0b101
+E       ? ++
+
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_103.py:22: AssertionError
+______________________ TestRoundedAvg.test_simple_cases _______________________
+
+self = <Easy.test_Human_Eval_103.TestRoundedAvg testMethod=test_simple_cases>
+
+    def test_simple_cases(self):
+>       self.assertEqual(rounded_avg(1, 5), "0b11")
+E       AssertionError: '11' != '0b11'
+E       - 11
+E       + 0b11
+E       ? ++
+
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_103.py:16: AssertionError
+______________ TestTruncateNumber.test_truncate_number_negative _______________
+
+self = <Easy.test_Human_Eval_2.TestTruncateNumber testMethod=test_truncate_number_negative>
+
+    def test_truncate_number_negative(self):
+>       self.assertEqual(truncate_number(-3.5), -0.5)
+E       AssertionError: 0.5 != -0.5
+
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_2.py:25: AssertionError
+_____________ TestTriangleArea.test_triangle_area_negative_values _____________
+
+self = <Easy.test_Human_Eval_45.TestTriangleArea testMethod=test_triangle_area_negative_values>
+
+    def test_triangle_area_negative_values(self):
+>       with self.assertRaises(Exception):
+E       AssertionError: Exception not raised
+
+tests\deepseek-coder-v2-lite-instruct\Easy\test_Human_Eval_45.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/deepseek-coder-v2-lite-instruct/Easy/test_Human_Eval_103.py::TestRoundedAvg::test_edge_cases
+FAILED tests/deepseek-coder-v2-lite-instruct/Easy/test_Human_Eval_103.py::TestRoundedAvg::test_simple_cases
+FAILED tests/deepseek-coder-v2-lite-instruct/Easy/test_Human_Eval_2.py::TestTruncateNumber::test_truncate_number_negative
+FAILED tests/deepseek-coder-v2-lite-instruct/Easy/test_Human_Eval_45.py::TestTriangleArea::test_triangle_area_negative_values
+======================== 4 failed, 27 passed in 0.20s =========================
