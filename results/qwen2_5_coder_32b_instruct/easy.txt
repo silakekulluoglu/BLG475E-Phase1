@@ -1,0 +1,17 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/25200398/Desktop/BLG475E-Phase1
+collected 50 items
+
+tests/qwen2_5_coder_32b_instruct/easy/human_eval_103_test.py .....       [ 10%]
+tests/qwen2_5_coder_32b_instruct/easy/human_eval_125_test.py .....       [ 20%]
+tests/qwen2_5_coder_32b_instruct/easy/human_eval_131_test.py .....       [ 30%]
+tests/qwen2_5_coder_32b_instruct/easy/human_eval_27_test.py .....        [ 40%]
+tests/qwen2_5_coder_32b_instruct/easy/human_eval_2_test.py .....         [ 50%]
+tests/qwen2_5_coder_32b_instruct/easy/human_eval_30_test.py .....        [ 60%]
+tests/qwen2_5_coder_32b_instruct/easy/human_eval_45_test.py .....        [ 70%]
+tests/qwen2_5_coder_32b_instruct/easy/human_eval_70_test.py .....        [ 80%]
+tests/qwen2_5_coder_32b_instruct/easy/human_eval_86_test.py .....        [ 90%]
+tests/qwen2_5_coder_32b_instruct/easy/human_eval_98_test.py .....        [100%]
+
+============================== 50 passed in 0.13s ==============================

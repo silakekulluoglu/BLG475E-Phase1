@@ -1,0 +1,80 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/25200398/Desktop/BLG475E-Phase1
+collected 50 items
+
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_10_test.py .....        [ 10%]
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_121_test.py .....       [ 20%]
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_149_test.py .....       [ 30%]
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_20_test.py F....        [ 40%]
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_32_test.py ..F.F        [ 50%]
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_58_test.py .....        [ 60%]
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_78_test.py .....        [ 70%]
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_85_test.py ....F        [ 80%]
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_93_test.py ....F        [ 90%]
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_94_test.py .....        [100%]
+
+=================================== FAILURES ===================================
+_____________ TestFindClosestElements.test_find_closest_elements_1 _____________
+
+self = <human_eval_20_test.TestFindClosestElements testMethod=test_find_closest_elements_1>
+
+    def test_find_closest_elements_1(self):
+>       self.assertEqual(find_closest_elements([1.0, 2.0, 3.9, 4.0, 5.0, 2.2]), (2.0, 2.2))
+E       AssertionError: Tuples differ: (3.9, 4.0) != (2.0, 2.2)
+E       
+E       First differing element 0:
+E       3.9
+E       2.0
+E       
+E       - (3.9, 4.0)
+E       + (2.0, 2.2)
+
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_20_test.py:6: AssertionError
+________________________ TestFindZero.test_find_zero_3 _________________________
+
+self = <human_eval_32_test.TestFindZero testMethod=test_find_zero_3>
+
+    def test_find_zero_3(self):
+>       self.assertAlmostEqual(find_zero([1, -3, 2]), 1.0, places=4)
+E       AssertionError: 0.49999999994179234 != 1.0 within 4 places (0.5000000000582077 difference)
+
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_32_test.py:13: AssertionError
+________________________ TestFindZero.test_find_zero_5 _________________________
+
+self = <human_eval_32_test.TestFindZero testMethod=test_find_zero_5>
+
+    def test_find_zero_5(self):
+>       self.assertAlmostEqual(find_zero([-1, 0, 1]), 0.0, places=4)
+E       AssertionError: -1.0 != 0.0 within 4 places (1.0 difference)
+
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_32_test.py:19: AssertionError
+______________________________ TestAdd.test_add_5 ______________________________
+
+self = <human_eval_85_test.TestAdd testMethod=test_add_5>
+
+    def test_add_5(self):
+>       self.assertEqual(add([1, 2, 3, 4, 5, 6]), 6)
+E       AssertionError: 12 != 6
+
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_85_test.py:18: AssertionError
+___________________________ TestEncode.test_encode_5 ___________________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_encode_5>
+
+    def test_encode_5(self):
+>       self.assertEqual(encode("I DoNt KnOw WhAt tO WrItE"), 'k dQnT kNqW wHcT tQ wRkTg')
+E       AssertionError: 'k dQnT kNqW wHcT Tq wRkTg' != 'k dQnT kNqW wHcT tQ wRkTg'
+E       - k dQnT kNqW wHcT Tq wRkTg
+E       ?                  ^^
+E       + k dQnT kNqW wHcT tQ wRkTg
+E       ?                  ^^
+
+tests/qwen2_5_coder_32b_instruct/hard/human_eval_93_test.py:18: AssertionError
+=========================== short test summary info ============================
+FAILED tests/qwen2_5_coder_32b_instruct/hard/human_eval_20_test.py::TestFindClosestElements::test_find_closest_elements_1
+FAILED tests/qwen2_5_coder_32b_instruct/hard/human_eval_32_test.py::TestFindZero::test_find_zero_3
+FAILED tests/qwen2_5_coder_32b_instruct/hard/human_eval_32_test.py::TestFindZero::test_find_zero_5
+FAILED tests/qwen2_5_coder_32b_instruct/hard/human_eval_85_test.py::TestAdd::test_add_5
+FAILED tests/qwen2_5_coder_32b_instruct/hard/human_eval_93_test.py::TestEncode::test_encode_5
+========================= 5 failed, 45 passed in 0.15s =========================
