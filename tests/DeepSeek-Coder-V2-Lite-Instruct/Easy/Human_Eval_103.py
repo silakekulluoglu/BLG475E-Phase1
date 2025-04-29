@@ -1,6 +1,14 @@
-def check(candidate):
-    assert candidate(1, 5) == "0b11"
-    assert candidate(7, 13) == "0b1010"
-    assert candidate(964, 977) == "0b1111001010"
-    assert candidate(996, 997) == "0b1111100100"
-    assert candidate(560, 851) == "0b1011000010"
+import unittest
+
+class TestRoundedAvg(unittest.TestCase):
+    def test_simple_cases(self):
+        self.assertEqual(rounded_avg(1, 5), "0b11")
+        self.assertEqual(rounded_avg(7, 13), "0b1010")
+
+    def test_edge_cases(self):
+        self.assertEqual(rounded_avg(7, 5), -1)
+        self.assertEqual(rounded_avg(5, 1), -1)
+        self.assertEqual(rounded_avg(5, 5), "0b101")
+
+if __name__ == "__main__":
+    unittest.main()

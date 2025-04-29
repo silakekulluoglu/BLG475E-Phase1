@@ -1,6 +1,14 @@
-def check(candidate):
-    assert candidate([[0,0,1,0], [0,1,0,0], [1,1,1,1]], 1) == 6
-    assert candidate([[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]], 2) == 5
-    assert candidate([[0,0,0], [0,0,0]], 5) == 0
-    assert candidate([[1,1,1,1], [1,1,1,1]], 2) == 4
-    assert candidate([[1,1,1,1], [1,1,1,1]], 9) == 2
+import unittest
+
+class TestMaxFill(unittest.TestCase):
+    def test_simple_cases(self):
+        self.assertEqual(max_fill([[0,0,1,0], [0,1,0,0], [1,1,1,1]], 1), 6)
+        self.assertEqual(max_fill([[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]], 2), 5)
+        self.assertEqual(max_fill([[0,0,0], [0,0,0]], 5), 0)
+    
+    def test_edge_cases(self):
+        self.assertEqual(max_fill([[1,1,1,1], [1,1,1,1]], 2), 4)
+        self.assertEqual(max_fill([[1,1,1,1], [1,1,1,1]], 9), 2)
+
+if __name__ == '__main__':
+    unittest.main()

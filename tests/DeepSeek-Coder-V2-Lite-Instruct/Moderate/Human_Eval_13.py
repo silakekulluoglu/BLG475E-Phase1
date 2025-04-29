@@ -1,5 +1,17 @@
-def check(candidate):
-    assert candidate(3, 7) == 1
-    assert candidate(10, 15) == 5
-    assert candidate(49, 14) == 7
-    assert candidate(144, 60) == 12
+import unittest
+
+class TestGreatestCommonDivisor(unittest.TestCase):
+    def test_case_1(self):
+        self.assertEqual(greatest_common_divisor(3, 7), 1)
+    
+    def test_case_2(self):
+        self.assertEqual(greatest_common_divisor(10, 15), 5)
+    
+    def test_case_3(self):
+        self.assertEqual(greatest_common_divisor(49, 14), 7)
+    
+    def test_case_4(self):
+        self.assertEqual(greatest_common_divisor(144, 60), 12)
+
+if __name__ == '__main__':
+    unittest.main()

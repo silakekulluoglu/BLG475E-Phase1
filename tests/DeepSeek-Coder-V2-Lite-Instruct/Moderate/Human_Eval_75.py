@@ -1,6 +1,14 @@
-def check(candidate):
-    assert candidate(5) == False
-    assert candidate(30) == True
-    assert candidate(8) == True
-    assert candidate(10) == False
-    assert candidate(125) == True
+import unittest
+
+class TestIsMultiplyPrime(unittest.TestCase):
+    def test_false_cases(self):
+        self.assertFalse(is_multiply_prime(5))
+        self.assertFalse(is_multiply_prime(10))
+    
+    def test_true_cases(self):
+        self.assertTrue(is_multiply_prime(30))
+        self.assertTrue(is_multiply_prime(8))
+        self.assertTrue(is_multiply_prime(11 * 9 * 9))
+
+if __name__ == '__main__':
+    unittest.main()

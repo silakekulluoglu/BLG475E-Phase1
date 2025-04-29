@@ -1,6 +1,14 @@
-def check(candidate):
-    assert candidate("Jupiter", "Neptune") == ("Saturn", "Uranus")
-    assert candidate("Earth", "Mercury") == ("Venus",)
-    assert candidate("Mercury", "Uranus") == ("Venus", "Earth", "Mars", "Jupiter", "Saturn")
-    assert candidate("Neptune", "Venus") == ("Earth", "Mars", "Jupiter", "Saturn", "Uranus")
-    assert candidate("Earth", "Earth") == ()
+import unittest
+
+class TestBf(unittest.TestCase):
+    def test_simple_cases(self):
+        self.assertEqual(bf("Jupiter", "Neptune"), ("Saturn", "Uranus"))
+        self.assertEqual(bf("Earth", "Mercury"), ("Venus",))
+
+    def test_edge_cases(self):
+        self.assertEqual(bf("Earth", "Earth"), ())
+        self.assertEqual(bf("Mars", "Earth"), ())
+        self.assertEqual(bf("Jupiter", "Makemake"), ())
+
+if __name__ == '__main__':
+    unittest.main()
