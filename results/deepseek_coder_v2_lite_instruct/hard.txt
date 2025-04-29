@@ -2,19 +2,17 @@
 platform win32 -- Python 3.11.0, pytest-8.3.5, pluggy-1.5.0
 rootdir: C:\Users\Neti\Documents\GitHub\BLG475E-Phase1
 plugins: anyio-3.6.2
-collected 23 items / 1 error
+collected 26 items
 
-=================================== ERRORS ====================================
-_ ERROR collecting tests/deepseek-coder-v2-lite-instruct/Hard/test_Human_Eval_32.py _
-ImportError while importing test module 'C:\Users\Neti\Documents\GitHub\BLG475E-Phase1\tests\deepseek-coder-v2-lite-instruct\Hard\test_Human_Eval_32.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-..\..\..\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-tests\deepseek-coder-v2-lite-instruct\Hard\test_Human_Eval_32.py:13: in <module>
-    from Human_Eval_10 import poly, find_zero
-E   ImportError: cannot import name 'poly' from 'Human_Eval_10' (C:\Users\Neti\Documents\GitHub\BLG475E-Phase1\source\deepseek-coder-v2-lite-instruct\Hard\Human_Eval_10.py)
-=========================== short test summary info ===========================
-ERROR tests/deepseek-coder-v2-lite-instruct/Hard/test_Human_Eval_32.py
-!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-============================== 1 error in 0.36s ===============================
+tests\deepseek_coder_v2_lite_instruct\hard\test_human_eval_10.py .....   [ 19%]
+tests\deepseek_coder_v2_lite_instruct\hard\test_human_eval_121.py .      [ 23%]
+tests\deepseek_coder_v2_lite_instruct\hard\test_human_eval_149.py .      [ 26%]
+tests\deepseek_coder_v2_lite_instruct\hard\test_human_eval_20.py .....   [ 46%]
+tests\deepseek_coder_v2_lite_instruct\hard\test_human_eval_32.py ...     [ 57%]
+tests\deepseek_coder_v2_lite_instruct\hard\test_human_eval_58.py ....    [ 73%]
+tests\deepseek_coder_v2_lite_instruct\hard\test_human_eval_78.py ..      [ 80%]
+tests\deepseek_coder_v2_lite_instruct\hard\test_human_eval_85.py .       [ 84%]
+tests\deepseek_coder_v2_lite_instruct\hard\test_human_eval_93.py ..      [ 92%]
+tests\deepseek_coder_v2_lite_instruct\hard\test_human_eval_94.py ..      [100%]
+
+============================= 26 passed in 0.13s ==============================
