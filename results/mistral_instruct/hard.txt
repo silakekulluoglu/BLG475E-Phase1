@@ -1,0 +1,474 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.10, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/silakekulluoglu/Desktop/BLG475E-Phase1-1/tests/mistral_instruct
+collected 50 items
+
+hard/human_eval_10_test.py .....                                         [ 10%]
+hard/human_eval_121_test.py FFF.F                                        [ 20%]
+hard/human_eval_149_test.py F..FF                                        [ 30%]
+hard/human_eval_20_test.py .FFFF                                         [ 40%]
+hard/human_eval_32_test.py F.FFF                                         [ 50%]
+hard/human_eval_58_test.py F.F..                                         [ 60%]
+hard/human_eval_78_test.py F.FFF                                         [ 70%]
+hard/human_eval_85_test.py FFF.F                                         [ 80%]
+hard/human_eval_93_test.py FFFF.                                         [ 90%]
+hard/human_eval_94_test.py FFFFF                                         [100%]
+
+=================================== FAILURES ===================================
+______________________ TestSolution.test_all_even_numbers ______________________
+
+self = <human_eval_121_test.TestSolution testMethod=test_all_even_numbers>
+
+    def test_all_even_numbers(self):
+>       self.assertEqual(solution([2, 4, 6]), 12)
+E       AssertionError: 0 != 12
+
+hard/human_eval_121_test.py:16: AssertionError
+______________________ TestSolution.test_all_odd_numbers _______________________
+
+self = <human_eval_121_test.TestSolution testMethod=test_all_odd_numbers>
+
+    def test_all_odd_numbers(self):
+>       self.assertEqual(solution([1, 3, 5]), 0)
+E       AssertionError: 6 != 0
+
+hard/human_eval_121_test.py:19: AssertionError
+____________ TestSolution.test_combination_of_even_and_odd_numbers _____________
+
+self = <human_eval_121_test.TestSolution testMethod=test_combination_of_even_and_odd_numbers>
+
+    def test_combination_of_even_and_odd_numbers(self):
+>       self.assertEqual(solution([2, 1, 4, 3]), 7)
+E       AssertionError: 0 != 7
+
+hard/human_eval_121_test.py:22: AssertionError
+________________________ TestSolution.test_mixed_input _________________________
+
+self = <human_eval_121_test.TestSolution testMethod=test_mixed_input>
+
+    def test_mixed_input(self):
+>       self.assertEqual(solution([1, "a", -5, 0.25, True]), 0)
+
+hard/human_eval_121_test.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lst = [1, 'a', -5, 0.25, True]
+
+    def solution(lst):
+        result = 0
+        for i, num in enumerate(lst):
+>           if num % 2 != 0 and i % 2 == 0:
+E           TypeError: not all arguments converted during string formatting
+
+../../source/mistral_instruct/hard/human_eval_121.py:4: TypeError
+__________ TestSortedListSum.test_combination_of_odd_and_even_lengths __________
+
+self = <human_eval_149_test.TestSortedListSum testMethod=test_combination_of_odd_and_even_lengths>
+
+    def test_combination_of_odd_and_even_lengths(self):
+>       self.assertEqual(sorted_list_sum(["a", 1, "b", 3, "c", 5]), ["a", "b", "c", [1, 3, 5]])
+
+hard/human_eval_149_test.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lst = ['a', 1, 'b', 3, 'c', 5]
+
+    def sorted_list_sum(lst):
+>       odd_length = [num for num in lst if len(num) % 2 != 0]
+E       TypeError: object of type 'int' has no len()
+
+../../source/mistral_instruct/hard/human_eval_149.py:2: TypeError
+______________________ TestSortedListSum.test_mixed_input ______________________
+
+self = <human_eval_149_test.TestSortedListSum testMethod=test_mixed_input>
+
+    def test_mixed_input(self):
+>       self.assertEqual(sorted_list_sum([1, "a", -5, 0.25, True]), [])
+
+hard/human_eval_149_test.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lst = [1, 'a', -5, 0.25, True]
+
+    def sorted_list_sum(lst):
+>       odd_length = [num for num in lst if len(num) % 2 != 0]
+E       TypeError: object of type 'int' has no len()
+
+../../source/mistral_instruct/hard/human_eval_149.py:2: TypeError
+____________________ TestSortedListSum.test_odd_length_only ____________________
+
+self = <human_eval_149_test.TestSortedListSum testMethod=test_odd_length_only>
+
+    def test_odd_length_only(self):
+>       self.assertEqual(sorted_list_sum([1, 3, 5]), [1, 3, 5])
+
+hard/human_eval_149_test.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lst = [1, 3, 5]
+
+    def sorted_list_sum(lst):
+>       odd_length = [num for num in lst if len(num) % 2 != 0]
+E       TypeError: object of type 'int' has no len()
+
+../../source/mistral_instruct/hard/human_eval_149.py:2: TypeError
+_______ TestFindClosestElements.test_find_closest_elements_many_numbers ________
+
+self = <human_eval_20_test.TestFindClosestElements testMethod=test_find_closest_elements_many_numbers>
+
+    def test_find_closest_elements_many_numbers(self):
+        expected = (2.0, 3.0)
+        numbers = [1.0, 2.5, 3.0, 4.0]
+        result = find_closest_elements(numbers)
+>       self.assertTupleEqual(result, expected)
+E       AssertionError: Tuples differ: (2.5, 3.0) != (2.0, 3.0)
+E       
+E       First differing element 0:
+E       2.5
+E       2.0
+E       
+E       - (2.5, 3.0)
+E       ?    ^
+E       
+E       + (2.0, 3.0)
+E       ?    ^
+
+hard/human_eval_20_test.py:35: AssertionError
+_______ TestFindClosestElements.test_find_closest_elements_single_number _______
+
+self = <human_eval_20_test.TestFindClosestElements testMethod=test_find_closest_elements_single_number>
+
+    def test_find_closest_elements_single_number(self):
+        expected = (None, None)
+        numbers = [1.0]
+>       result = find_closest_elements(numbers)
+
+hard/human_eval_20_test.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+numbers = [1.0]
+
+    def find_closest_elements(numbers: List[float]) -> Tuple[float, float]:
+    
+        if len(numbers) < 2:
+>           raise ValueError("Number of numbers should be at least two.")
+E           ValueError: Number of numbers should be at least two.
+
+../../source/mistral_instruct/hard/human_eval_20.py:6: ValueError
+_____ TestFindClosestElements.test_find_closest_elements_two_close_numbers _____
+
+self = <human_eval_20_test.TestFindClosestElements testMethod=test_find_closest_elements_two_close_numbers>
+
+    def test_find_closest_elements_two_close_numbers(self):
+        expected = (1.5, 2.5)
+        numbers = [1.0, 2.5]
+        result = find_closest_elements(numbers)
+>       self.assertTupleEqual(result, expected)
+E       AssertionError: Tuples differ: (1.0, 2.5) != (1.5, 2.5)
+E       
+E       First differing element 0:
+E       1.0
+E       1.5
+E       
+E       - (1.0, 2.5)
+E       ?    ^
+E       
+E       + (1.5, 2.5)
+E       ?    ^
+
+hard/human_eval_20_test.py:29: AssertionError
+____ TestFindClosestElements.test_find_closest_elements_two_distant_numbers ____
+
+self = <human_eval_20_test.TestFindClosestElements testMethod=test_find_closest_elements_two_distant_numbers>
+
+    def test_find_closest_elements_two_distant_numbers(self):
+        expected = (2.5, 3.5)
+        numbers = [2.0, 3.5]
+        result = find_closest_elements(numbers)
+>       self.assertTupleEqual(result, expected)
+E       AssertionError: Tuples differ: (2.0, 3.5) != (2.5, 3.5)
+E       
+E       First differing element 0:
+E       2.0
+E       2.5
+E       
+E       - (2.0, 3.5)
+E       ?    ^
+E       
+E       + (2.5, 3.5)
+E       ?    ^
+
+hard/human_eval_20_test.py:23: AssertionError
+_______________________ TestPolyAndZero.test_poly_cubic ________________________
+
+self = <human_eval_32_test.TestPolyAndZero testMethod=test_poly_cubic>
+
+    def test_poly_cubic(self):
+        xs = [1.0, 2.0, 3.0, 1.0]
+>       self.assertEqual(poly(xs, 1), 4)
+E       AssertionError: 7.0 != 4
+
+hard/human_eval_32_test.py:24: AssertionError
+______________________ TestPolyAndZero.test_poly_no_root _______________________
+
+self = <human_eval_32_test.TestPolyAndZero testMethod=test_poly_no_root>
+
+    def test_poly_no_root(self):
+        xs = [2.0, 3.0]
+>       with self.assertRaises(ValueError):
+E       AssertionError: ValueError not raised
+
+hard/human_eval_32_test.py:35: AssertionError
+_____________________ TestPolyAndZero.test_poly_quadratic ______________________
+
+self = <human_eval_32_test.TestPolyAndZero testMethod=test_poly_quadratic>
+
+    def test_poly_quadratic(self):
+        xs = [1.0, 2.0, 1.0]
+>       self.assertEqual(poly(xs, 1), 3)
+E       AssertionError: 4.0 != 3
+
+hard/human_eval_32_test.py:19: AssertionError
+________________________ TestPolyAndZero.test_poly_zero ________________________
+
+self = <human_eval_32_test.TestPolyAndZero testMethod=test_poly_zero>
+
+    def test_poly_zero(self):
+        xs = [1.0, -1.0]
+>       with self.assertRaises(ValueError):
+E       AssertionError: ValueError not raised
+
+hard/human_eval_32_test.py:30: AssertionError
+_________________________ TestCommon.test_empty_lists __________________________
+
+self = <human_eval_58_test.TestCommon testMethod=test_empty_lists>
+
+    def test_empty_lists(self):
+>       self.assertListEqual(common([]), [])
+E       TypeError: common() missing 1 required positional argument: 'l2'
+
+hard/human_eval_58_test.py:13: TypeError
+______________________ TestCommon.test_multiple_elements _______________________
+
+self = <human_eval_58_test.TestCommon testMethod=test_multiple_elements>
+
+    def test_multiple_elements(self):
+>       self.assertListEqual(common([1, 2, 3, 4], [4, 5, 6, 1, 2]), [1, 2])
+E       AssertionError: Lists differ: [1, 2, 4] != [1, 2]
+E       
+E       First list contains 1 additional elements.
+E       First extra element 2:
+E       4
+E       
+E       - [1, 2, 4]
+E       ?      ---
+E       
+E       + [1, 2]
+
+hard/human_eval_58_test.py:27: AssertionError
+________________________ TestHexKey.test_complex_input _________________________
+
+self = <human_eval_78_test.TestHexKey testMethod=test_complex_input>
+
+    def test_complex_input(self):
+        input2 = "3410AF"
+>       expected_prime_count = 1 + prime_digits.count("3") + \
+                               prime_digits.count("1") + prime_digits.count("A") + \
+                               prime_digits.count("F")
+E       NameError: name 'prime_digits' is not defined
+
+hard/human_eval_78_test.py:31: NameError
+_________________ TestHexKey.test_multiple_digits_and_letters __________________
+
+self = <human_eval_78_test.TestHexKey testMethod=test_multiple_digits_and_letters>
+
+    def test_multiple_digits_and_letters(self):
+        input1 = "34AF"
+>       expected_prime_count = 1 + prime_digits.count("3") + \
+                               prime_digits.count("A") + prime_digits.count("F")
+E       NameError: name 'prime_digits' is not defined
+
+hard/human_eval_78_test.py:25: NameError
+______________________ TestHexKey.test_single_digit_input ______________________
+
+self = <human_eval_78_test.TestHexKey testMethod=test_single_digit_input>
+
+    def test_single_digit_input(self):
+        for prime in "2357":
+>           self.assertEqual(hex_key(prime), 1 if prime in [2, 3] else 0)
+E           AssertionError: 1 != 0
+
+hard/human_eval_78_test.py:17: AssertionError
+_____________________ TestHexKey.test_single_letter_input ______________________
+
+self = <human_eval_78_test.TestHexKey testMethod=test_single_letter_input>
+
+    def test_single_letter_input(self):
+        for letter in ["A", "B", "C", "D", "E", "F"]:
+>           self.assertEqual(hex_key(letter), 1)
+E           AssertionError: 0 != 1
+
+hard/human_eval_78_test.py:21: AssertionError
+________________________ TestAdd.test_all_even_numbers _________________________
+
+self = <human_eval_85_test.TestAdd testMethod=test_all_even_numbers>
+
+    def test_all_even_numbers(self):
+>       self.assertEqual(add([0, 2, 4]), 6)
+E       AssertionError: 2 != 6
+
+hard/human_eval_85_test.py:23: AssertionError
+_________________________ TestAdd.test_all_odd_numbers _________________________
+
+self = <human_eval_85_test.TestAdd testMethod=test_all_odd_numbers>
+
+    def test_all_odd_numbers(self):
+>       self.assertEqual(add([1, 3, 5]), 9)
+E       AssertionError: 0 != 9
+
+hard/human_eval_85_test.py:26: AssertionError
+_______________ TestAdd.test_combination_of_even_and_odd_numbers _______________
+
+self = <human_eval_85_test.TestAdd testMethod=test_combination_of_even_and_odd_numbers>
+
+    def test_combination_of_even_and_odd_numbers(self):
+>       self.assertEqual(add([0, 1, 2, 4]), 6)
+E       AssertionError: 4 != 6
+
+hard/human_eval_85_test.py:29: AssertionError
+_____________________ TestAdd.test_odd_number_of_elements ______________________
+
+self = <human_eval_85_test.TestAdd testMethod=test_odd_number_of_elements>
+
+    def test_odd_number_of_elements(self):
+>       with self.assertRaises(ValueError) as context:
+E       AssertionError: ValueError not raised
+
+hard/human_eval_85_test.py:18: AssertionError
+________________________ TestEncode.test_all_consonants ________________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_all_consonants>
+
+        def test_all_consonants(self):
+>           self.assertEqual(encode("bcdfghjklmnpqrstvwxyz"),
+    "BCDFGHJKLMNPQRSTVWXYZbcdefghijklmno")
+E   AssertionError: 'BCDFGHJKLMNPQRSTVWXYZ' != 'BCDFGHJKLMNPQRSTVWXYZbcdefghijklmno'
+E   - BCDFGHJKLMNPQRSTVWXYZ
+E   + BCDFGHJKLMNPQRSTVWXYZbcdefghijklmno
+E   ?                      ++++++++++++++
+
+hard/human_eval_93_test.py:19: AssertionError
+__________________________ TestEncode.test_all_vowels __________________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_all_vowels>
+
+    def test_all_vowels(self):
+>       self.assertEqual(encode("aeiou"), "TRYHGF")
+E       AssertionError: 'IOUAE' != 'TRYHGF'
+E       - IOUAE
+E       + TRYHGF
+
+hard/human_eval_93_test.py:16: AssertionError
+________________________ TestEncode.test_case_sensitive ________________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_case_sensitive>
+
+    def test_case_sensitive(self):
+>       self.assertEqual(encode("Hello World!"), "hELLO wORLD!")
+E       AssertionError: 'HOLLA WARLD!' != 'hELLO wORLD!'
+E       - HOLLA WARLD!
+E       + hELLO wORLD!
+
+hard/human_eval_93_test.py:23: AssertionError
+____________________ TestEncode.test_combination_of_letters ____________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_combination_of_letters>
+
+    def test_combination_of_letters(self):
+>       self.assertEqual(encode("HeLl0WorLd!"), "heLLO WorLd!")
+E       AssertionError: 'HOLL0WARLD!' != 'heLLO WorLd!'
+E       - HOLL0WARLD!
+E       + heLLO WorLd!
+
+hard/human_eval_93_test.py:26: AssertionError
+________________________ TestSkjkasksd.test_all_primes _________________________
+
+self = <human_eval_94_test.TestSkjkasksd testMethod=test_all_primes>
+
+    def test_all_primes(self):
+>       self.assertEqual(skjkasdkd([2, 3, 5, 7]), 18)
+E       AssertionError: 7 != 18
+
+hard/human_eval_94_test.py:16: AssertionError
+________________________ TestSkjkasksd.test_empty_list _________________________
+
+self = <human_eval_94_test.TestSkjkasksd testMethod=test_empty_list>
+
+    def test_empty_list(self):
+>       self.assertEqual(skjkasdkd([]), 0)
+E       AssertionError: 2 != 0
+
+hard/human_eval_94_test.py:13: AssertionError
+___________________ TestSkjkasksd.test_large_numbers_in_list ___________________
+
+self = <human_eval_94_test.TestSkjkasksd testMethod=test_large_numbers_in_list>
+
+    def test_large_numbers_in_list(self):
+>       self.assertEqual(skjkasdkd([1000003, 2, 3, 4, 5, 6, 7, 8, 9, 1000007]), 20)
+E       AssertionError: 8 != 20
+
+hard/human_eval_94_test.py:22: AssertionError
+______________________ TestSkjkasksd.test_not_all_primes _______________________
+
+self = <human_eval_94_test.TestSkjkasksd testMethod=test_not_all_primes>
+
+    def test_not_all_primes(self):
+>       self.assertEqual(skjkasdkd([4, 6, 9, 2, 5]), 5)
+E       AssertionError: 9 != 5
+
+hard/human_eval_94_test.py:19: AssertionError
+______________________ TestSkjkasksd.test_only_one_prime _______________________
+
+self = <human_eval_94_test.TestSkjkasksd testMethod=test_only_one_prime>
+
+    def test_only_one_prime(self):
+>       self.assertEqual(skjkasdkd([1000003]), 3)
+E       AssertionError: 4 != 3
+
+hard/human_eval_94_test.py:25: AssertionError
+=========================== short test summary info ============================
+FAILED hard/human_eval_121_test.py::TestSolution::test_all_even_numbers - Ass...
+FAILED hard/human_eval_121_test.py::TestSolution::test_all_odd_numbers - Asse...
+FAILED hard/human_eval_121_test.py::TestSolution::test_combination_of_even_and_odd_numbers
+FAILED hard/human_eval_121_test.py::TestSolution::test_mixed_input - TypeErro...
+FAILED hard/human_eval_149_test.py::TestSortedListSum::test_combination_of_odd_and_even_lengths
+FAILED hard/human_eval_149_test.py::TestSortedListSum::test_mixed_input - Typ...
+FAILED hard/human_eval_149_test.py::TestSortedListSum::test_odd_length_only
+FAILED hard/human_eval_20_test.py::TestFindClosestElements::test_find_closest_elements_many_numbers
+FAILED hard/human_eval_20_test.py::TestFindClosestElements::test_find_closest_elements_single_number
+FAILED hard/human_eval_20_test.py::TestFindClosestElements::test_find_closest_elements_two_close_numbers
+FAILED hard/human_eval_20_test.py::TestFindClosestElements::test_find_closest_elements_two_distant_numbers
+FAILED hard/human_eval_32_test.py::TestPolyAndZero::test_poly_cubic - Asserti...
+FAILED hard/human_eval_32_test.py::TestPolyAndZero::test_poly_no_root - Asser...
+FAILED hard/human_eval_32_test.py::TestPolyAndZero::test_poly_quadratic - Ass...
+FAILED hard/human_eval_32_test.py::TestPolyAndZero::test_poly_zero - Assertio...
+FAILED hard/human_eval_58_test.py::TestCommon::test_empty_lists - TypeError: ...
+FAILED hard/human_eval_58_test.py::TestCommon::test_multiple_elements - Asser...
+FAILED hard/human_eval_78_test.py::TestHexKey::test_complex_input - NameError...
+FAILED hard/human_eval_78_test.py::TestHexKey::test_multiple_digits_and_letters
+FAILED hard/human_eval_78_test.py::TestHexKey::test_single_digit_input - Asse...
+FAILED hard/human_eval_78_test.py::TestHexKey::test_single_letter_input - Ass...
+FAILED hard/human_eval_85_test.py::TestAdd::test_all_even_numbers - Assertion...
+FAILED hard/human_eval_85_test.py::TestAdd::test_all_odd_numbers - AssertionE...
+FAILED hard/human_eval_85_test.py::TestAdd::test_combination_of_even_and_odd_numbers
+FAILED hard/human_eval_85_test.py::TestAdd::test_odd_number_of_elements - Ass...
+FAILED hard/human_eval_93_test.py::TestEncode::test_all_consonants - Assertio...
+FAILED hard/human_eval_93_test.py::TestEncode::test_all_vowels - AssertionErr...
+FAILED hard/human_eval_93_test.py::TestEncode::test_case_sensitive - Assertio...
+FAILED hard/human_eval_93_test.py::TestEncode::test_combination_of_letters - ...
+FAILED hard/human_eval_94_test.py::TestSkjkasksd::test_all_primes - Assertion...
+FAILED hard/human_eval_94_test.py::TestSkjkasksd::test_empty_list - Assertion...
+FAILED hard/human_eval_94_test.py::TestSkjkasksd::test_large_numbers_in_list
+FAILED hard/human_eval_94_test.py::TestSkjkasksd::test_not_all_primes - Asser...
+FAILED hard/human_eval_94_test.py::TestSkjkasksd::test_only_one_prime - Asser...
+======================== 34 failed, 16 passed in 0.04s =========================

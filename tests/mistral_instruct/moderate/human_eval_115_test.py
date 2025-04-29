@@ -1,7 +1,7 @@
 import unittest
 from typing import List, Tuple
 import math
-from source.mistral_instruct import max_fill
+from source.mistral_instruct.moderate.human_eval_115 import max_fill
 
 class TestMaxFill(unittest.TestCase):
     def setUp(self):

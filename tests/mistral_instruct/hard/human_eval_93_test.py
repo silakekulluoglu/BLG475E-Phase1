@@ -1,6 +1,6 @@
 import unittest
 from typing import Union
-from source.mistral_instruct import encode
+from source.mistral_instruct.hard.human_eval_93 import encode
 
 class TestEncode(unittest.TestCase):
     def setUp(self):

@@ -1,0 +1,495 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.10, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/silakekulluoglu/Desktop/BLG475E-Phase1-1/tests/mistral_instruct
+collected 49 items
+
+moderate/human_eval_107_test.py F.FF.                                    [ 10%]
+moderate/human_eval_115_test.py FFFFF                                    [ 20%]
+moderate/human_eval_132_test.py ..F..                                    [ 30%]
+moderate/human_eval_13_test.py F                                         timedout
+moderate/human_eval_148_test.py ..FFF                                    [ 51%]
+moderate/human_eval_21_test.py .FFF                                      [ 59%]
+moderate/human_eval_36_test.py FFF.F                                     [ 69%]
+moderate/human_eval_51_test.py F.FF.                                     [ 79%]
+moderate/human_eval_68_test.py .FFF.                                     [ 89%]
+moderate/human_eval_75_test.py ..FF.                                     [100%]
+
+=================================== FAILURES ===================================
+_________ TestEvenOddPalindrome.test_even_odd_palindrome_large_number __________
+
+self = <human_eval_107_test.TestEvenOddPalindrome testMethod=test_even_odd_palindrome_large_number>
+
+    def test_even_odd_palindrome_large_number(self):
+        expected = (205, 140)
+        result = even_odd_palindrome(6789)
+>       self.assertEqual(result, expected)
+E       AssertionError: Tuples differ: (76, 90) != (205, 140)
+E       
+E       First differing element 0:
+E       76
+E       205
+E       
+E       - (76, 90)
+E       + (205, 140)
+
+moderate/human_eval_107_test.py:30: AssertionError
+______________ TestEvenOddPalindrome.test_even_odd_palindrome_one ______________
+
+self = <human_eval_107_test.TestEvenOddPalindrome testMethod=test_even_odd_palindrome_one>
+
+    def test_even_odd_palindrome_one(self):
+        expected = (0, 1)
+        result = even_odd_palindrome(1)
+>       self.assertEqual(result, expected)
+E       AssertionError: Tuples differ: (0, 0) != (0, 1)
+E       
+E       First differing element 1:
+E       0
+E       1
+E       
+E       - (0, 0)
+E       ?     ^
+E       
+E       + (0, 1)
+E       ?     ^
+
+moderate/human_eval_107_test.py:20: AssertionError
+_________ TestEvenOddPalindrome.test_even_odd_palindrome_small_number __________
+
+self = <human_eval_107_test.TestEvenOddPalindrome testMethod=test_even_odd_palindrome_small_number>
+
+    def test_even_odd_palindrome_small_number(self):
+        expected = (3, 1)
+        result = even_odd_palindrome(9)
+>       self.assertEqual(result, expected)
+E       AssertionError: Tuples differ: (4, 4) != (3, 1)
+E       
+E       First differing element 0:
+E       4
+E       3
+E       
+E       - (4, 4)
+E       + (3, 1)
+
+moderate/human_eval_107_test.py:25: AssertionError
+________________ TestMaxFill.test_max_fill_capacity_more_water _________________
+
+self = <human_eval_115_test.TestMaxFill testMethod=test_max_fill_capacity_more_water>
+
+    def test_max_fill_capacity_more_water(self):
+        expected = (1, 5)
+        grid = [[5]]
+        capacity = 5
+        result = max_fill(grid, capacity)
+>       self.assertEqual(result, expected)
+E       AssertionError: 1 != (1, 5)
+
+moderate/human_eval_115_test.py:46: AssertionError
+_____________________ TestMaxFill.test_max_fill_empty_grid _____________________
+
+self = <human_eval_115_test.TestMaxFill testMethod=test_max_fill_empty_grid>
+
+    def test_max_fill_empty_grid(self):
+        expected = (0, 0)
+        grid = []
+        capacity = 1
+        result = max_fill(grid, capacity)
+>       self.assertEqual(result, expected)
+E       AssertionError: 0 != (0, 0)
+
+moderate/human_eval_115_test.py:18: AssertionError
+_____________________ TestMaxFill.test_max_fill_large_grid _____________________
+
+self = <human_eval_115_test.TestMaxFill testMethod=test_max_fill_large_grid>
+
+    def test_max_fill_large_grid(self):
+        expected = (3, 6)
+        grid = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+        capacity = 2
+        result = max_fill(grid, capacity)
+>       self.assertEqual(result, expected)
+E       AssertionError: 2 != (3, 6)
+
+moderate/human_eval_115_test.py:39: AssertionError
+__________________ TestMaxFill.test_max_fill_single_row_grid ___________________
+
+self = <human_eval_115_test.TestMaxFill testMethod=test_max_fill_single_row_grid>
+
+    def test_max_fill_single_row_grid(self):
+        expected = (2, 2)
+        grid = [[2]]
+        capacity = 1
+        result = max_fill(grid, capacity)
+>       self.assertEqual(result, expected)
+E       AssertionError: 2 != (2, 2)
+
+moderate/human_eval_115_test.py:25: AssertionError
+_____________________ TestMaxFill.test_max_fill_small_grid _____________________
+
+self = <human_eval_115_test.TestMaxFill testMethod=test_max_fill_small_grid>
+
+    def test_max_fill_small_grid(self):
+        expected = (1, 3)
+        grid = [[1, 0], [0, 1]]
+        capacity = 2
+        result = max_fill(grid, capacity)
+>       self.assertEqual(result, expected)
+E       AssertionError: 1 != (1, 3)
+
+moderate/human_eval_115_test.py:32: AssertionError
+_______________ TestIsNested.test_is_nested_no_matching_brackets _______________
+
+self = <human_eval_132_test.TestIsNested testMethod=test_is_nested_no_matching_brackets>
+
+    def test_is_nested_no_matching_brackets(self):
+        expected = False
+        string = "([)]"
+        result = is_nested(string)
+>       self.assertEqual(result, expected)
+E       AssertionError: True != False
+
+moderate/human_eval_132_test.py:29: AssertionError
+________________________ TestGCD.test_gcd_large_number _________________________
+
+self = <human_eval_13_test.TestGCD testMethod=test_gcd_large_number>
+
+    def test_gcd_large_number(self):
+        result = greatest_common_divisor(7654321, 4321765)
+>       self.assertEqual(result, 1369)
+E       AssertionError: 1 != 1369
+
+moderate/human_eval_13_test.py:21: AssertionError
+______________________ TestGCD.test_gcd_negative_numbers _______________________
+
+self = <human_eval_13_test.TestGCD testMethod=test_gcd_negative_numbers>
+
+    def test_gcd_negative_numbers(self):
+        result = greatest_common_divisor(-24, -18)
+>       self.assertEqual(result, 18)
+E       AssertionError: 6 != 18
+
+moderate/human_eval_13_test.py:25: AssertionError
+____________________________ TestGCD.test_gcd_zero _____________________________
+
+self = <human_eval_13_test.TestGCD testMethod=test_gcd_zero>
+
+    def test_gcd_zero(self):
+>       with self.assertRaises(TypeError):
+E       AssertionError: TypeError not raised
+
+moderate/human_eval_13_test.py:28: AssertionError
+_______________________ TestBF.test_bf_multiple_planets ________________________
+
+self = <human_eval_148_test.TestBF testMethod=test_bf_multiple_planets>
+
+    def test_bf_multiple_planets(self):
+        expected = ["Venus", "Earth"]
+        planet1 = "Mercury"
+        planet2 = "Mars"
+        result = bf(planet1, planet2)
+>       self.assertEqual(result, expected)
+E       AssertionError: Lists differ: ['Venus'] != ['Venus', 'Earth']
+E       
+E       Second list contains 1 additional elements.
+E       First extra element 1:
+E       'Earth'
+E       
+E       - ['Venus']
+E       + ['Venus', 'Earth']
+
+moderate/human_eval_148_test.py:43: AssertionError
+____________________ TestBF.test_bf_valid_adjacent_planets _____________________
+
+self = <human_eval_148_test.TestBF testMethod=test_bf_valid_adjacent_planets>
+
+    def test_bf_valid_adjacent_planets(self):
+        expected = ["Venus"]
+        planet1 = "Mercury"
+        planet2 = "Venus"
+        result = bf(planet1, planet2)
+>       self.assertEqual(result, expected)
+E       AssertionError: Lists differ: [] != ['Venus']
+E       
+E       Second list contains 1 additional elements.
+E       First extra element 0:
+E       'Venus'
+E       
+E       - []
+E       + ['Venus']
+
+moderate/human_eval_148_test.py:29: AssertionError
+___________________ TestBF.test_bf_valid_nonadjacent_planets ___________________
+
+self = <human_eval_148_test.TestBF testMethod=test_bf_valid_nonadjacent_planets>
+
+    def test_bf_valid_nonadjacent_planets(self):
+        expected = ["Mars", "Astronaut"]
+        planet1 = "Mercury"
+        planet2 = "Mars"
+        result = bf(planet1, planet2)
+>       self.assertEqual(result, expected)
+E       AssertionError: Lists differ: ['Venus'] != ['Mars', 'Astronaut']
+E       
+E       First differing element 0:
+E       'Venus'
+E       'Mars'
+E       
+E       Second list contains 1 additional elements.
+E       First extra element 1:
+E       'Astronaut'
+E       
+E       - ['Venus']
+E       + ['Mars', 'Astronaut']
+
+moderate/human_eval_148_test.py:36: AssertionError
+____________________ TestRescale.test_rescale_large_numbers ____________________
+
+self = <human_eval_21_test.TestRescale testMethod=test_rescale_large_numbers>
+
+    def test_rescale_large_numbers(self):
+        numbers = [23456789.123456, 32109876.543210]
+        expected_scaled = [0.9283781, 1.4366217]
+        result = rescale_to_unit(numbers)
+>       self.assertListEqual(result, expected_scaled)
+E       AssertionError: Lists differ: [0.0, 1.0] != [0.9283781, 1.4366217]
+E       
+E       First differing element 0:
+E       0.0
+E       0.9283781
+E       
+E       - [0.0, 1.0]
+E       + [0.9283781, 1.4366217]
+
+moderate/human_eval_21_test.py:26: AssertionError
+__________________ TestRescale.test_rescale_negative_numbers ___________________
+
+self = <human_eval_21_test.TestRescale testMethod=test_rescale_negative_numbers>
+
+    def test_rescale_negative_numbers(self):
+        numbers = [-5, -3, 2]
+        expected_scaled = [1.0, 0.6, 0.4]
+        result = rescale_to_unit(numbers)
+>       self.assertListEqual(result, expected_scaled)
+E       AssertionError: Lists differ: [0.0, 0.2857142857142857, 1.0] != [1.0, 0.6, 0.4]
+E       
+E       First differing element 0:
+E       0.0
+E       1.0
+E       
+E       - [0.0, 0.2857142857142857, 1.0]
+E       + [1.0, 0.6, 0.4]
+
+moderate/human_eval_21_test.py:32: AssertionError
+_____________________ TestRescale.test_rescale_simple_case _____________________
+
+self = <human_eval_21_test.TestRescale testMethod=test_rescale_simple_case>
+
+    def test_rescale_simple_case(self):
+        numbers = [3, 5, 1, 7]
+        expected_scaled = [0.082, 0.143, 0.021, 0.235]
+        result = rescale_to_unit(numbers)
+>       self.assertListEqual(result, expected_scaled)
+E       AssertionError: Lists differ: [0.3333333333333333, 0.6666666666666666, 0.0, 1.0] != [0.082, 0.143, 0.021, 0.235]
+E       
+E       First differing element 0:
+E       0.3333333333333333
+E       0.082
+E       
+E       - [0.3333333333333333, 0.6666666666666666, 0.0, 1.0]
+E       + [0.082, 0.143, 0.021, 0.235]
+
+moderate/human_eval_21_test.py:20: AssertionError
+____________________ TestFizzBuzz.test_fizz_buzz_edge_case _____________________
+
+self = <human_eval_36_test.TestFizzBuzz testMethod=test_fizz_buzz_edge_case>
+
+    def test_fizz_buzz_edge_case(self):
+        expected = 6
+        result = fizz_buzz(143)
+>       self.assertEqual(result, expected)
+E       AssertionError: 2 != 6
+
+moderate/human_eval_36_test.py:30: AssertionError
+___________________ TestFizzBuzz.test_fizz_buzz_large_input ____________________
+
+self = <human_eval_36_test.TestFizzBuzz testMethod=test_fizz_buzz_large_input>
+
+    def test_fizz_buzz_large_input(self):
+        expected = 178
+        result = fizz_buzz(1000)
+>       self.assertEqual(result, expected)
+E       AssertionError: 16 != 178
+
+moderate/human_eval_36_test.py:25: AssertionError
+___________________ TestFizzBuzz.test_fizz_buzz_simple_case ____________________
+
+self = <human_eval_36_test.TestFizzBuzz testMethod=test_fizz_buzz_simple_case>
+
+    def test_fizz_buzz_simple_case(self):
+        expected = 2
+        result = fizz_buzz(43)
+>       self.assertEqual(result, expected)
+E       AssertionError: 0 != 2
+
+moderate/human_eval_36_test.py:20: AssertionError
+____________________ TestFizzBuzz.test_fizz_buzz_with_seven ____________________
+
+self = <human_eval_36_test.TestFizzBuzz testMethod=test_fizz_buzz_with_seven>
+
+    def test_fizz_buzz_with_seven(self):
+        expected = 1
+        result = fizz_buzz(1237)
+>       self.assertEqual(result, expected)
+E       AssertionError: 20 != 1
+
+moderate/human_eval_36_test.py:35: AssertionError
+______________ TestRemoveVowels.test_remove_vowels_complex_string ______________
+
+self = <human_eval_51_test.TestRemoveVowels testMethod=test_remove_vowels_complex_string>
+
+    def test_remove_vowels_complex_string(self):
+        expected = "N'w-d53-B@f7!"
+        result = remove_vowels("New-Developer@Fiverr!")
+>       self.assertEqual(result, expected)
+E       AssertionError: 'Nw-Dvlpr@Fvrr!' != "N'w-d53-B@f7!"
+E       - Nw-Dvlpr@Fvrr!
+E       + N'w-d53-B@f7!
+
+moderate/human_eval_51_test.py:30: AssertionError
+________________ TestRemoveVowels.test_remove_vowels_mixed_case ________________
+
+self = <human_eval_51_test.TestRemoveVowels testMethod=test_remove_vowels_mixed_case>
+
+    def test_remove_vowels_mixed_case(self):
+        expected = "Cdwrfs"
+        result = remove_vowels("CodeWars is fun!")
+>       self.assertEqual(result, expected)
+E       AssertionError: 'CdWrs s fn!' != 'Cdwrfs'
+E       - CdWrs s fn!
+E       + Cdwrfs
+
+moderate/human_eval_51_test.py:35: AssertionError
+______________ TestRemoveVowels.test_remove_vowels_simple_string _______________
+
+self = <human_eval_51_test.TestRemoveVowels testMethod=test_remove_vowels_simple_string>
+
+    def test_remove_vowels_simple_string(self):
+        expected = "hsl"
+        result = remove_vowels("hello world!")
+>       self.assertEqual(result, expected)
+E       AssertionError: 'hll wrld!' != 'hsl'
+E       - hll wrld!
+E       + hsl
+
+moderate/human_eval_51_test.py:25: AssertionError
+_______________________ TestPluck.test_pluck_even_array ________________________
+
+self = <human_eval_68_test.TestPluck testMethod=test_pluck_even_array>
+
+    def test_pluck_even_array(self):
+        expected = [2, 1]
+        result = pluck([0, 2, 4, 6])
+>       self.assertEqual(result, expected)
+E       AssertionError: Lists differ: [0, 0] != [2, 1]
+E       
+E       First differing element 0:
+E       0
+E       2
+E       
+E       - [0, 0]
+E       + [2, 1]
+
+moderate/human_eval_68_test.py:25: AssertionError
+______________________ TestPluck.test_pluck_longer_array _______________________
+
+self = <human_eval_68_test.TestPluck testMethod=test_pluck_longer_array>
+
+    def test_pluck_longer_array(self):
+        expected = [8, 3]
+        result = pluck([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+>       self.assertEqual(result, expected)
+E       AssertionError: Lists differ: [0, 0] != [8, 3]
+E       
+E       First differing element 0:
+E       0
+E       8
+E       
+E       - [0, 0]
+E       + [8, 3]
+
+moderate/human_eval_68_test.py:35: AssertionError
+_______________________ TestPluck.test_pluck_mixed_array _______________________
+
+self = <human_eval_68_test.TestPluck testMethod=test_pluck_mixed_array>
+
+    def test_pluck_mixed_array(self):
+        expected = [4, 1]
+        result = pluck([1, 3, 4, 5, 7, 9, 2])
+>       self.assertEqual(result, expected)
+E       AssertionError: Lists differ: [4, 0] != [4, 1]
+E       
+E       First differing element 1:
+E       0
+E       1
+E       
+E       - [4, 0]
+E       ?     ^
+E       
+E       + [4, 1]
+E       ?     ^
+
+moderate/human_eval_68_test.py:30: AssertionError
+___________ TestIsMultiplyPrime.test_is_multiply_prime_prime_number ____________
+
+self = <human_eval_75_test.TestIsMultiplyPrime testMethod=test_is_multiply_prime_prime_number>
+
+    def test_is_multiply_prime_prime_number(self):
+        expected = True
+        result = is_multiply_prime(7)
+>       self.assertEqual(result, expected)
+E       AssertionError: False != True
+
+moderate/human_eval_75_test.py:30: AssertionError
+__________ TestIsMultiplyPrime.test_is_multiply_prime_two_times_three __________
+
+self = <human_eval_75_test.TestIsMultiplyPrime testMethod=test_is_multiply_prime_two_times_three>
+
+    def test_is_multiply_prime_two_times_three(self):
+        expected = True
+        result = is_multiply_prime(6)
+>       self.assertEqual(result, expected)
+E       AssertionError: False != True
+
+moderate/human_eval_75_test.py:35: AssertionError
+=========================== short test summary info ============================
+FAILED moderate/human_eval_107_test.py::TestEvenOddPalindrome::test_even_odd_palindrome_large_number
+FAILED moderate/human_eval_107_test.py::TestEvenOddPalindrome::test_even_odd_palindrome_one
+FAILED moderate/human_eval_107_test.py::TestEvenOddPalindrome::test_even_odd_palindrome_small_number
+FAILED moderate/human_eval_115_test.py::TestMaxFill::test_max_fill_capacity_more_water
+FAILED moderate/human_eval_115_test.py::TestMaxFill::test_max_fill_empty_grid
+FAILED moderate/human_eval_115_test.py::TestMaxFill::test_max_fill_large_grid
+FAILED moderate/human_eval_115_test.py::TestMaxFill::test_max_fill_single_row_grid
+FAILED moderate/human_eval_115_test.py::TestMaxFill::test_max_fill_small_grid
+FAILED moderate/human_eval_132_test.py::TestIsNested::test_is_nested_no_matching_brackets
+FAILED moderate/human_eval_13_test.py::TestGCD::test_gcd_large_number - Asser...
+FAILED moderate/human_eval_13_test.py::TestGCD::test_gcd_negative_numbers - A...
+FAILED moderate/human_eval_13_test.py::TestGCD::test_gcd_zero - AssertionErro...
+FAILED moderate/human_eval_148_test.py::TestBF::test_bf_multiple_planets - As...
+FAILED moderate/human_eval_148_test.py::TestBF::test_bf_valid_adjacent_planets
+FAILED moderate/human_eval_148_test.py::TestBF::test_bf_valid_nonadjacent_planets
+FAILED moderate/human_eval_21_test.py::TestRescale::test_rescale_large_numbers
+FAILED moderate/human_eval_21_test.py::TestRescale::test_rescale_negative_numbers
+FAILED moderate/human_eval_21_test.py::TestRescale::test_rescale_simple_case
+FAILED moderate/human_eval_36_test.py::TestFizzBuzz::test_fizz_buzz_edge_case
+FAILED moderate/human_eval_36_test.py::TestFizzBuzz::test_fizz_buzz_large_input
+FAILED moderate/human_eval_36_test.py::TestFizzBuzz::test_fizz_buzz_simple_case
+FAILED moderate/human_eval_36_test.py::TestFizzBuzz::test_fizz_buzz_with_seven
+FAILED moderate/human_eval_51_test.py::TestRemoveVowels::test_remove_vowels_complex_string
+FAILED moderate/human_eval_51_test.py::TestRemoveVowels::test_remove_vowels_mixed_case
+FAILED moderate/human_eval_51_test.py::TestRemoveVowels::test_remove_vowels_simple_string
+FAILED moderate/human_eval_68_test.py::TestPluck::test_pluck_even_array - Ass...
+FAILED moderate/human_eval_68_test.py::TestPluck::test_pluck_longer_array - A...
+FAILED moderate/human_eval_68_test.py::TestPluck::test_pluck_mixed_array - As...
+FAILED moderate/human_eval_75_test.py::TestIsMultiplyPrime::test_is_multiply_prime_prime_number
+FAILED moderate/human_eval_75_test.py::TestIsMultiplyPrime::test_is_multiply_prime_two_times_three
+======================== 30 failed, 19 passed in 0.05s =========================

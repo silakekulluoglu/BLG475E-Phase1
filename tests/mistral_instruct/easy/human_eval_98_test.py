@@ -1,5 +1,5 @@
 import unittest
-from source.mistral_instruct import count_upper
+from source.mistral_instruct.easy.human_eval_98 import count_upper
 
 class TestCountUpper(unittest.TestCase):
     def setUp(self):

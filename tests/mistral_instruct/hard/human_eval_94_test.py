@@ -1,6 +1,6 @@
 import unittest
 from typing import List, Union
-from source.mistral_instruct import skjkasdkd
+from source.mistral_instruct.hard.human_eval_94 import skjkasdkd
 
 class TestSkjkasksd(unittest.TestCase):
     def setUp(self):

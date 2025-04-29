@@ -1,6 +1,6 @@
 import unittest
 from typing import List, Union
-from source.mistral_instruct import solution
+from source.mistral_instruct.hard.human_eval_121 import solution
 
 class TestSolution(unittest.TestCase):
     def setUp(self):

@@ -1,5 +1,5 @@
 import unittest
-from source.mistral_instruct import digits
+from source.mistral_instruct.easy.human_eval_131 import digits
 
 class TestDigits(unittest.TestCase):
     def setUp(self):

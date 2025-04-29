@@ -1,5 +1,5 @@
 import unittest
-from source.mistral_instruct import anti_shuffle
+from source.mistral_instruct.easy.human_eval_86 import anti_shuffle
 
 class TestAntiShuffle(unittest.TestCase):
     def setUp(self):

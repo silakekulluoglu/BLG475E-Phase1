@@ -1,7 +1,7 @@
 import unittest
 import math
 from typing import List, Union
-from source.mistral_instruct import poly, find_zero
+from source.mistral_instruct.hard.human_eval_32 import poly, find_zero
 
 class TestPolyAndZero(unittest.TestCase):
     def setUp(self):

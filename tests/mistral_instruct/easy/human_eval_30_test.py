@@ -1,5 +1,5 @@
 import unittest
-from source.mistral_instruct import get_positive
+from source.mistral_instruct.easy.human_eval_30 import get_positive
 
 class TestGetPositive(unittest.TestCase):
     def setUp(self):

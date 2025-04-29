@@ -1,5 +1,5 @@
 import unittest
-from source.mistral_instruct import is_palindrome, make_palindrome
+from source.mistral_instruct.hard.human_eval_10 import is_palindrome, make_palindrome
 
 class TestPalindromes(unittest.TestCase):
     def setUp(self):

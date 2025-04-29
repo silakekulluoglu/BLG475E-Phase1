@@ -1,6 +1,6 @@
 import unittest
 import string
-from source.mistral_instruct import flip_case
+from source.mistral_instruct.easy.human_eval_27 import flip_case
 
 class TestFlipCase(unittest.TestCase):
     def setUp(self):

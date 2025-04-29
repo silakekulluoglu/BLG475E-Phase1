@@ -1,5 +1,5 @@
 import unittest
-from source.mistral_instruct import greatest_common_divisor
+from source.mistral_instruct.moderate.human_eval_13 import greatest_common_divisor
 
 class TestGCD(unittest.TestCase):
     def setUp(self):
@@ -26,4 +26,4 @@ class TestGCD(unittest.TestCase):
 
     def test_gcd_zero(self):
         with self.assertRaises(TypeError):
-            greatest_common_divisor(0, any_integer)  # Replace 'any_integer' with an appropriate value to raise the TypeError
+            greatest_common_divisor(0, 5)  # Replace 'any_integer' with an appropriate value to raise the TypeError

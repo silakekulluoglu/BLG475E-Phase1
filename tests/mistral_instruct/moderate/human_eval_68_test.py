@@ -1,6 +1,6 @@
 import unittest
 from typing import List
-from source.mistral_instruct import pluck
+from source.mistral_instruct.moderate.human_eval_68 import pluck
 
 class TestPluck(unittest.TestCase):
     def setUp(self):

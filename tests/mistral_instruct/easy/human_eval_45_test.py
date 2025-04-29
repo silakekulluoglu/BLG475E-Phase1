@@ -1,5 +1,5 @@
 import unittest
-from source.mistral_instruct import triangle_area
+from source.mistral_instruct.easy.human_eval_45 import triangle_area
 
 class TestTriangleArea(unittest.TestCase):
     def setUp(self):

@@ -1,6 +1,6 @@
 import unittest
 from typing import Tuple
-from source.mistral_instruct import even_odd_palindrome
+from source.mistral_instruct.moderate.human_eval_107 import even_odd_palindrome
 
 class TestEvenOddPalindrome(unittest.TestCase):
     def setUp(self):

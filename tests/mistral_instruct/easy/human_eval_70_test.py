@@ -1,5 +1,5 @@
 import unittest
-from source.mistral_instruct import strange_sort_list
+from source.mistral_instruct.easy.human_eval_70 import strange_sort_list
 
 class TestStrangeSortList(unittest.TestCase):
     def setUp(self):

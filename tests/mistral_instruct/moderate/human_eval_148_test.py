@@ -1,6 +1,6 @@
 import unittest
 from typing import Tuple, List
-from source.mistral_instruct import bf
+from source.mistral_instruct.moderate.human_eval_148 import bf
 
 class TestBF(unittest.TestCase):
     def setUp(self):

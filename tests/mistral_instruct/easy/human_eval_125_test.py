@@ -1,5 +1,5 @@
 import unittest
-from source.mistral_instruct import split_words
+from source.mistral_instruct.easy.human_eval_125 import split_words
 
 class TestSplitWords(unittest.TestCase):
     def setUp(self):

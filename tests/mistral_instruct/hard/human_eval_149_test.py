@@ -1,6 +1,6 @@
 import unittest
 from typing import List, Union
-from source.mistral_instruct import sorted_list_sum
+from source.mistral_instruct.hard.human_eval_149 import sorted_list_sum
 
 class TestSortedListSum(unittest.TestCase):
     def setUp(self):
