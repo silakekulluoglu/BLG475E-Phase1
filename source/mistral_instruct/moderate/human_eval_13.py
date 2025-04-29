@@ -1,11 +1,3 @@
-'''def greatest_common_divisor(a: int, b: int) -> int:
-    while a != b:
-        if a > b:
-            a -= b
-        else:
-            b -= a
-    return a
-    '''
 def greatest_common_divisor(a: int, b: int) -> int:
     a, b = abs(a), abs(b)
     if a == 0 and b == 0:
