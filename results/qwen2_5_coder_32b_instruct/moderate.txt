@@ -1,0 +1,51 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/25200398/Desktop/BLG475E-Phase1
+collected 50 items
+
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_107_test.py .....   [ 10%]
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_115_test.py .....   [ 20%]
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_132_test.py .....   [ 30%]
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_13_test.py .....    [ 40%]
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_148_test.py .....   [ 50%]
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_21_test.py .....    [ 60%]
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_36_test.py .....    [ 70%]
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_51_test.py .F...    [ 80%]
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_68_test.py .....    [ 90%]
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_75_test.py ..F.F    [100%]
+
+=================================== FAILURES ===================================
+____________________ TestRemoveVowels.test_remove_vowels_2 _____________________
+
+self = <human_eval_51_test.TestRemoveVowels testMethod=test_remove_vowels_2>
+
+    def test_remove_vowels_2(self):
+>       self.assertEqual(remove_vowels("abcdef\nghijklm"), 'bcdf\ng hjklm')
+E       AssertionError: 'bcdf\nghjklm' != 'bcdf\ng hjklm'
+E         bcdf
+E       - ghjklm+ g hjklm?  +
+
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_51_test.py:9: AssertionError
+_________________ TestIsMultiplyPrime.test_is_multiply_prime_3 _________________
+
+self = <human_eval_75_test.TestIsMultiplyPrime testMethod=test_is_multiply_prime_3>
+
+    def test_is_multiply_prime_3(self):
+>       self.assertEqual(is_multiply_prime(8), False)
+E       AssertionError: True != False
+
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_75_test.py:12: AssertionError
+_________________ TestIsMultiplyPrime.test_is_multiply_prime_5 _________________
+
+self = <human_eval_75_test.TestIsMultiplyPrime testMethod=test_is_multiply_prime_5>
+
+    def test_is_multiply_prime_5(self):
+>       self.assertEqual(is_multiply_prime(125), False)
+E       AssertionError: True != False
+
+tests/qwen2_5_coder_32b_instruct/moderate/human_eval_75_test.py:18: AssertionError
+=========================== short test summary info ============================
+FAILED tests/qwen2_5_coder_32b_instruct/moderate/human_eval_51_test.py::TestRemoveVowels::test_remove_vowels_2
+FAILED tests/qwen2_5_coder_32b_instruct/moderate/human_eval_75_test.py::TestIsMultiplyPrime::test_is_multiply_prime_3
+FAILED tests/qwen2_5_coder_32b_instruct/moderate/human_eval_75_test.py::TestIsMultiplyPrime::test_is_multiply_prime_5
+========================= 3 failed, 47 passed in 0.19s =========================
