@@ -1,4 +1,5 @@
 import unittest
+from source.mistral_instruct import digits
 
 class TestDigits(unittest.TestCase):
     def setUp(self):

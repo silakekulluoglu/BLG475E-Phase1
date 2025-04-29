@@ -1,4 +1,5 @@
 import unittest
+from source.mistral_instruct import get_positive
 
 class TestGetPositive(unittest.TestCase):
     def setUp(self):

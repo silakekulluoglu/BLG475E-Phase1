@@ -1,4 +1,5 @@
 import unittest
+from source.mistral_instruct import anti_shuffle
 
 class TestAntiShuffle(unittest.TestCase):
     def setUp(self):

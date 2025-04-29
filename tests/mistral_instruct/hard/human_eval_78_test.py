@@ -1,5 +1,6 @@
 import unittest
 from typing import Union
+from source.mistral_instruct import hex_key, prime_digits
 
 class TestHexKey(unittest.TestCase):
     def setUp(self):

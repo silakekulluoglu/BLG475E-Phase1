@@ -1,4 +1,5 @@
 import unittest
+from source.mistral_instruct import split_words
 
 class TestSplitWords(unittest.TestCase):
     def setUp(self):

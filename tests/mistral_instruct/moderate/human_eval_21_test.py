@@ -1,5 +1,6 @@
 import unittest
 from typing import List
+from source.mistral_instruct import rescale_to_unit
 
 class TestRescale(unittest.TestCase):
     def setUp(self):

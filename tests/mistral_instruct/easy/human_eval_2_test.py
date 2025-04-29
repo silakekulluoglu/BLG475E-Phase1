@@ -1,4 +1,6 @@
 import unittest
+from source.mistral_instruct import truncate_number
+
 
 class TestTruncateNumber(unittest.TestCase):
     def setUp(self):

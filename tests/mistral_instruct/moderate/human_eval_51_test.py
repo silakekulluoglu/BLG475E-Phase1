@@ -1,5 +1,6 @@
 import unittest
 from typing import StringIO, Dict
+from source.mistral_instruct import remove_vowels
 
 class TestRemoveVowels(unittest.TestCase):
     def setUp(self):

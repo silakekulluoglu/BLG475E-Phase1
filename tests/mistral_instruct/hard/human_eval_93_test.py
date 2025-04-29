@@ -1,5 +1,6 @@
 import unittest
 from typing import Union
+from source.mistral_instruct import encode
 
 class TestEncode(unittest.TestCase):
     def setUp(self):

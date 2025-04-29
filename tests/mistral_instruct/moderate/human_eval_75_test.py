@@ -1,5 +1,6 @@
 import unittest
 from typing import List
+from source.mistral_instruct import is_multiply_prime
 
 class TestIsMultiplyPrime(unittest.TestCase):
     def setUp(self):

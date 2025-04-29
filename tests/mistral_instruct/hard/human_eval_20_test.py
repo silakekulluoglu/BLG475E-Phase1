@@ -1,6 +1,7 @@
 import unittest
 import math
 from typing import List, Tuple
+from source.mistral_instruct import find_closest_elements
 
 class TestFindClosestElements(unittest.TestCase):
     def setUp(self):

@@ -1,5 +1,6 @@
 import unittest
 from typing import Tuple, List
+from source.mistral_instruct import bf
 
 class TestBF(unittest.TestCase):
     def setUp(self):

@@ -1,5 +1,6 @@
 import unittest
 from typing import List, Tuple
+from source.mistral_instruct import fizz_buzz
 
 class TestFizzBuzz(unittest.TestCase):
     def setUp(self):

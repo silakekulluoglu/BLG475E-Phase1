@@ -1,4 +1,5 @@
 import unittest
+from source.mistral_instruct import greatest_common_divisor
 
 class TestGCD(unittest.TestCase):
     def setUp(self):

@@ -1,5 +1,6 @@
 import unittest
 import string
+from source.mistral_instruct import flip_case
 
 class TestFlipCase(unittest.TestCase):
     def setUp(self):

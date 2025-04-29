@@ -1,4 +1,5 @@
 import unittest
+from source.mistral_instruct import rounded_avg
 
 class TestRoundedAvg(unittest.TestCase):
     def setUp(self):

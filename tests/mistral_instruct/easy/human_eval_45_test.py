@@ -1,4 +1,5 @@
 import unittest
+from source.mistral_instruct import triangle_area
 
 class TestTriangleArea(unittest.TestCase):
     def setUp(self):

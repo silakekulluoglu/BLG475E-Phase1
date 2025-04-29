@@ -1,5 +1,6 @@
 import unittest
 from typing import List
+from source.mistral_instruct import common
 
 class TestCommon(unittest.TestCase):
     def setUp(self):

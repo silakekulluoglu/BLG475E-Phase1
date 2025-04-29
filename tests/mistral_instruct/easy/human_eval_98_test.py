@@ -1,4 +1,5 @@
 import unittest
+from source.mistral_instruct import count_upper
 
 class TestCountUpper(unittest.TestCase):
     def setUp(self):
