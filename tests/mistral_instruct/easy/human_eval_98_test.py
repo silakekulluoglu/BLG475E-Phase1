@@ -1,29 +1,17 @@
 import unittest
 from source.mistral_instruct.easy.human_eval_98 import count_upper
 
+import unittest
+
 class TestCountUpper(unittest.TestCase):
-    def setUp(self):
-        pass  # Setup any test fixtures here if needed
+    def test_count_upper(self):
+        self.assertEqual(count_upper('aBCdEf'), 1)
+        self.assertEqual(count_upper('abcdefg'), 0)
+        self.assertEqual(count_upper('dBBE'), 0)
+        self.assertEqual(count_upper('dBBe'), 0)
+        self.assertEqual(count_upper('1aBCdEf'), 1)
+        self.assertEqual(count_upper('abcdefg1'), 0)
+        self.assertEqual(count_upper('dBBe1'), 0)
 
-    def tearDown(self):
-        pass  # Clean up after the tests run here if needed
-
-    def test_count_upper_empty(self):
-        result = count_upper('')
-        self.assertEqual(result, 0)
-
-    def test_count_upper_single_uppercase_vowel(self):
-        result = count_upper("A")
-        self.assertEqual(result, 1)
-
-    def test_count_upper_multiple_uppercase_vowels(self):
-        result = count_upper("IOU")
-        self.assertEqual(result, 2)
-
-    def test_count_upper_odd_number_of_letters(self):
-        result = count_upper("OUI")
-        self.assertEqual(result, 1)
-
-    def test_count_upper_mixed_case(self):
-        result = count_upper("ioUaEo")
-        self.assertEqual(result, 2)
+if __name__ == '__main__':
+    unittest.main()

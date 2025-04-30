@@ -2,6 +2,9 @@ def anti_shuffle(s):
     words = s.split()
     result = []
     for word in words:
-        sorted_word = ''.join(sorted(list(word)))
-        result.append(sorted_word)
-    return ' '.join(result)
+        chars = list(word)
+        chars = [char for char in chars if char.isalpha()]
+        chars.sort(key=ord)
+        result.append(''.join(chars))
+        result.append(' ')
+    return ''.join(result)[:-1]

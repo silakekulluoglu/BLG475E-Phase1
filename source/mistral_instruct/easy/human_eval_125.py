@@ -1,18 +1,18 @@
 def split_words(txt):
-    words = []
-    for char in txt:
-        if char.isspace():
-            if words:
-                break
-        elif char == ',':
-            words.append(txt[words[-1]:txt.index(char)].strip())
-            continue
+    if txt.count(' ') == 0:
+        if txt.count(',') == 0:
+            result = 0
+            for char in txt.lower():
+                if char.isalpha() and ord(char) % 2 == 1:
+                    result += 1
+            return result
         else:
-            if ord('a') <= ord(char.lower()) <= ord('z'):
-                if ord(char.lower()) % 2 != 0:
-                    words.append(char)
-    if not words:
-        return len([i for i in txt.lower() if i.isalpha() and (ord(i) < ord('a') or 
-ord(i) > ord('z'))])
+            words = txt.split(',')
+            result = 0
+            for word in words:
+                for char in word.lower():
+                    if char.isalpha() and ord(char) % 2 == 1:
+                        result += 1
+            return result
     else:
-        return words
+        return txt.split()

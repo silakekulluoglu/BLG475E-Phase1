@@ -2,29 +2,11 @@ import unittest
 from source.mistral_instruct.easy.human_eval_30 import get_positive
 
 class TestGetPositive(unittest.TestCase):
-    def setUp(self):
-        pass  # Setup any test fixtures here if needed
+    def test_get_positive(self):
+        self.assertEqual(get_positive([1, -2, 3, -4, 5, -6, 7]), [1, 3, 5, 7])
+        self.assertEqual(get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10]), [5, 3, 2, 3, 9, 123, 1])
+        self.assertEqual(get_positive([0, -1, 0, 0, 0]), [])
+        self.assertEqual(get_positive([-1, 0, 1]), [1])
 
-    def tearDown(self):
-        pass  # Clean up after the tests run here if needed
-
-    def test_get_positive_empty_list(self):
-        result = get_positive([])
-        self.assertCountEqual(result, [])
-
-    def test_get_positive_only_positives(self):
-        input_list = [3, 7, 12, 0]
-        result = get_positive(input_list)
-        expected_output = [3, 7, 12]
-        self.assertCountEqual(result, expected_output)
-
-    def test_get_positive_only_zeros(self):
-        input_list = [0, 0, 0, -5, 0]
-        result = get_positive(input_list)
-        self.assertCountEqual(result, [])
-
-    def test_get_positive_negatives_and_positives(self):
-        input_list = [-3, -2, -1, 0, 4, 5]
-        result = get_positive(input_list)
-        expected_output = [4, 5]
-        self.assertCountEqual(result, expected_output)
+if __name__ == '__main__':
+    unittest.main()
