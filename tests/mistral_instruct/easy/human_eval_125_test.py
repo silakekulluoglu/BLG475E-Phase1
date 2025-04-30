@@ -2,16 +2,28 @@ import unittest
 from source.mistral_instruct.easy.human_eval_125 import split_words
 
 class TestSplitWords(unittest.TestCase):
-    def test_split_words(self):
-        self.assertEqual(split_words("Hello world!"), ["Hello", "world!"])
-        self.assertEqual(split_words("Hello,world!"), ["Hello", "world!"])
-        self.assertEqual(split_words("abcdef"), 3)
-        self.assertEqual(split_words("z"), 0)
-        self.assertEqual(split_words("abc"), 1)
-        self.assertEqual(split_words("1abcdef"), 3)
-        self.assertEqual(split_words("1abc1"), 1)
-        self.assertEqual(split_words("1abc1z"), 1)
-        self.assertRaises(TypeError, split_words, 123)
+    def setUp(self):
+        pass  # Setup any test fixtures here if needed
 
-if __name__ == '__main__':
-    unittest.main()
+    def tearDown(self):
+        pass  # Clean up after the tests run here if needed
+
+    def test_split_words_empty(self):
+        result = split_words("")
+        self.assertEqual(result, [])
+
+    def test_split_words_no_spaces(self):
+        result = split_words("HelloWorld")
+        self.assertEqual(result, ["helloworld"])
+
+    def test_split_words_simple_space(self):
+        result = split_words("Hello World")
+        self.assertEqual(result, ["hello", "world"])
+
+    def test_split_words_multiple_spaces(self):
+        result = split_words("Hello   World   !")
+        self.assertEqual(result, ["hello", "world"])
+
+    def test_split_words_special_chars(self):
+        result = split_words("Hello@World!")
+        self.assertEqual(result, ["hello", "@world!"])

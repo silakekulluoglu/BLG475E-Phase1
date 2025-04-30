@@ -2,14 +2,32 @@ import unittest
 from source.mistral_instruct.easy.human_eval_86 import anti_shuffle
 
 class TestAntiShuffle(unittest.TestCase):
-    def test_anti_shuffle(self):
-        self.assertEqual(anti_shuffle('Hi'), 'Hi')
-        self.assertEqual(anti_shuffle('hello'), 'ehllo')
-        self.assertEqual(anti_shuffle('Hello World!!!'), 'Hello !!!Wdlor')
-        self.assertEqual(anti_shuffle('1Hello World!'), '1Hello !!!Wdlor')
-        self.assertEqual(anti_shuffle('1Hello World!'), '1Hello !!!Wdlor')
-        self.assertEqual(anti_shuffle('Hello1 World!'), 'Hello1 !!!Wdlor')
-        self.assertEqual(anti_shuffle('1Hello World!1'), '1Hello !!!Wdlor1')
+    def setUp(self):
+        pass  # Setup any test fixtures here if needed
 
-if __name__ == '__main__':
-    unittest.main()
+    def tearDown(self):
+        pass  # Clean up after the tests run here if needed
+
+    def test_anti_shuffle_empty(self):
+        result = anti_shuffle('')
+        self.assertEqual(result, '')
+
+    def test_anti_shuffle_single_word(self):
+        result = anti_shuffle('hello')
+        expected_output = 'ehllo'
+        self.assertEqual(result, expected_output)
+
+    def test_anti_shuffle_multiple_words(self):
+        result = anti_shuffle("I am a programmer")
+        expected_output = "AaimaMproramgeer"
+        self.assertEqual(result, expected_output)
+
+    def test_anti_shuffle_mixed_case(self):
+        result = anti_shuffle("HELLO WORLD")
+        expected_output = "hElLoWoRlD"
+        self.assertEqual(result, expected_output)
+
+    def test_anti_shuffle_special_characters(self):
+        result = anti_shuffle("Hello1World!@#$%")
+        expected_output = "hEllo1WorlD!@#$%"
+        self.assertEqual(result, expected_output)

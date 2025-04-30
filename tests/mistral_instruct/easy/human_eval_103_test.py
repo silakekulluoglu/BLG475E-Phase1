@@ -2,14 +2,28 @@ import unittest
 from source.mistral_instruct.easy.human_eval_103 import rounded_avg
 
 class TestRoundedAvg(unittest.TestCase):
-    def test_rounded_avg(self):
-        self.assertEqual(rounded_avg(1, 5), "0b11")
-        self.assertEqual(rounded_avg(7, 5), "-1")
-        self.assertEqual(rounded_avg(10, 20), "0b1111")
-        self.assertEqual(rounded_avg(20, 33), "0b11010")
-        self.assertRaises(ValueError, rounded_avg, 1.5, 5)
-        self.assertRaises(ValueError, rounded_avg, -1, 5)
-        self.assertRaises(ValueError, rounded_avg, 1, -5)
+    def setUp(self):
+        pass  # Setup any test fixtures here if needed
 
-if __name__ == '__main__':
-    unittest.main()
+    def tearDown(self):
+        pass  # Clean up after the tests run here if needed
+
+    def test_rounded_avg_negative_n(self):
+        result = rounded_avg(-1, 5)
+        self.assertEqual(result, -1)
+
+    def test_rounded_avg_zero(self):
+        result = rounded_avg(0, 0)
+        self.assertEqual(result, -1)
+
+    def test_rounded_avg_simple(self):
+        result = rounded_avg(3, 5)
+        self.assertEqual(result, '1011')
+
+    def test_rounded_avg_large(self):
+        result = rounded_avg(2678, 2690)
+        self.assertEqual(result, '1011011000')
+
+    def test_rounded_avg_even_number(self):
+        result = rounded_avg(4, 5)
+        self.assertEqual(result, '1100')
