@@ -1,3 +1,9 @@
+'''
+@Authors
+Student Names: Feray Lina Yence, Fitnete Guni, Sıla Keküllüoğlu
+Student IDs: 150190007, 150200913, 150210084
+'''
+
 def bf(planet1, planet2):
     planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", 
 "Neptune"]

@@ -1,3 +1,9 @@
+'''
+@Authors
+Student Names: Feray Lina Yence, Fitnete Guni, Sıla Keküllüoğlu
+Student IDs: 150190007, 150200913, 150210084
+'''
+
 from typing import List, Tuple
 
 def find_closest_elements(numbers: List[float]) -> Tuple[float, float]:

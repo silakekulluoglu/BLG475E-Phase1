@@ -1,3 +1,9 @@
+'''
+@Authors
+Student Names: Feray Lina Yence, Fitnete Guni, Sıla Keküllüoğlu
+Student IDs: 150190007, 150200913, 150210084
+'''
+
 def count_upper(s):
     vowels = {'A', 'E', 'I', 'O', 'U'}
     index = 0

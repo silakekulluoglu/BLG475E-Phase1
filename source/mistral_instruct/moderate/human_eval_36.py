@@ -1,3 +1,9 @@
+'''
+@Authors
+Student Names: Feray Lina Yence, Fitnete Guni, Sıla Keküllüoğlu
+Student IDs: 150190007, 150200913, 150210084
+'''
+
 def fizz_buzz(n: int):
     count = 0
     for num in range(1, n):

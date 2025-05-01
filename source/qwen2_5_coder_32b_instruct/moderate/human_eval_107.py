@@ -1,3 +1,9 @@
+'''
+@Authors
+Student Names: Feray Lina Yence, Fitnete Guni, Sıla Keküllüoğlu
+Student IDs: 150190007, 150200913, 150210084
+'''
+
 def even_odd_palindrome(n):
     def is_palindrome(n):
         return str(n) == str(n)[::-1]

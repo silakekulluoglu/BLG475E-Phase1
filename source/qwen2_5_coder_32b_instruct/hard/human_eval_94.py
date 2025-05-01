@@ -1,3 +1,9 @@
+'''
+@Authors
+Student Names: Feray Lina Yence, Fitnete Guni, Sıla Keküllüoğlu
+Student IDs: 150190007, 150200913, 150210084
+'''
+
 def skjkasdkd(lst):
     def isPrime(n):
         for i in range(2, int(n**0.5) + 1):
