@@ -5,16 +5,16 @@ Student IDs: 150190007, 150200913, 150210084
 '''
 
 import unittest
-from source.mistral_instruct.easy.human_eval_2 import truncate_number
+from regenerated_codes.mistral_instruct.easy.human_eval_2 import truncate_number
 
 class TestTruncateNumber(unittest.TestCase):
     def test_truncate_zero1(self): # Test for zero as an integer
-        result = truncate_number(0)
-        self.assertEqual(result, 0.0)
+        with self.assertRaises(ValueError):
+            truncate_number(0)
 
     def test_truncate_zero2(self): # Test for zero as a float
-        result = truncate_number(0.0)
-        self.assertEqual(result, 0.0)
+        with self.assertRaises(ValueError):
+            truncate_number(0.0)
 
     def test_truncate_positive(self): # Test for positive float values
         test_cases = [

@@ -1,1 +1,27 @@
-easy prompts:
+human_eval_2:
+"\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n.   Return the decimal part of the number.\n    Raise ValueError if the input is negative or zero\n   >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n"
+
+human_eval_27:
+"\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase, relatively.\n    Don't call attributes doesn't belong to str object.\n>>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n"
+
+human_eval_30:
+"\n\ndef get_positive(l: list):\n    \"\"\"Return only positive numbers in the list.\n    >>> get_positive([-1, 2, -4, 5, 6])\n    [2, 5, 6]\n    >>> get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    [5, 3, 2, 3, 9, 123, 1]\n    \"\"\"\n"
+
+human_eval_45:
+"\n\ndef triangle_area(a, h):\n    \"\"\"Given length of a side and high return area for a triangle.\n   Give ValueError if side or high is smaller than zero\n >>> triangle_area(5, 3)\n    7.5\n    \"\"\"\n"
+
+human_eval_70: couldn't fix errors
+
+human_eval_86: couldn't fix errors
+
+human_eval_98:
+"\ndef count_upper(s):\n    \"\"\"\n    Given a string s, count the number of uppercase vowels in even indices. Be careful with the names of uppercase/lowercase variables. Do not make string s uppercase, do not change it. Keep the uppercase vowels in a different string. Iterate through s and look for the even indices. If even indices' letters are in the uppercase vowels string, then count them.  \n    \n    For example:\n    count_upper('aBCdEf') returns 1\n    count_upper('abcdefg') returns 0\n    count_upper('dBBE') returns 0\n    \"\"\"\n"
+
+human_eval_103:
+"\ndef rounded_avg(n, m):\n    \"\"\"You are given two positive integers n and m, and your task is to compute the\n    average of the integers from n through m (including n and m). \n    Round the answer to the nearest integer (according to python rounding rules) and convert that to binary.\n    If n is greater than m, return -1. If m or n is not positive, -1. \n    Example:\n    rounded_avg(1, 5) => \"0b11\"\n    rounded_avg(7, 5) => -1\n    rounded_avg(10, 20) => \"0b1111\"\n    rounded_avg(20, 33) => \"0b11010\"\n    \"\"\"\n"
+
+human_eval_125:
+"\ndef split_words(txt):\n    '''\n    Given a string of words, return a list of words split on whitespace if it has whitespace But think consequtively whitespaces as 1 blank space. If no whitespaces exists in the text you\n    should split on commas and return the list of words seperated by commas (','). If no commas exists you should return the number of lower-case letters with odd order in the\n    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25\n Don't change the original text (do not make it lowercase or uppercase) and  "lower-case letters with odd order" contains from 'a' to 'z', both included.  Examples\n    split_words(\"Hello world!\") -> [\"Hello\", \"world!\"]\n    split_words(\"Hello,world!\") -> [\"Hello\", \"world!\"]\n    split_words(\"abcdef\") == 3 \n    '''\n"
+
+human_eval_131:
+"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits of n.\n    Return 0 if all digits are even. If there is one digit and it is even, also return 0. Look at all the digits, if that digit is odd, multiply it with the product. If it's even, don't multiply it. If all the digits are even, then the product is not important, the result is zero. You can control if all the digits are even with a flag. ıf there is at least one odd in the digits, then the result is the product which is not zero.   \n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n"
