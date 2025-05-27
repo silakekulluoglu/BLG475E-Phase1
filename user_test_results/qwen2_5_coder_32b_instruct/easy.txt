@@ -1,0 +1,142 @@
+..FFFF.....FFF.F....F....FF...........................FF..............F......................F...................
+======================================================================
+FAIL: test_rounded_avg_11_invalid_negative_n (human_eval_103_test.TestRoundedAvg)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_103_test.py", line 59, in test_rounded_avg_11_invalid_negative_n
+    rounded_avg(-5, 5)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rounded_avg_12_invalid_zero_n (human_eval_103_test.TestRoundedAvg)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_103_test.py", line 64, in test_rounded_avg_12_invalid_zero_n
+    rounded_avg(0, 5)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rounded_avg_13_invalid_negative_m (human_eval_103_test.TestRoundedAvg)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_103_test.py", line 69, in test_rounded_avg_13_invalid_negative_m
+    rounded_avg(5, -5)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rounded_avg_14_invalid_zero_m (human_eval_103_test.TestRoundedAvg)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_103_test.py", line 74, in test_rounded_avg_14_invalid_zero_m
+    rounded_avg(5, 0)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rounded_avg_7_round_up (human_eval_103_test.TestRoundedAvg)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_103_test.py", line 41, in test_rounded_avg_7_round_up
+    self.assertEqual(rounded_avg(4, 5), "0b101")  # avg = 4.5 → 5
+AssertionError: '0b100' != '0b101'
+- 0b100
+?     ^
++ 0b101
+?     ^
+
+
+======================================================================
+FAIL: test_rounded_avg_8_round_down (human_eval_103_test.TestRoundedAvg)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_103_test.py", line 45, in test_rounded_avg_8_round_down
+    self.assertEqual(rounded_avg(1, 4), "0b11")  # avg = 2.5 → round = 2
+AssertionError: '0b10' != '0b11'
+- 0b10
+?    ^
++ 0b11
+?    ^
+
+
+======================================================================
+FAIL: test_rounded_avg_9_large_range (human_eval_103_test.TestRoundedAvg)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_103_test.py", line 49, in test_rounded_avg_9_large_range
+    self.assertEqual(rounded_avg(1, 1000000), "0b11110100001001000000")
+AssertionError: '0b1111010000100100000' != '0b11110100001001000000'
+- 0b1111010000100100000
++ 0b11110100001001000000
+?                      +
+
+
+======================================================================
+FAIL: test_split_words_10_letters_and_numbers (human_eval_125_test.TestSplitWords)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_125_test.py", line 53, in test_split_words_10_letters_and_numbers
+    self.assertEqual(split_words("Ab1Cd2Ef3"), 1)  # only 'b' (odd, lowercase)
+AssertionError: 3 != 1
+
+======================================================================
+FAIL: test_split_words_6_mixed_case (human_eval_125_test.TestSplitWords)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_125_test.py", line 37, in test_split_words_6_mixed_case
+    self.assertEqual(split_words("aAaBbCcDdEe"), 3)  # b, d, e (lowercase only)
+AssertionError: 2 != 3
+
+======================================================================
+FAIL: test_digits_10_large_number (human_eval_131_test.TestDigits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_131_test.py", line 53, in test_digits_10_large_number
+    self.assertEqual(digits(123456789012345), 945)  # only odd digits multiplied
+AssertionError: 14175 != 945
+
+======================================================================
+FAIL: test_digits_11_zero (human_eval_131_test.TestDigits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_131_test.py", line 58, in test_digits_11_zero
+    digits(0)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_truncate_number_8_very_large (human_eval_2_test.TestTruncateNumber)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_2_test.py", line 45, in test_truncate_number_8_very_large
+    self.assertAlmostEqual(truncate_number(1e20 + 0.1), 0.1, places=6)
+AssertionError: 0.0 != 0.1 within 6 places (0.1 difference)
+
+======================================================================
+FAIL: test_truncate_number_9_negative (human_eval_2_test.TestTruncateNumber)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_2_test.py", line 50, in test_truncate_number_9_negative
+    truncate_number(-3.5)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_triangle_area_10_negative_input (human_eval_45_test.TestTriangleArea)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_45_test.py", line 54, in test_triangle_area_10_negative_input
+    triangle_area(-3, 5)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_anti_shuffle_11_unicode (human_eval_86_test.TestAntiShuffle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_86_test.py", line 57, in test_anti_shuffle_11_unicode
+    self.assertEqual(anti_shuffle('a😊b😢c'), 'a😊b😢c')  # preserved as individual "words"
+AssertionError: 'abc😊😢' != 'a😊b😢c'
+- abc😊😢
++ a😊b😢c
+
+
+----------------------------------------------------------------------
+Ran 113 tests in 0.043s
+
+FAILED (failures=15)
