@@ -5,17 +5,23 @@ Student IDs: 150190007, 150200913, 150210084
 '''
 
 def skjkasdkd(lst):
-    # Find the largest prime number in lst
-    primes = [2]
-    for num in lst:
-        if all(num % i != 0 for i in primes):
-            primes.append(num)
+    def is_prime(num):
+        if num < 2:
+            return False
+        for i in range(2, int(num**0.5) + 1):
+            if num % i == 0:
+                return False
+        return True
 
-    # Determine the sum of the digits of the largest prime number
-    largest_prime = max(primes)
-    result = 0
-    while largest_prime > 0:
-        rem = largest_prime % 10
-        result += rem
-        largest_prime //= 10
-    return result
+    max_prime = 0
+    max_prime_sum = 0
+
+    if not lst:
+        return 0
+
+    for num in lst:
+        if is_prime(num) and num > max_prime:
+            max_prime = num
+
+    digit_sum = sum(map(int, list(str(max_prime))))
+    return digit_sum or 0
