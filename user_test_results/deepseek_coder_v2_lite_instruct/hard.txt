@@ -1,0 +1,28 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.0, pytest-8.3.5, pluggy-1.5.0
+rootdir: C:\Users\Neti\Documents\GitHub\BLG475E-Phase1
+plugins: anyio-3.6.2
+collected 50 items
+
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\hard\test_human_eval_10.py . [  2%]
+....                                                                     [ 10%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\hard\test_human_eval_121.py . [ 12%]
+....                                                                     [ 20%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\hard\test_human_eval_149.py . [ 22%]
+....                                                                     [ 30%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\hard\test_human_eval_20.py . [ 32%]
+....                                                                     [ 40%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\hard\test_human_eval_32.py . [ 42%]
+....                                                                     [ 50%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\hard\test_human_eval_58.py . [ 52%]
+....                                                                     [ 60%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\hard\test_human_eval_78.py . [ 62%]
+....                                                                     [ 70%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\hard\test_human_eval_85.py . [ 72%]
+....                                                                     [ 80%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\hard\test_human_eval_93.py . [ 82%]
+....                                                                     [ 90%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\hard\test_human_eval_94.py . [ 92%]
+....                                                                     [100%]
+
+============================= 50 passed in 0.15s ==============================
