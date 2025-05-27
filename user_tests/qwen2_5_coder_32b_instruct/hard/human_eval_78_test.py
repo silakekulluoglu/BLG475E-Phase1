@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.hard.human_eval_78 import hex_key
+from regenerated_codes.qwen2_5_coder_32b_instruct.hard.human_eval_78 import hex_key
 
 class TestHexKey(unittest.TestCase):
     # Input: "AB" → only 'B' is a hex-prime (decimal 11)

@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.moderate.human_eval_132 import is_nested
+from regenerated_codes.qwen2_5_coder_32b_instruct.moderate.human_eval_132 import is_nested
 
 class TestIsNested(unittest.TestCase):
     # ===============================

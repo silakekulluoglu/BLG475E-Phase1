@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.easy.human_eval_86 import anti_shuffle
+from regenerated_codes.qwen2_5_coder_32b_instruct.easy.human_eval_86 import anti_shuffle
 
 class TestAntiShuffle(unittest.TestCase):
     # Already sorted two-letter input

@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.hard.human_eval_149 import sorted_list_sum
+from regenerated_codes.qwen2_5_coder_32b_instruct.hard.human_eval_149 import sorted_list_sum
 
 class TestSortedListSum(unittest.TestCase):
     # ["aa", "a", "aaa"] → "aa" is even → result = ["aa"]

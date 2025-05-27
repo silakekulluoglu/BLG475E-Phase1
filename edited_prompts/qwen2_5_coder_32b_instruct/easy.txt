@@ -1,0 +1,62 @@
+[
+    {
+        "task_id": "HumanEval/2",
+        "entry_point": "truncate_number",
+        "prompt": "Given a positive floating-point number, return the decimal (fractional) part of the number. If the input is equal or greater than 1e16 or negative or zero, raise a ValueError. Examples: truncate_number(3.5) => 0.5; truncate_number(123.456) => 0.456; truncate_number(1e20 + 0.1) => raises ValueError; truncate_number(-3.5) => raises ValueError; truncate_number(0.0) => raises ValueError"
+    },
+    {
+        "task_id": "HumanEval/27",
+        "prompt": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n",
+        "entry_point": "flip_case",
+        "canonical_solution": "    return string.swapcase()\n",
+        "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('') == ''\n    assert candidate('Hello!') == 'hELLO!'\n    assert candidate('These violent delights have violent ends') == 'tHESE VIOLENT DELIGHTS HAVE VIOLENT ENDS'\n"
+    },
+    {
+        "task_id": "HumanEval/30",
+        "prompt": "\n\ndef get_positive(l: list):\n    \"\"\"Return only positive numbers in the list.\n    >>> get_positive([-1, 2, -4, 5, 6])\n    [2, 5, 6]\n    >>> get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    [5, 3, 2, 3, 9, 123, 1]\n    \"\"\"\n",
+        "entry_point": "get_positive",
+        "canonical_solution": "    return [e for e in l if e > 0]\n",
+        "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([-1, -2, 4, 5, 6]) == [4, 5, 6]\n    assert candidate([5, 3, -5, 2, 3, 3, 9, 0, 123, 1, -10]) == [5, 3, 2, 3, 3, 9, 123, 1]\n    assert candidate([-1, -2]) == []\n    assert candidate([]) == []\n\n"
+    },
+    {
+        "task_id": "HumanEval/45",
+        "entry_point": "triangle_area",
+        "Given two positive numbers `a` and `h` representing the base and height of a triangle, return the area of the triangle using the formula (a * h) / 2. If either `a` or `h` is less than or equal to zero, raise a ValueError. Examples: triangle_area(5, 3) => 7.5; triangle_area(2, 2) => 2.0; triangle_area(-3, 5) => raises ValueError; triangle_area(0, 4) => raises ValueError"
+    },
+    {
+        "task_id": "HumanEval/70",
+        "prompt": "\ndef strange_sort_list(lst):\n    '''\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n\n    Examples:\n    strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]\n    strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]\n    strange_sort_list([]) == []\n    '''\n",
+        "entry_point": "strange_sort_list",
+        "canonical_solution": "    res, switch = [], True\n    while lst:\n        res.append(min(lst) if switch else max(lst))\n        lst.remove(res[-1])\n        switch = not switch\n    return res\n",
+        "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([1, 2, 3, 4]) == [1, 4, 2, 3]\n    assert candidate([5, 6, 7, 8, 9]) == [5, 9, 6, 8, 7]\n    assert candidate([1, 2, 3, 4, 5]) == [1, 5, 2, 4, 3]\n    assert candidate([5, 6, 7, 8, 9, 1]) == [1, 9, 5, 8, 6, 7]\n    assert candidate([5, 5, 5, 5]) == [5, 5, 5, 5]\n    assert candidate([]) == []\n    assert candidate([1,2,3,4,5,6,7,8]) == [1, 8, 2, 7, 3, 6, 4, 5]\n    assert candidate([0,2,2,2,5,5,-5,-5]) == [-5, 5, -5, 5, 0, 2, 2, 2]\n    assert candidate([111111]) == [111111]\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True\n\n"
+    },
+    {
+        "task_id": "HumanEval/86",
+        "entry_point": "anti_shuffle",
+        "Write a function that takes a string and returns a reordered version of it. In the result, each word (defined as a sequence of characters separated by whitespace or emojis) must have its characters sorted in ascending ascii order. All original spacing (including multiple or trailing spaces) must be preserved exactly. Punctuations are also part of the string. Examples: anti_shuffle(\"hello\") => \"ehllo\"; anti_shuffle(\"Hello World!!!\") => \"Hello !!!Wdlor\"; anti_shuffle(\"a😊b😢c\") => \"a😊b😢c\"  # 'a', 'b', and 'c' are sorted independently, emojis remain in place"
+    },
+    {
+        "task_id": "HumanEval/98",
+        "prompt": "\ndef count_upper(s):\n    \"\"\"\n    Given a string s, count the number of uppercase vowels in even indices.\n    \n    For example:\n    count_upper('aBCdEf') returns 1\n    count_upper('abcdefg') returns 0\n    count_upper('dBBE') returns 0\n    \"\"\"\n",
+        "entry_point": "count_upper",
+        "canonical_solution": "    count = 0\n    for i in range(0,len(s),2):\n        if s[i] in \"AEIOU\":\n            count += 1\n    return count\n",
+        "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate('aBCdEf')  == 1\n    assert candidate('abcdefg') == 0\n    assert candidate('dBBE') == 0\n    assert candidate('B')  == 0\n    assert candidate('U')  == 1\n    assert candidate('') == 0\n    assert candidate('EEEE') == 2\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True\n\n"
+    },
+    {
+        "task_id": "HumanEval/103",
+        "entry_point": "rounded_avg",
+        "You are given two positive integers n and m (n > 0 and m > 0). Your task is to compute the average of the integers from n through m (inclusive). Round the result to the nearest integer by rounding up if the fractional part is 0.5 or more, otherwise round down. Then, return the result as a binary string using Python’s built-in bin() function. If n is greater than m, return -1. If either n or m is less than or equal to 0, the function should raise a ValueError. Examples: rounded_avg(1, 5) => \"0b11\"        # average = 3.0; rounded_avg(4, 5) => \"0b101\"       # average = 4.5 → round to 5; rounded_avg(1, 4) => \"0b11\"        # average = 2.5 → round to 3; rounded_avg(7, 5) => raises ValueError; rounded_avg(-1, 5) => raises ValueError"
+    },
+    {
+        "task_id": "HumanEval/125",
+        "prompt": "\ndef split_words(txt):\n    '''\n    Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you\n    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the\n    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25\n    Examples\n    split_words(\"Hello world!\") \u279e [\"Hello\", \"world!\"]\n    split_words(\"Hello,world!\") \u279e [\"Hello\", \"world!\"]\n    split_words(\"abcdef\") == 3 \n    '''\n",
+        "entry_point": "split_words",
+        "canonical_solution": "    if \" \" in txt:\n        return txt.split()\n    elif \",\" in txt:\n        return txt.replace(',',' ').split()\n    else:\n        return len([i for i in txt if i.islower() and ord(i)%2 == 0])\n",
+        "test": "def check(candidate):\n\n    assert candidate(\"Hello world!\") == [\"Hello\",\"world!\"]\n    assert candidate(\"Hello,world!\") == [\"Hello\",\"world!\"]\n    assert candidate(\"Hello world,!\") == [\"Hello\",\"world,!\"]\n    assert candidate(\"Hello,Hello,world !\") == [\"Hello,Hello,world\",\"!\"]\n    assert candidate(\"abcdef\") == 3\n    assert candidate(\"aaabb\") == 2\n    assert candidate(\"aaaBb\") == 1\n    assert candidate(\"\") == 0\n"
+    },
+    {
+        "task_id": "HumanEval/131",
+        "entry_point": "digits",
+        "Given a positive integer n (n > 0), return the product of all odd digits in the number. Digits are counted with repetition, so each occurrence of an odd digit contributes to the product. If there are no odd digits in n, return 0. If the input is 0 or negative, raise a ValueError. Examples: digits(1) => 1; digits(235) => 15; digits(123456789012345) => 14175; digits(4) => 0; digits(0) => raises ValueError"
+    }
+]

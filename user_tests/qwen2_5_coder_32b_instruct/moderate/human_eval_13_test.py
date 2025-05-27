@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.moderate.human_eval_13 import greatest_common_divisor
+from regenerated_codes.qwen2_5_coder_32b_instruct.moderate.human_eval_13 import greatest_common_divisor
 
 class TestGreatestCommonDivisor(unittest.TestCase):
     # Two coprime numbers
@@ -37,9 +37,10 @@ class TestGreatestCommonDivisor(unittest.TestCase):
         self.assertEqual(greatest_common_divisor(0, 13), 13)
         self.assertEqual(greatest_common_divisor(9, 0), 9)
 
-    # Both inputs are zero — undefined mathematically, will return 0 in this implementation
+    # Both inputs are zero — undefined mathematically, invalid
     def test_greatest_common_divisor_7_both_zero(self):
-        self.assertEqual(greatest_common_divisor(0, 0), 0)  # implementation-dependent
+        with self.assertRaises(ValueError):
+            greatest_common_divisor(0, 0)
 
     # Negative input values — gcd should be non-negative
     def test_greatest_common_divisor_8_negative_input(self):

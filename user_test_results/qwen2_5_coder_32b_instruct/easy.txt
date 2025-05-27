@@ -1,4 +1,4 @@
-..FFFF.....FFF.F....F....FF...........................FF..............F......................F...................
+..FFFF.....FFF............F...........................FF..............F......................F...................
 ======================================================================
 FAIL: test_rounded_avg_11_invalid_negative_n (human_eval_103_test.TestRoundedAvg)
 ----------------------------------------------------------------------
@@ -62,36 +62,13 @@ FAIL: test_rounded_avg_9_large_range (human_eval_103_test.TestRoundedAvg)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_103_test.py", line 49, in test_rounded_avg_9_large_range
-    self.assertEqual(rounded_avg(1, 1000000), "0b11110100001001000000")
-AssertionError: '0b1111010000100100000' != '0b11110100001001000000'
+    self.assertEqual(rounded_avg(1, 1000000), "0b1111010000100100001")
+AssertionError: '0b1111010000100100000' != '0b1111010000100100001'
 - 0b1111010000100100000
-+ 0b11110100001001000000
-?                      +
+?                     ^
++ 0b1111010000100100001
+?                     ^
 
-
-======================================================================
-FAIL: test_split_words_10_letters_and_numbers (human_eval_125_test.TestSplitWords)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_125_test.py", line 53, in test_split_words_10_letters_and_numbers
-    self.assertEqual(split_words("Ab1Cd2Ef3"), 1)  # only 'b' (odd, lowercase)
-AssertionError: 3 != 1
-
-======================================================================
-FAIL: test_split_words_6_mixed_case (human_eval_125_test.TestSplitWords)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_125_test.py", line 37, in test_split_words_6_mixed_case
-    self.assertEqual(split_words("aAaBbCcDdEe"), 3)  # b, d, e (lowercase only)
-AssertionError: 2 != 3
-
-======================================================================
-FAIL: test_digits_10_large_number (human_eval_131_test.TestDigits)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/easy/human_eval_131_test.py", line 53, in test_digits_10_large_number
-    self.assertEqual(digits(123456789012345), 945)  # only odd digits multiplied
-AssertionError: 14175 != 945
 
 ======================================================================
 FAIL: test_digits_11_zero (human_eval_131_test.TestDigits)
@@ -137,6 +114,6 @@ AssertionError: 'abc😊😢' != 'a😊b😢c'
 
 
 ----------------------------------------------------------------------
-Ran 113 tests in 0.043s
+Ran 113 tests in 0.030s
 
-FAILED (failures=15)
+FAILED (failures=12)

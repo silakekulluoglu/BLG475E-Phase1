@@ -6,55 +6,69 @@ Student IDs: 150190007, 150200913, 150210084
 
 import unittest
 import math
-from source.qwen2_5_coder_32b_instruct.hard.human_eval_32 import find_zero
+from regenerated_codes.qwen2_5_coder_32b_instruct.hard.human_eval_32 import find_zero
+
+# Helper to evaluate a polynomial
+def poly(coeffs, x):
+    return sum(coeff * (x ** i) for i, coeff in enumerate(coeffs))
 
 class TestFindZero(unittest.TestCase):
+
+    # Checks whether the returned root satisfies poly(coeffs, root) ≈ 0
+    def assert_root_is_valid(self, coeffs, root, tol=1e-4):
+        self.assertTrue(math.isclose(poly(coeffs, root), 0.0, abs_tol=tol),
+                        msg=f"Returned root {root} does not satisfy poly(coeffs, x) ≈ 0")
+
     # f(x) = 1 + 2x → simple linear equation with root at x = -0.5
     def test_find_zero_1(self):
-        self.assertAlmostEqual(find_zero([1, 2]), -0.5, places=4)
+        coeffs = [1, 2]
+        self.assert_root_is_valid(coeffs, find_zero(coeffs))
 
-    # f(x) = -6 + 11x - 6x² + x³ → cubic with known root at x = 1
+    # f(x) = x³ - 6x² + 11x - 6 → cubic with known roots at x = 1, 2, 3
     def test_find_zero_2(self):
-        self.assertAlmostEqual(find_zero([-6, 11, -6, 1]), 1.0, places=4)
+        coeffs = [-6, 11, -6, 1]
+        self.assert_root_is_valid(coeffs, find_zero(coeffs))
 
-    # f(x) = x + 4 → linear with negative root at x = -4
+    # f(x) = x + 4 → linear polynomial with negative root x = -4
     def test_find_zero_negative_root(self):
-        self.assertAlmostEqual(find_zero([4, 1]), -4.0, places=4)
+        coeffs = [4, 1]
+        self.assert_root_is_valid(coeffs, find_zero(coeffs))
 
-    # ===============================
-    # Additional tests
-    # ===============================
-
-    # f(x) = x → root is exactly at x = 0
+    # f(x) = x → exact root at x = 0
     def test_zero_root_exact(self):
-        self.assertAlmostEqual(find_zero([0, 1]), 0.0, places=4)
+        coeffs = [0, 1]
+        self.assert_root_is_valid(coeffs, find_zero(coeffs))
 
-    # Odd-length input → violates prompt rule → should raise ValueError
+    # ================================================================
+    # Additional test cases
+    # ================================================================
+
+    # f(x) = 1 + 2x + 3x² → odd number of coefficients → invalid
     def test_invalid_odd_length_1(self):
         with self.assertRaises(ValueError):
             find_zero([1, 2, 3])
 
-    # Odd-length input (longer) → should raise ValueError
+    # f(x) = 2 - 4x + 2x² + x³ + 0 → odd number of coefficients → invalid
     def test_invalid_odd_length_2(self):
         with self.assertRaises(ValueError):
             find_zero([2, -4, 2, 1, 0])
 
-    # Even-length input but last coefficient is 0 → invalid (no highest-degree term)
+    # f(x) = 1 + 2x + 3x² + 0x³ → highest-degree coefficient is zero → invalid
     def test_invalid_zero_last_coefficient_1(self):
         with self.assertRaises(ValueError):
             find_zero([1, 2, 3, 0])
 
-    # All coefficients are 0 → invalid input, degenerate polynomial
+    # All coefficients are zero → degenerate polynomial → invalid
     def test_invalid_zero_last_coefficient_2(self):
         with self.assertRaises(ValueError):
             find_zero([0, 0, 0, 0])
 
-    # Highest-degree coefficient is 0 (trailing 0) → invalid input
+    # f(x) = 5 - 3x + 0x² + 0x³ + x⁴ + 0x⁵ → trailing 0 → invalid
     def test_invalid_zero_last_coefficient_3(self):
         with self.assertRaises(ValueError):
             find_zero([5, -3, 0, 0, 1, 0])
 
-    # Input looks padded (x² - 1), but last coefficient is 0 → invalid
+    # f(x) = -1 + 0x + x² + 0x³ → trailing zero again → invalid
     def test_invalid_padded_input(self):
         with self.assertRaises(ValueError):
             find_zero([-1, 0, 1, 0])

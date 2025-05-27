@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.moderate.human_eval_36 import fizz_buzz
+from regenerated_codes.qwen2_5_coder_32b_instruct.moderate.human_eval_36 import fizz_buzz
 
 class TestFizzBuzz(unittest.TestCase):
     # Simple base case — no numbers match, no 7s

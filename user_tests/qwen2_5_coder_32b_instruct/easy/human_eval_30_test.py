@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.easy.human_eval_30 import get_positive
+from regenerated_codes.qwen2_5_coder_32b_instruct.easy.human_eval_30 import get_positive
 
 class TestGetPositive(unittest.TestCase):
     # Mixed input with negative and positive numbers

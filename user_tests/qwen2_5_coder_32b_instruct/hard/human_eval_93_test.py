@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.hard.human_eval_93 import encode
+from regenerated_codes.qwen2_5_coder_32b_instruct.hard.human_eval_93 import encode
 
 class TestEncode(unittest.TestCase):
     # 'TEST' → swapcase = 'test' → replace 'e' → 'g' → 'tgst'

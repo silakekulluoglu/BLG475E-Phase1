@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.moderate.human_eval_148 import bf
+from regenerated_codes.qwen2_5_coder_32b_instruct.moderate.human_eval_148 import bf
 
 class TestBf(unittest.TestCase):
     # ===============================

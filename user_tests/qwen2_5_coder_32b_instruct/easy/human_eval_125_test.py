@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.easy.human_eval_125 import split_words
+from regenerated_codes.qwen2_5_coder_32b_instruct.easy.human_eval_125 import split_words
 
 class TestSplitWords(unittest.TestCase):
     # Input contains whitespace → split by whitespace
@@ -34,7 +34,7 @@ class TestSplitWords(unittest.TestCase):
 
     # Mixed casing — only lowercase odd-indexed letters should be counted
     def test_split_words_6_mixed_case(self):
-        self.assertEqual(split_words("aAaBbCcDdEe"), 3)  # b, d, e (lowercase only)
+        self.assertEqual(split_words("aAaBbCcDdEe"), 2)  # b, d (lowercase only)
 
     # Comma with symbols — split as words even if symbols are present
     def test_split_words_7_commas_and_symbols(self):
@@ -48,9 +48,9 @@ class TestSplitWords(unittest.TestCase):
     def test_split_words_9_non_letters_in_fallback(self):
         self.assertEqual(split_words("1234!@#azb"), 2)  # a=0, z=25, b=1 → b is odd
 
-    # Mixed-case, digits, and no separators — validates strict fallback behavior
+    # Mixed-case, digits, and no separators
     def test_split_words_10_letters_and_numbers(self):
-        self.assertEqual(split_words("Ab1Cd2Ef3"), 1)  # only 'b' (odd, lowercase)
+        self.assertEqual(split_words("Ab1Cd2Ef3"), 3)  # b, d and f
 
 
 if __name__ == '__main__':

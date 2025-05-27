@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.hard.human_eval_20 import find_closest_elements
+from regenerated_codes.qwen2_5_coder_32b_instruct.hard.human_eval_20 import find_closest_elements
 
 class TestFindClosestElements(unittest.TestCase):
     # Only two values — minimal valid input
@@ -42,7 +42,7 @@ class TestFindClosestElements(unittest.TestCase):
 
     # Reversed sorted input
     def test_reverse_sorted(self):
-        self.assertEqual(find_closest_elements([9.0, 8.0, 7.0]), (8.0, 9.0))
+        self.assertEqual(find_closest_elements([9.0, 8.0, 6.8]), (8.0, 9.0))
 
     # Large magnitude float values
     def test_large_values(self):

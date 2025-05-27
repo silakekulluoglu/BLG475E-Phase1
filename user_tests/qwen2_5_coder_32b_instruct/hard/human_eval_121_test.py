@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.hard.human_eval_121 import solution
+from regenerated_codes.qwen2_5_coder_32b_instruct.hard.human_eval_121 import solution
 
 class TestSolution(unittest.TestCase):
     # [5, 8, 7, 1] → odd values at even indices: 5 (idx 0), 7 (idx 2) → 12

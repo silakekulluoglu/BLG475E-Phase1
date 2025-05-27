@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.easy.human_eval_70 import strange_sort_list
+from regenerated_codes.qwen2_5_coder_32b_instruct.easy.human_eval_70 import strange_sort_list
 
 class TestStrangeSortList(unittest.TestCase):
     # Simple increasing sequence → alternates min and max

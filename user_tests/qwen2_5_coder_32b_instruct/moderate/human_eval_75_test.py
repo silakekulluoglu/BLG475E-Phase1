@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.moderate.human_eval_75 import is_multiply_prime
+from regenerated_codes.qwen2_5_coder_32b_instruct.moderate.human_eval_75 import is_multiply_prime
 
 class TestIsMultiplyPrime(unittest.TestCase):
     # 5 → single prime, not product of 3

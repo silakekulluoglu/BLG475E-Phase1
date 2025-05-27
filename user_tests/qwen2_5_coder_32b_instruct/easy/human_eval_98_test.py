@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.easy.human_eval_98 import count_upper
+from regenerated_codes.qwen2_5_coder_32b_instruct.easy.human_eval_98 import count_upper
 
 class TestCountUpper(unittest.TestCase):
     # Only one uppercase vowel at index 4 → count is 1

@@ -1,19 +1,4 @@
-E...FF.FF.................F.................F...............................................FFE.................
-======================================================================
-ERROR: human_eval_107_test (unittest.loader._FailedTest)
-----------------------------------------------------------------------
-ImportError: Failed to import test module: human_eval_107_test
-Traceback (most recent call last):
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/loader.py", line 436, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/loader.py", line 377, in _get_module_from_name
-    __import__(name)
-  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_107_test.py", line 49
-    self.assertEqual(even_odd_palindrome(1000), (48, 60))
-    ^
-IndentationError: expected an indented block
-
-
+..FF..........F...FF.FF.................F.................F...............................................FFE.................
 ======================================================================
 ERROR: test_pluck_14_string_input (human_eval_68_test.TestPluck)
 ----------------------------------------------------------------------
@@ -25,6 +10,30 @@ Traceback (most recent call last):
   File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/moderate/human_eval_68.py", line 10, in <lambda>
     evens = list(filter(lambda x: x % 2 == 0, arr))
 TypeError: not all arguments converted during string formatting
+
+======================================================================
+FAIL: test_even_odd_palindrome_11_out_of_range_negative (human_eval_107_test.TestEvenOddPalindrome)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_107_test.py", line 63, in test_even_odd_palindrome_11_out_of_range_negative
+    even_odd_palindrome(-10)
+AssertionError: (<class 'ValueError'>, <class 'AssertionError'>, <class 'IndexError'>) not raised
+
+======================================================================
+FAIL: test_even_odd_palindrome_12_out_of_range_above_max (human_eval_107_test.TestEvenOddPalindrome)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_107_test.py", line 68, in test_even_odd_palindrome_12_out_of_range_above_max
+    even_odd_palindrome(1001)
+AssertionError: (<class 'ValueError'>, <class 'AssertionError'>) not raised
+
+======================================================================
+FAIL: test_even_odd_palindrome_out_of_range_zero (human_eval_107_test.TestEvenOddPalindrome)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_107_test.py", line 58, in test_even_odd_palindrome_out_of_range_zero
+    even_odd_palindrome(0)
+AssertionError: (<class 'ValueError'>, <class 'AssertionError'>, <class 'IndexError'>) not raised
 
 ======================================================================
 FAIL: test_max_fill_12_inconsistent_row_lengths (human_eval_115_test.TestMaxFill)
@@ -91,6 +100,6 @@ Traceback (most recent call last):
 AssertionError: ValueError not raised
 
 ----------------------------------------------------------------------
-Ran 112 tests in 0.145s
+Ran 126 tests in 0.174s
 
-FAILED (failures=8, errors=2)
+FAILED (failures=11, errors=1)

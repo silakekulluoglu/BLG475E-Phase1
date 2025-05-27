@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.easy.human_eval_131 import digits
+from regenerated_codes.qwen2_5_coder_32b_instruct.easy.human_eval_131 import digits
 
 class TestDigits(unittest.TestCase):
     # Single odd digit → return that digit
@@ -50,7 +50,7 @@ class TestDigits(unittest.TestCase):
 
     # Long number with sparse odd digits
     def test_digits_10_large_number(self):
-        self.assertEqual(digits(123456789012345), 945)  # only odd digits multiplied
+        self.assertEqual(digits(123456789012345), 14175)  # only odd digits multiplied
 
     # Zero is not a valid positive integer input
     def test_digits_11_zero(self):

@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.hard.human_eval_85 import add
+from regenerated_codes.qwen2_5_coder_32b_instruct.hard.human_eval_85 import add
 
 class TestAdd(unittest.TestCase):
     # Even number at odd index → 88

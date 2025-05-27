@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.moderate.human_eval_107 import even_odd_palindrome
+from regenerated_codes.qwen2_5_coder_32b_instruct.moderate.human_eval_107 import even_odd_palindrome
 
 class TestEvenOddPalindrome(unittest.TestCase):
     # Up to 123 → many palindromes including double- and triple-digit
@@ -45,7 +45,7 @@ class TestEvenOddPalindrome(unittest.TestCase):
         self.assertEqual(even_odd_palindrome(11), (4, 6))  # palindromes: 1–9, 11
 
     # Upper boundary of input constraint
-        def test_even_odd_palindrome_9(self):
+    def test_even_odd_palindrome_9(self):
         self.assertEqual(even_odd_palindrome(1000), (48, 60))
 
     # Only one even palindrome

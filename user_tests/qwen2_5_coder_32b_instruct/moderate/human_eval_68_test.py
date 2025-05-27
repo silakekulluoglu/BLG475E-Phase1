@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.moderate.human_eval_68 import pluck
+from regenerated_codes.qwen2_5_coder_32b_instruct.moderate.human_eval_68 import pluck
 
 class TestPluck(unittest.TestCase):
     # Two evens: 4 and 2 → choose smallest (2) and its index (1)
