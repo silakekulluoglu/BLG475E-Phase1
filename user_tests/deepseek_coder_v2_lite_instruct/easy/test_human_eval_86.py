@@ -7,7 +7,6 @@ Student IDs: 150190007, 150200913, 150210084
 import sys
 import os
 
-# Add the path to the source code
 sys.path.append(
     os.path.abspath(
         os.path.join(os.path.dirname(__file__), '../../../source/deepseek_coder_v2_lite_instruct/easy')

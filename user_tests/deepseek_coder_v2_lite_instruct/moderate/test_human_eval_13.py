@@ -7,18 +7,11 @@ Student IDs: 150190007, 150200913, 150210084
 import sys
 import os
 
-# Add the path to the source code
-import sys, os
-
-sys.path.insert(0,
+sys.path.append(
     os.path.abspath(
-        os.path.join(
-            os.path.dirname(__file__),
-            '../../../../source/deepseek_coder_v2_lite_instruct/moderate'
-        )
+        os.path.join(os.path.dirname(__file__), '../../../source/deepseek_coder_v2_lite_instruct/moderate')
     )
 )
-
 
 from human_eval_13 import greatest_common_divisor
 

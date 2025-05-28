@@ -6,12 +6,9 @@ Student IDs: 150190007, 150200913, 150210084
 
 import sys, os
 
-sys.path.insert(0,
+sys.path.append(
     os.path.abspath(
-        os.path.join(
-            os.path.dirname(__file__),
-            '../../../../source/deepseek_coder_v2_lite_instruct/moderate'
-        )
+        os.path.join(os.path.dirname(__file__), '/regenerated_codes/deepseek_coder_v2_lite_instruct/moderate')
     )
 )
 
@@ -29,6 +26,8 @@ class TestIsNested(unittest.TestCase):
 
     def test_alternating(self):
         self.assertFalse(is_nested('[][][][]'))
+
+        
 
 if __name__ == '__main__':
     unittest.main()

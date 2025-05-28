@@ -6,15 +6,11 @@ Student IDs: 150190007, 150200913, 150210084
 
 import sys, os
 
-sys.path.insert(0,
+sys.path.append(
     os.path.abspath(
-        os.path.join(
-            os.path.dirname(__file__),
-            '../../../../source/deepseek_coder_v2_lite_instruct/easy'
-        )
+        os.path.join(os.path.dirname(__file__), '../../../source/deepseek_coder_v2_lite_instruct/easy')
     )
 )
-
 
 from human_eval_125 import split_words
 

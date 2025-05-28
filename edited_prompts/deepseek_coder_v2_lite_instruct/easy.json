@@ -1,0 +1,9 @@
+[
+{
+  "task_id": "HumanEval/103",
+  "prompt": "\n\ndef rounded_avg(n, m):\n    \"\"\"\n    Given two positive integers n and m:\n      1. Compute the inclusive sum of all integers from n through m.\n      2. Divide by the count (m - n + 1) to get the average.\n      3. Round the result to the nearest integer using Python’s built-in round().\n      4. Convert that integer to a binary string with Python’s bin(), preserving the '0b' prefix.\n    If n > m, return -1 (an integer).\n\n    Inputs:\n      - n, m: positive integers\n    Returns:\n      - if n <= m: a string equal to bin(round((sum(n..m))/(m - n + 1)))\n      - if n > m: the integer -1\n\n    Clarifications:\n      • Use Python’s built-in round() for banker’s rounding of .5 cases.\n      • Use Python’s built-in bin() to produce the '0b...' prefix.\n\n    Examples:\n      >>> rounded_avg(1, 5)\n      '0b11'       # (1+2+3+4+5)/5 = 3 → bin(3)\n      >>> rounded_avg(7, 13)\n      '0b1010'     # avg = 10\n      >>> rounded_avg(5, 5)\n      '0b101'      # avg = 5\n      >>> rounded_avg(7, 5)\n      -1           # invalid range\n    \"\"\"\n",
+  "entry_point": "rounded_avg",
+  "canonical_solution": "    if m < n:\n        return -1\n    total = sum(range(n, m + 1))\n    avg = round(total / (m - n + 1))\n    return bin(avg)\n",
+  "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(1, 5) == \"0b11\"\n    assert candidate(7, 13) == \"0b1010\"\n    assert candidate(964, 977) == \"0b1111001010\"\n    assert candidate(996, 997) == \"0b1111100100\"\n    assert candidate(560, 851) == \"0b1011000010\"\n    assert candidate(185, 546) == \"0b101101110\"\n    assert candidate(362, 496) == \"0b110101101\"\n    assert candidate(350, 902) == \"0b1001110010\"\n    assert candidate(197, 233) == \"0b11010111\"\n\n    # Check some edge cases\n    assert candidate(7, 5) == -1\n    assert candidate(5, 1) == -1\n    assert candidate(5, 5) == \"0b101\"\n\n"
+}
+]
