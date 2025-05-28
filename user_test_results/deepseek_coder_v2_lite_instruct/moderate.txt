@@ -1,0 +1,40 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.0, pytest-8.3.5, pluggy-1.5.0
+rootdir: C:\Users\Neti\Documents\GitHub\BLG475E-Phase1
+plugins: anyio-3.6.2
+collected 38 items
+
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\moderate\test_human_eval_107.py . [  2%]
+..                                                                       [  7%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\moderate\test_human_eval_115.py . [ 10%]
+...                                                                      [ 18%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\moderate\test_human_eval_13.py . [ 21%]
+...                                                                      [ 28%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\moderate\test_human_eval_132.py . [ 31%]
+..F                                                                      [ 39%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\moderate\test_human_eval_148.py . [ 42%]
+...                                                                      [ 50%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\moderate\test_human_eval_21.py . [ 52%]
+..                                                                       [ 57%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\moderate\test_human_eval_36.py . [ 60%]
+...                                                                      [ 68%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\moderate\test_human_eval_51.py . [ 71%]
+...                                                                      [ 78%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\moderate\test_human_eval_68.py . [ 81%]
+...                                                                      [ 89%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\moderate\test_human_eval_75.py . [ 92%]
+...                                                                      [100%]
+
+================================== FAILURES ===================================
+________________________ TestIsNested.test_unbalanced _________________________
+
+self = <test_human_eval_132.TestIsNested testMethod=test_unbalanced>
+
+    def test_unbalanced(self):
+>       self.assertFalse(is_nested('[[[]]'))
+E       AssertionError: True is not false
+
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\moderate\test_human_eval_132.py:34: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/deepseek_coder_v2_lite_instruct/my_unit_tests/moderate/test_human_eval_132.py::TestIsNested::test_unbalanced
+======================== 1 failed, 37 passed in 0.35s =========================

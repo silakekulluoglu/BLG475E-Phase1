@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.easy.human_eval_103 import rounded_avg
+from regenerated_codes.qwen2_5_coder_32b_instruct.easy.human_eval_103 import rounded_avg
 
 class TestRoundedAvg(unittest.TestCase):
     # Average of [1, 2, 3, 4, 5] = 3 → binary = "0b11"
@@ -46,7 +46,7 @@ class TestRoundedAvg(unittest.TestCase):
 
     # Very large input range
     def test_rounded_avg_9_large_range(self):
-        self.assertEqual(rounded_avg(1, 1000000), "0b11110100001001000000")
+        self.assertEqual(rounded_avg(1, 1000000), "0b1111010000100100001")
 
     # Confirm type is str or -1
     def test_rounded_avg_10_type_check(self):

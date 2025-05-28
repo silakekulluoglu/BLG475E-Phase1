@@ -1,0 +1,96 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.0, pytest-8.3.5, pluggy-1.5.0
+rootdir: C:\Users\Neti\Documents\GitHub\BLG475E-Phase1
+plugins: anyio-3.6.2
+collected 58 items
+
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_103.py F [  1%]
+FFF.F                                                                    [ 10%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_125.py . [ 12%]
+.....                                                                    [ 20%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_131.py . [ 22%]
+.....                                                                    [ 31%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_2.py . [ 32%]
+.....                                                                    [ 41%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_27.py . [ 43%]
+.....                                                                    [ 51%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_30.py . [ 53%]
+....                                                                     [ 60%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_45.py . [ 62%]
+....                                                                     [ 68%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_70.py . [ 70%]
+.....                                                                    [ 79%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_86.py . [ 81%]
+.....                                                                    [ 89%]
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_98.py . [ 91%]
+.....                                                                    [100%]
+
+================================== FAILURES ===================================
+____________________ TestRoundedAvg.test_adjacent_numbers _____________________
+
+self = <test_human_eval_103.TestRoundedAvg testMethod=test_adjacent_numbers>
+
+    def test_adjacent_numbers(self):
+>       self.assertEqual(rounded_avg(100, 101), "0b1100100")
+E       AssertionError: '1100100' != '0b1100100'
+E       - 1100100
+E       + 0b1100100
+E       ? ++
+
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_103.py:26: AssertionError
+______________________ TestRoundedAvg.test_equal_bounds _______________________
+
+self = <test_human_eval_103.TestRoundedAvg testMethod=test_equal_bounds>
+
+    def test_equal_bounds(self):
+>       self.assertEqual(rounded_avg(42, 42), "0b101010")
+E       AssertionError: '101010' != '0b101010'
+E       - 101010
+E       + 0b101010
+E       ? ++
+
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_103.py:39: AssertionError
+_____________________ TestRoundedAvg.test_half_round_down _____________________
+
+self = <test_human_eval_103.TestRoundedAvg testMethod=test_half_round_down>
+
+    def test_half_round_down(self):
+>       self.assertEqual(rounded_avg(8, 9), "0b1000")
+E       AssertionError: '1000' != '0b1000'
+E       - 1000
+E       + 0b1000
+E       ? ++
+
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_103.py:29: AssertionError
+______________________ TestRoundedAvg.test_half_round_up ______________________
+
+self = <test_human_eval_103.TestRoundedAvg testMethod=test_half_round_up>
+
+    def test_half_round_up(self):
+>       self.assertEqual(rounded_avg(1, 2), "0b10")
+E       AssertionError: '10' != '0b10'
+E       - 10
+E       + 0b10
+E       ? ++
+
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_103.py:32: AssertionError
+_______________________ TestRoundedAvg.test_large_range _______________________
+
+self = <test_human_eval_103.TestRoundedAvg testMethod=test_large_range>
+
+    def test_large_range(self):
+        expected = bin(round((1 + 100) / 2))
+>       self.assertEqual(rounded_avg(1, 100), expected)
+E       AssertionError: '110010' != '0b110010'
+E       - 110010
+E       + 0b110010
+E       ? ++
+
+tests\deepseek_coder_v2_lite_instruct\my_unit_tests\easy\test_human_eval_103.py:36: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/deepseek_coder_v2_lite_instruct/my_unit_tests/easy/test_human_eval_103.py::TestRoundedAvg::test_adjacent_numbers
+FAILED tests/deepseek_coder_v2_lite_instruct/my_unit_tests/easy/test_human_eval_103.py::TestRoundedAvg::test_equal_bounds
+FAILED tests/deepseek_coder_v2_lite_instruct/my_unit_tests/easy/test_human_eval_103.py::TestRoundedAvg::test_half_round_down
+FAILED tests/deepseek_coder_v2_lite_instruct/my_unit_tests/easy/test_human_eval_103.py::TestRoundedAvg::test_half_round_up
+FAILED tests/deepseek_coder_v2_lite_instruct/my_unit_tests/easy/test_human_eval_103.py::TestRoundedAvg::test_large_range
+======================== 5 failed, 53 passed in 0.31s =========================

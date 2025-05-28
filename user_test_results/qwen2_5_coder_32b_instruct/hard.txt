@@ -1,0 +1,95 @@
+..............................F..............EFFEFE.................................F.F..........
+======================================================================
+ERROR: test_invalid_odd_length_1 (human_eval_32_test.TestFindZero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/hard/human_eval_32_test.py", line 35, in test_invalid_odd_length_1
+    find_zero([1, 2, 3])
+  File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/hard/human_eval_32.py", line 14, in find_zero
+    while poly(xs, begin) * poly(xs, end) > 0:
+  File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/hard/human_eval_32.py", line 10, in poly
+    return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])
+  File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/hard/human_eval_32.py", line 10, in <listcomp>
+    return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])
+OverflowError: math range error
+
+======================================================================
+ERROR: test_invalid_zero_last_coefficient_1 (human_eval_32_test.TestFindZero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/hard/human_eval_32_test.py", line 45, in test_invalid_zero_last_coefficient_1
+    find_zero([1, 2, 3, 0])
+  File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/hard/human_eval_32.py", line 14, in find_zero
+    while poly(xs, begin) * poly(xs, end) > 0:
+  File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/hard/human_eval_32.py", line 10, in poly
+    return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])
+  File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/hard/human_eval_32.py", line 10, in <listcomp>
+    return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])
+OverflowError: math range error
+
+======================================================================
+ERROR: test_invalid_zero_last_coefficient_3 (human_eval_32_test.TestFindZero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/hard/human_eval_32_test.py", line 55, in test_invalid_zero_last_coefficient_3
+    find_zero([5, -3, 0, 0, 1, 0])
+  File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/hard/human_eval_32.py", line 14, in find_zero
+    while poly(xs, begin) * poly(xs, end) > 0:
+  File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/hard/human_eval_32.py", line 10, in poly
+    return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])
+  File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/hard/human_eval_32.py", line 10, in <listcomp>
+    return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])
+OverflowError: math range error
+
+======================================================================
+FAIL: test_ambiguous_pair_should_fail (human_eval_20_test.TestFindClosestElements)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/hard/human_eval_20_test.py", line 62, in test_ambiguous_pair_should_fail
+    find_closest_elements([1.0, 2.0, 3.0, 4.0])
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_odd_length_2 (human_eval_32_test.TestFindZero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/hard/human_eval_32_test.py", line 40, in test_invalid_odd_length_2
+    find_zero([2, -4, 2, 1, 0])
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_padded_input (human_eval_32_test.TestFindZero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/hard/human_eval_32_test.py", line 60, in test_invalid_padded_input
+    find_zero([-1, 0, 1, 0])
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_zero_last_coefficient_2 (human_eval_32_test.TestFindZero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/hard/human_eval_32_test.py", line 50, in test_invalid_zero_last_coefficient_2
+    find_zero([0, 0, 0, 0])
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_all_non_primes (human_eval_94_test.TestSkjkasdkd)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/hard/human_eval_94_test.py", line 65, in test_all_non_primes
+    self.assertEqual(skjkasdkd([0, 1, 4, 6, 8, 9, 10]), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_single_non_prime (human_eval_94_test.TestSkjkasdkd)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/hard/human_eval_94_test.py", line 53, in test_single_non_prime
+    self.assertEqual(skjkasdkd([1]), 0)
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 97 tests in 0.009s
+
+FAILED (failures=6, errors=3)

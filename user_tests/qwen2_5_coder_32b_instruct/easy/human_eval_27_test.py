@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.easy.human_eval_27 import flip_case
+from regenerated_codes.qwen2_5_coder_32b_instruct.easy.human_eval_27 import flip_case
 
 class TestFlipCase(unittest.TestCase):
     # Empty string — should return empty string

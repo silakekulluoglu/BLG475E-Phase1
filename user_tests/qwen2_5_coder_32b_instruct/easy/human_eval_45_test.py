@@ -5,7 +5,7 @@ Student IDs: 150190007, 150200913, 150210084
 """
 
 import unittest
-from source.qwen2_5_coder_32b_instruct.easy.human_eval_45 import triangle_area
+from regenerated_codes.qwen2_5_coder_32b_instruct.easy.human_eval_45 import triangle_area
 
 class TestTriangleArea(unittest.TestCase):
     # Standard triangle with base=5 and height=3 → area = 7.5
@@ -20,21 +20,24 @@ class TestTriangleArea(unittest.TestCase):
     def test_triangle_area_3(self):
         self.assertEqual(triangle_area(10, 8), 40.0)
 
-    # Base is zero → area should be 0.0
+    # Base is zero → invalid input
     def test_triangle_area_4(self):
-        self.assertEqual(triangle_area(0, 5), 0.0)
+        with self.assertRaises(ValueError):
+            triangle_area(0, 5)
 
-    # Height is zero → area should be 0.0
+    # Height is zero → invalid input
     def test_triangle_area_5(self):
-        self.assertEqual(triangle_area(7, 0), 0.0)
+        with self.assertRaises(ValueError):
+            triangle_area(7, 0)
 
     # ===============================
     # Additional test cases
     # ===============================
 
-    # Both base and height are zero → area should be 0.0
+    # Both base and height are zero → invalid input
     def test_triangle_area_6_both_zero(self):
-        self.assertEqual(triangle_area(0, 0), 0.0)
+        with self.assertRaises(ValueError):
+            triangle_area(0, 0)
 
     # Float values for base and height → test precision
     def test_triangle_area_7_floats(self):

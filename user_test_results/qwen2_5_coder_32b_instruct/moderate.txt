@@ -1,0 +1,105 @@
+..FF..........F...FF.FF.................F.................F...............................................FFE.................
+======================================================================
+ERROR: test_pluck_14_string_input (human_eval_68_test.TestPluck)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_68_test.py", line 72, in test_pluck_14_string_input
+    pluck(["2", 4, 6])
+  File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/moderate/human_eval_68.py", line 10, in pluck
+    evens = list(filter(lambda x: x % 2 == 0, arr))
+  File "/Users/25200398/Desktop/BLG475E-Phase1/source/qwen2_5_coder_32b_instruct/moderate/human_eval_68.py", line 10, in <lambda>
+    evens = list(filter(lambda x: x % 2 == 0, arr))
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+FAIL: test_even_odd_palindrome_11_out_of_range_negative (human_eval_107_test.TestEvenOddPalindrome)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_107_test.py", line 63, in test_even_odd_palindrome_11_out_of_range_negative
+    even_odd_palindrome(-10)
+AssertionError: (<class 'ValueError'>, <class 'AssertionError'>, <class 'IndexError'>) not raised
+
+======================================================================
+FAIL: test_even_odd_palindrome_12_out_of_range_above_max (human_eval_107_test.TestEvenOddPalindrome)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_107_test.py", line 68, in test_even_odd_palindrome_12_out_of_range_above_max
+    even_odd_palindrome(1001)
+AssertionError: (<class 'ValueError'>, <class 'AssertionError'>) not raised
+
+======================================================================
+FAIL: test_even_odd_palindrome_out_of_range_zero (human_eval_107_test.TestEvenOddPalindrome)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_107_test.py", line 58, in test_even_odd_palindrome_out_of_range_zero
+    even_odd_palindrome(0)
+AssertionError: (<class 'ValueError'>, <class 'AssertionError'>, <class 'IndexError'>) not raised
+
+======================================================================
+FAIL: test_max_fill_12_inconsistent_row_lengths (human_eval_115_test.TestMaxFill)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_115_test.py", line 65, in test_max_fill_12_inconsistent_row_lengths
+    max_fill([[1, 0], [1, 1, 1]], 2)
+AssertionError: (<class 'ValueError'>, <class 'IndexError'>, <class 'AssertionError'>) not raised
+
+======================================================================
+FAIL: test_max_fill_13_grid_too_large (human_eval_115_test.TestMaxFill)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_115_test.py", line 71, in test_max_fill_13_grid_too_large
+    max_fill(grid, 2)
+AssertionError: (<class 'ValueError'>, <class 'AssertionError'>) not raised
+
+======================================================================
+FAIL: test_max_fill_15_capacity_too_small (human_eval_115_test.TestMaxFill)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_115_test.py", line 81, in test_max_fill_15_capacity_too_small
+    max_fill([[1, 1, 1]], -1)
+AssertionError: (<class 'ValueError'>, <class 'AssertionError'>, <class 'ZeroDivisionError'>) not raised
+
+======================================================================
+FAIL: test_max_fill_16_capacity_too_large (human_eval_115_test.TestMaxFill)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_115_test.py", line 86, in test_max_fill_16_capacity_too_large
+    max_fill([[1, 1, 1]], 11)
+AssertionError: (<class 'ValueError'>, <class 'AssertionError'>) not raised
+
+======================================================================
+FAIL: test_is_nested_18_long_flat (human_eval_132_test.TestIsNested)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_132_test.py", line 75, in test_is_nested_18_long_flat
+    self.assertEqual(is_nested('[]' * 500), False)
+AssertionError: True != False
+
+======================================================================
+FAIL: test_greatest_common_divisor_8_negative_input (human_eval_13_test.TestGreatestCommonDivisor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_13_test.py", line 47, in test_greatest_common_divisor_8_negative_input
+    self.assertEqual(greatest_common_divisor(9, -6), 3)
+AssertionError: -3 != 3
+
+======================================================================
+FAIL: test_pluck_12_negative_input (human_eval_68_test.TestPluck)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_68_test.py", line 62, in test_pluck_12_negative_input
+    pluck([1, -2, 3])
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_pluck_13_non_integer (human_eval_68_test.TestPluck)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/user_tests/qwen2_5_coder_32b_instruct/moderate/human_eval_68_test.py", line 67, in test_pluck_13_non_integer
+    pluck([2.5, 4, 6])
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 126 tests in 0.174s
+
+FAILED (failures=11, errors=1)
