@@ -1,0 +1,654 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.10, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/silakekulluoglu/Desktop/hey/BLG475E-Phase1
+collected 68 items
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py FFFFF.FFFFF      [ 16%]
+user_tests/mistral_instruct/easy/human_eval_125_test.py F.FFFF           [ 25%]
+user_tests/mistral_instruct/easy/human_eval_131_test.py F.....FFF        [ 38%]
+user_tests/mistral_instruct/easy/human_eval_27_test.py .FFFF             [ 45%]
+user_tests/mistral_instruct/easy/human_eval_2_test.py .F.FF              [ 52%]
+user_tests/mistral_instruct/easy/human_eval_30_test.py .....             [ 60%]
+user_tests/mistral_instruct/easy/human_eval_45_test.py FF...             [ 67%]
+user_tests/mistral_instruct/easy/human_eval_70_test.py F...F             [ 75%]
+user_tests/mistral_instruct/easy/human_eval_86_test.py ..F.F...          [ 86%]
+user_tests/mistral_instruct/easy/human_eval_98_test.py .FFFFF.FF         [100%]
+
+=================================== FAILURES ===================================
+__________________ TestRoundedAvg.test_even_average_rounding ___________________
+
+self = <human_eval_103_test.TestRoundedAvg testMethod=test_even_average_rounding>
+
+    def test_even_average_rounding(self):
+>       self.assertEqual(rounded_avg(1, 2), "0b10")
+E       AssertionError: '1' != '0b10'
+E       - 1
+E       + 0b10
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py:47: AssertionError
+_________________ TestRoundedAvg.test_rounded_avg_even_number __________________
+
+self = <human_eval_103_test.TestRoundedAvg testMethod=test_rounded_avg_even_number>
+
+    def test_rounded_avg_even_number(self):
+        result = rounded_avg(4, 5)
+>       self.assertEqual(result, '0b100')
+E       AssertionError: '100' != '0b100'
+E       - 100
+E       + 0b100
+E       ? ++
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py:44: AssertionError
+______________ TestRoundedAvg.test_rounded_avg_exact_middle_value ______________
+
+self = <human_eval_103_test.TestRoundedAvg testMethod=test_rounded_avg_exact_middle_value>
+
+    def test_rounded_avg_exact_middle_value(self):
+        result = rounded_avg(20, 33)
+>       self.assertEqual(result, "0b11010")
+E       AssertionError: '11010' != '0b11010'
+E       - 11010
+E       + 0b11010
+E       ? ++
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py:40: AssertionError
+____________________ TestRoundedAvg.test_rounded_avg_large _____________________
+
+self = <human_eval_103_test.TestRoundedAvg testMethod=test_rounded_avg_large>
+
+    def test_rounded_avg_large(self):
+>       self.assertEqual(rounded_avg(1, 100), "0b110010")
+E       AssertionError: '110010' != '0b110010'
+E       - 110010
+E       + 0b110010
+E       ? ++
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py:36: AssertionError
+_____________________ TestRoundedAvg.test_rounded_avg_mid ______________________
+
+self = <human_eval_103_test.TestRoundedAvg testMethod=test_rounded_avg_mid>
+
+    def test_rounded_avg_mid(self):
+        result = rounded_avg(10, 20)
+>       self.assertEqual(result, "0b1111")
+E       AssertionError: '1111' != '0b1111'
+E       - 1111
+E       + 0b1111
+E       ? ++
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py:33: AssertionError
+__________________ TestRoundedAvg.test_rounded_avg_negative_m __________________
+
+self = <human_eval_103_test.TestRoundedAvg testMethod=test_rounded_avg_negative_m>
+
+    def test_rounded_avg_negative_m(self):
+        result = rounded_avg(-9, -5)
+>       self.assertEqual(result, -1)
+E       AssertionError: '-111' != -1
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py:17: AssertionError
+__________________ TestRoundedAvg.test_rounded_avg_negative_n __________________
+
+self = <human_eval_103_test.TestRoundedAvg testMethod=test_rounded_avg_negative_n>
+
+    def test_rounded_avg_negative_n(self):
+        result = rounded_avg(-1, 5)
+>       self.assertEqual(result, -1)
+E       AssertionError: '10' != -1
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py:13: AssertionError
+____________________ TestRoundedAvg.test_rounded_avg_simple ____________________
+
+self = <human_eval_103_test.TestRoundedAvg testMethod=test_rounded_avg_simple>
+
+    def test_rounded_avg_simple(self):
+        result = rounded_avg(3, 5)
+>       self.assertEqual(result, '0b100')
+E       AssertionError: '100' != '0b100'
+E       - 100
+E       + 0b100
+E       ? ++
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py:29: AssertionError
+_____________________ TestRoundedAvg.test_rounded_avg_zero _____________________
+
+self = <human_eval_103_test.TestRoundedAvg testMethod=test_rounded_avg_zero>
+
+    def test_rounded_avg_zero(self):
+        result = rounded_avg(0, 0)
+>       self.assertEqual(result, -1)
+E       AssertionError: '0' != -1
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py:25: AssertionError
+______________________ TestRoundedAvg.test_rounding_down _______________________
+
+self = <human_eval_103_test.TestRoundedAvg testMethod=test_rounding_down>
+
+    def test_rounding_down(self):
+>       self.assertEqual(rounded_avg(1, 4), "0b10")
+E       AssertionError: '10' != '0b10'
+E       - 10
+E       + 0b10
+E       ? ++
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py:50: AssertionError
+_________________ TestSplitWords.test_split_words_comma_split __________________
+
+self = <human_eval_125_test.TestSplitWords testMethod=test_split_words_comma_split>
+
+    def test_split_words_comma_split(self): # Test for splitting by commas
+>       self.assertEqual(split_words("Hello,world!"), ["Hello", "world!"])
+
+user_tests/mistral_instruct/easy/human_eval_125_test.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+txt = 'Hello,world!'
+
+    def split_words(txt):
+        words = []
+        for char in txt:
+            if char.isspace():
+                if words:
+                    break
+            elif char == ',':
+>               words.append(txt[words[-1]:txt.index(char)].strip())
+E               TypeError: slice indices must be integers or None or have an __index__ method
+
+source/mistral_instruct/easy/human_eval_125.py:14: TypeError
+_____________ TestSplitWords.test_split_words_no_split_count_odds ______________
+
+self = <human_eval_125_test.TestSplitWords testMethod=test_split_words_no_split_count_odds>
+
+    def test_split_words_no_split_count_odds(self):
+>       self.assertEqual(split_words("abcdef"), 3)     # b,d,f → 1,3,5
+E       AssertionError: ['a', 'c', 'e'] != 3
+
+user_tests/mistral_instruct/easy/human_eval_125_test.py:22: AssertionError
+____________ TestSplitWords.test_split_words_only_spaces_or_commas _____________
+
+self = <human_eval_125_test.TestSplitWords testMethod=test_split_words_only_spaces_or_commas>
+
+    def test_split_words_only_spaces_or_commas(self): # Test for strings with only spaces or commas
+>       self.assertEqual(split_words(" "), [])
+E       AssertionError: 0 != []
+
+user_tests/mistral_instruct/easy/human_eval_125_test.py:31: AssertionError
+____________ TestSplitWords.test_split_words_space_and_comma_mixed _____________
+
+self = <human_eval_125_test.TestSplitWords testMethod=test_split_words_space_and_comma_mixed>
+
+    def test_split_words_space_and_comma_mixed(self): # Test for mixed spaces and commas
+>       self.assertEqual(split_words("a,b c"), ["a,b", "c"])
+
+user_tests/mistral_instruct/easy/human_eval_125_test.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+txt = 'a,b c'
+
+    def split_words(txt):
+        words = []
+        for char in txt:
+            if char.isspace():
+                if words:
+                    break
+            elif char == ',':
+>               words.append(txt[words[-1]:txt.index(char)].strip())
+E               TypeError: slice indices must be integers or None or have an __index__ method
+
+source/mistral_instruct/easy/human_eval_125.py:14: TypeError
+_______________ TestSplitWords.test_split_words_whitespace_split _______________
+
+self = <human_eval_125_test.TestSplitWords testMethod=test_split_words_whitespace_split>
+
+    def test_split_words_whitespace_split(self): # Test for splitting by whitespace
+>       self.assertEqual(split_words("Hello world!"), ["Hello", "world!"])
+E       AssertionError: Lists differ: ['e', 'o'] != ['Hello', 'world!']
+E       
+E       First differing element 0:
+E       'e'
+E       'Hello'
+E       
+E       - ['e', 'o']
+E       + ['Hello', 'world!']
+
+user_tests/mistral_instruct/easy/human_eval_125_test.py:13: AssertionError
+____________________ TestDigits.test_digits_all_even_digits ____________________
+
+self = <human_eval_131_test.TestDigits testMethod=test_digits_all_even_digits>
+
+    def test_digits_all_even_digits(self):
+>       self.assertEqual(digits(24680), 0)
+E       AssertionError: 1 != 0
+
+user_tests/mistral_instruct/easy/human_eval_131_test.py:22: AssertionError
+___________________ TestDigits.test_digits_single_odd_digit ____________________
+
+self = <human_eval_131_test.TestDigits testMethod=test_digits_single_odd_digit>
+
+    def test_digits_single_odd_digit(self):
+>       self.assertEqual(digits(1), 1)
+E       AssertionError: 0 != 1
+
+user_tests/mistral_instruct/easy/human_eval_131_test.py:12: AssertionError
+______________ TestDigits.test_negative_number_raises_value_error ______________
+
+self = <human_eval_131_test.TestDigits testMethod=test_negative_number_raises_value_error>
+
+    def test_negative_number_raises_value_error(self):
+>       with self.assertRaises(ValueError):
+E       AssertionError: ValueError not raised
+
+user_tests/mistral_instruct/easy/human_eval_131_test.py:38: AssertionError
+___________________ TestDigits.test_zero_raises_value_error ____________________
+
+self = <human_eval_131_test.TestDigits testMethod=test_zero_raises_value_error>
+
+    def test_zero_raises_value_error(self):
+>       with self.assertRaises(ValueError):
+E       AssertionError: ValueError not raised
+
+user_tests/mistral_instruct/easy/human_eval_131_test.py:42: AssertionError
+_______________________ TestFlipCase.test_flip_lowercase _______________________
+
+self = <human_eval_27_test.TestFlipCase testMethod=test_flip_lowercase>
+
+    def test_flip_lowercase(self):  # Test with all lowercase letters
+        input_string = "hello world"
+>       result = flip_case(input_string)
+
+user_tests/mistral_instruct/easy/human_eval_27_test.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'hello world'
+
+    def flip_case(string: str) -> str:
+        result = ""
+        for char in string:
+>           if char in string.ascii_lowercase:
+E           AttributeError: 'str' object has no attribute 'ascii_lowercase'
+
+source/mistral_instruct/easy/human_eval_27.py:12: AttributeError
+______________________ TestFlipCase.test_flip_mixed_case _______________________
+
+self = <human_eval_27_test.TestFlipCase testMethod=test_flip_mixed_case>
+
+    def test_flip_mixed_case(self): # Test with a mix of uppercase and lowercase letters
+        input_string = "HeLLo wOrLd"
+>       result = flip_case(input_string)
+
+user_tests/mistral_instruct/easy/human_eval_27_test.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'HeLLo wOrLd'
+
+    def flip_case(string: str) -> str:
+        result = ""
+        for char in string:
+>           if char in string.ascii_lowercase:
+E           AttributeError: 'str' object has no attribute 'ascii_lowercase'
+
+source/mistral_instruct/easy/human_eval_27.py:12: AttributeError
+__________________ TestFlipCase.test_flip_special_characters ___________________
+
+self = <human_eval_27_test.TestFlipCase testMethod=test_flip_special_characters>
+
+    def test_flip_special_characters(self): # Test with special/escape characters
+        input_string = '\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./0123456789:;<=>?@[\\]^_`{|}~\x7f'
+>       result = flip_case(input_string)
+
+user_tests/mistral_instruct/easy/human_eval_27_test.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./0123456789:;<=>?@[\\]^_`{|}~\x7f'
+
+    def flip_case(string: str) -> str:
+        result = ""
+        for char in string:
+>           if char in string.ascii_lowercase:
+E           AttributeError: 'str' object has no attribute 'ascii_lowercase'
+
+source/mistral_instruct/easy/human_eval_27.py:12: AttributeError
+_______________________ TestFlipCase.test_flip_uppercase _______________________
+
+self = <human_eval_27_test.TestFlipCase testMethod=test_flip_uppercase>
+
+    def test_flip_uppercase(self):  # Test with all uppercase letters
+        input_string = "HELLO WORLD"
+>       result = flip_case(input_string)
+
+user_tests/mistral_instruct/easy/human_eval_27_test.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'HELLO WORLD'
+
+    def flip_case(string: str) -> str:
+        result = ""
+        for char in string:
+>           if char in string.ascii_lowercase:
+E           AttributeError: 'str' object has no attribute 'ascii_lowercase'
+
+source/mistral_instruct/easy/human_eval_27.py:12: AttributeError
+_____________ TestTruncateNumber.test_truncate_multiple_negatives ______________
+
+self = <human_eval_2_test.TestTruncateNumber testMethod=test_truncate_multiple_negatives>
+
+    def test_truncate_multiple_negatives(self): # Test for multiple negative float values
+        negative_values = [-0.1, -1.0, -123.456, -9999]
+        for value in negative_values:
+            with self.subTest(value=value):
+>               with self.assertRaises(ValueError):
+E               AssertionError: ValueError not raised
+
+user_tests/mistral_instruct/easy/human_eval_2_test.py:35: AssertionError
+____________________ TestTruncateNumber.test_truncate_zero1 ____________________
+
+self = <human_eval_2_test.TestTruncateNumber testMethod=test_truncate_zero1>
+
+    def test_truncate_zero1(self): # Test for zero as an integer
+>       with self.assertRaises(ValueError):
+E       AssertionError: ValueError not raised
+
+user_tests/mistral_instruct/easy/human_eval_2_test.py:12: AssertionError
+____________________ TestTruncateNumber.test_truncate_zero2 ____________________
+
+self = <human_eval_2_test.TestTruncateNumber testMethod=test_truncate_zero2>
+
+    def test_truncate_zero2(self): # Test for zero as a float
+>       with self.assertRaises(ValueError):
+E       AssertionError: ValueError not raised
+
+user_tests/mistral_instruct/easy/human_eval_2_test.py:16: AssertionError
+______________ TestTriangleArea.test_triangle_area_negative_base _______________
+
+self = <human_eval_45_test.TestTriangleArea testMethod=test_triangle_area_negative_base>
+
+    def test_triangle_area_negative_base(self): # Test case for negative base
+>       with self.assertRaises(ValueError):
+E       AssertionError: ValueError not raised
+
+user_tests/mistral_instruct/easy/human_eval_45_test.py:34: AssertionError
+_____________ TestTriangleArea.test_triangle_area_negative_height ______________
+
+self = <human_eval_45_test.TestTriangleArea testMethod=test_triangle_area_negative_height>
+
+    def test_triangle_area_negative_height(self): # Test case for negative height
+>       with self.assertRaises(ValueError):
+E       AssertionError: ValueError not raised
+
+user_tests/mistral_instruct/easy/human_eval_45_test.py:38: AssertionError
+_______________ TestStrangeSortList.test_strange_sort_list_cases _______________
+
+self = <human_eval_70_test.TestStrangeSortList testMethod=test_strange_sort_list_cases>
+
+    def test_strange_sort_list_cases(self): # Test case for a list with mixed positive and negative integers
+        test_cases = [
+            ([5, 2, -3, 7], [-3, 7, 2, 5]),
+            ([10, -4, 2, 6, 8], [-4, 10, 2, 8, 6]),
+            ([3, 1, 5, -2, 4], [-2, 5, 1, 4, 3]),
+            ([2, 2, 4, 4, 5], [2, 5, 2, 4, 4]),
+            ([1000000, -1000000, 0], [-1000000, 1000000, 0])
+        ]
+    
+        for input_list, expected_output in test_cases:  # Loop through each test case
+            with self.subTest(input=input_list):
+                result = strange_sort_list(input_list)
+>               self.assertEqual(result, expected_output)
+E               AssertionError: Lists differ: [-3, 7, 7, 7] != [-3, 7, 2, 5]
+E               
+E               First differing element 2:
+E               7
+E               2
+E               
+E               - [-3, 7, 7, 7]
+E               ?         ^  ^
+E               
+E               + [-3, 7, 2, 5]
+E               ?         ^  ^
+
+user_tests/mistral_instruct/easy/human_eval_70_test.py:39: AssertionError
+___________ TestStrangeSortList.test_strange_sort_list_two_elements ____________
+
+self = <human_eval_70_test.TestStrangeSortList testMethod=test_strange_sort_list_two_elements>
+
+    def test_strange_sort_list_two_elements(self): # Test case for a list with two elements
+>       result = strange_sort_list([3, 1])
+
+user_tests/mistral_instruct/easy/human_eval_70_test.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lst = [3, 1]
+
+    def strange_sort_list(lst):
+        if not lst:
+            return []
+    
+        sorted_lst = []
+        current_min = min(lst)
+        current_max = max(lst)
+        sorted_lst.append(current_min)
+        while len(sorted_lst) < len(lst):
+            for i in range(len(lst)):
+                if lst[i] == current_min:
+                    continue
+                elif lst[i] > current_max:
+                    current_max = lst[i]
+                else:
+>                   current_min = min([el for el in lst if el != current_min and el !=
+    current_max])
+E                   ValueError: min() iterable argument is empty
+
+source/mistral_instruct/easy/human_eval_70.py:22: ValueError
+______________ TestAntiShuffle.test_anti_shuffle_multiple_spaces _______________
+
+self = <human_eval_86_test.TestAntiShuffle testMethod=test_anti_shuffle_multiple_spaces>
+
+    def test_anti_shuffle_multiple_spaces(self): # Test case for multiple spaces
+        result = anti_shuffle("  double   space ")
+        expected_output = "  bdelou   aceps "
+>       self.assertEqual(result, expected_output)
+E       AssertionError: 'bdelou aceps' != '  bdelou   aceps '
+E       - bdelou aceps
+E       +   bdelou   aceps 
+E       ? ++       ++     +
+
+user_tests/mistral_instruct/easy/human_eval_86_test.py:38: AssertionError
+________________ TestAntiShuffle.test_anti_shuffle_only_spaces _________________
+
+self = <human_eval_86_test.TestAntiShuffle testMethod=test_anti_shuffle_only_spaces>
+
+    def test_anti_shuffle_only_spaces(self):  # Test case for a string with only spaces
+        result = anti_shuffle("     ")
+        expected_output = "     "
+>       self.assertEqual(result, expected_output)
+E       AssertionError: '' != '     '
+E       +
+
+user_tests/mistral_instruct/easy/human_eval_86_test.py:48: AssertionError
+_________________ TestCountUpper.test_count_upper_long_string __________________
+
+self = <human_eval_98_test.TestCountUpper testMethod=test_count_upper_long_string>
+
+    def test_count_upper_long_string(self):
+>       result = count_upper('ABCDEFGHIJKLMNOPQRSTUVWXYZAEIOU')
+
+user_tests/mistral_instruct/easy/human_eval_98_test.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZAEIOU'
+
+    def count_upper(s):
+        vowels = {'A', 'E', 'I', 'O', 'U'}
+        index = 0
+        count = 0
+        for char in s:
+>           if (index % 2 == 0) and (char.isupper() and char in VOWELS):
+E           NameError: name 'VOWELS' is not defined
+
+source/mistral_instruct/easy/human_eval_98.py:12: NameError
+__________________ TestCountUpper.test_count_upper_mixed_case __________________
+
+self = <human_eval_98_test.TestCountUpper testMethod=test_count_upper_mixed_case>
+
+    def test_count_upper_mixed_case(self):
+>       result = count_upper('ioUaEo')
+
+user_tests/mistral_instruct/easy/human_eval_98_test.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = 'ioUaEo'
+
+    def count_upper(s):
+        vowels = {'A', 'E', 'I', 'O', 'U'}
+        index = 0
+        count = 0
+        for char in s:
+>           if (index % 2 == 0) and (char.isupper() and char in VOWELS):
+E           NameError: name 'VOWELS' is not defined
+
+source/mistral_instruct/easy/human_eval_98.py:12: NameError
+__________________ TestCountUpper.test_count_upper_no_vowels ___________________
+
+self = <human_eval_98_test.TestCountUpper testMethod=test_count_upper_no_vowels>
+
+    def test_count_upper_no_vowels(self):
+>       result = count_upper('BCDFGH')
+
+user_tests/mistral_instruct/easy/human_eval_98_test.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = 'BCDFGH'
+
+    def count_upper(s):
+        vowels = {'A', 'E', 'I', 'O', 'U'}
+        index = 0
+        count = 0
+        for char in s:
+>           if (index % 2 == 0) and (char.isupper() and char in VOWELS):
+E           NameError: name 'VOWELS' is not defined
+
+source/mistral_instruct/easy/human_eval_98.py:12: NameError
+____________ TestCountUpper.test_count_upper_odd_number_of_letters _____________
+
+self = <human_eval_98_test.TestCountUpper testMethod=test_count_upper_odd_number_of_letters>
+
+    def test_count_upper_odd_number_of_letters(self):
+>       result = count_upper('OUI')
+
+user_tests/mistral_instruct/easy/human_eval_98_test.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = 'OUI'
+
+    def count_upper(s):
+        vowels = {'A', 'E', 'I', 'O', 'U'}
+        index = 0
+        count = 0
+        for char in s:
+>           if (index % 2 == 0) and (char.isupper() and char in VOWELS):
+E           NameError: name 'VOWELS' is not defined
+
+source/mistral_instruct/easy/human_eval_98.py:12: NameError
+______ TestCountUpper.test_count_upper_single_uppercase_vowel_even_index _______
+
+self = <human_eval_98_test.TestCountUpper testMethod=test_count_upper_single_uppercase_vowel_even_index>
+
+    def test_count_upper_single_uppercase_vowel_even_index(self):
+>       result = count_upper('A')
+
+user_tests/mistral_instruct/easy/human_eval_98_test.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = 'A'
+
+    def count_upper(s):
+        vowels = {'A', 'E', 'I', 'O', 'U'}
+        index = 0
+        count = 0
+        for char in s:
+>           if (index % 2 == 0) and (char.isupper() and char in VOWELS):
+E           NameError: name 'VOWELS' is not defined
+
+source/mistral_instruct/easy/human_eval_98.py:12: NameError
+_____________ TestCountUpper.test_count_upper_vowels_but_lowercase _____________
+
+self = <human_eval_98_test.TestCountUpper testMethod=test_count_upper_vowels_but_lowercase>
+
+    def test_count_upper_vowels_but_lowercase(self):
+>       result = count_upper('aeiouAEIOU')
+
+user_tests/mistral_instruct/easy/human_eval_98_test.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = 'aeiouAEIOU'
+
+    def count_upper(s):
+        vowels = {'A', 'E', 'I', 'O', 'U'}
+        index = 0
+        count = 0
+        for char in s:
+>           if (index % 2 == 0) and (char.isupper() and char in VOWELS):
+E           NameError: name 'VOWELS' is not defined
+
+source/mistral_instruct/easy/human_eval_98.py:12: NameError
+_____________ TestCountUpper.test_count_upper_with_non_alpha_chars _____________
+
+self = <human_eval_98_test.TestCountUpper testMethod=test_count_upper_with_non_alpha_chars>
+
+    def test_count_upper_with_non_alpha_chars(self):
+>       result = count_upper('A1E!I?O#U')
+
+user_tests/mistral_instruct/easy/human_eval_98_test.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = 'A1E!I?O#U'
+
+    def count_upper(s):
+        vowels = {'A', 'E', 'I', 'O', 'U'}
+        index = 0
+        count = 0
+        for char in s:
+>           if (index % 2 == 0) and (char.isupper() and char in VOWELS):
+E           NameError: name 'VOWELS' is not defined
+
+source/mistral_instruct/easy/human_eval_98.py:12: NameError
+=========================== short test summary info ============================
+FAILED user_tests/mistral_instruct/easy/human_eval_103_test.py::TestRoundedAvg::test_even_average_rounding
+FAILED user_tests/mistral_instruct/easy/human_eval_103_test.py::TestRoundedAvg::test_rounded_avg_even_number
+FAILED user_tests/mistral_instruct/easy/human_eval_103_test.py::TestRoundedAvg::test_rounded_avg_exact_middle_value
+FAILED user_tests/mistral_instruct/easy/human_eval_103_test.py::TestRoundedAvg::test_rounded_avg_large
+FAILED user_tests/mistral_instruct/easy/human_eval_103_test.py::TestRoundedAvg::test_rounded_avg_mid
+FAILED user_tests/mistral_instruct/easy/human_eval_103_test.py::TestRoundedAvg::test_rounded_avg_negative_m
+FAILED user_tests/mistral_instruct/easy/human_eval_103_test.py::TestRoundedAvg::test_rounded_avg_negative_n
+FAILED user_tests/mistral_instruct/easy/human_eval_103_test.py::TestRoundedAvg::test_rounded_avg_simple
+FAILED user_tests/mistral_instruct/easy/human_eval_103_test.py::TestRoundedAvg::test_rounded_avg_zero
+FAILED user_tests/mistral_instruct/easy/human_eval_103_test.py::TestRoundedAvg::test_rounding_down
+FAILED user_tests/mistral_instruct/easy/human_eval_125_test.py::TestSplitWords::test_split_words_comma_split
+FAILED user_tests/mistral_instruct/easy/human_eval_125_test.py::TestSplitWords::test_split_words_no_split_count_odds
+FAILED user_tests/mistral_instruct/easy/human_eval_125_test.py::TestSplitWords::test_split_words_only_spaces_or_commas
+FAILED user_tests/mistral_instruct/easy/human_eval_125_test.py::TestSplitWords::test_split_words_space_and_comma_mixed
+FAILED user_tests/mistral_instruct/easy/human_eval_125_test.py::TestSplitWords::test_split_words_whitespace_split
+FAILED user_tests/mistral_instruct/easy/human_eval_131_test.py::TestDigits::test_digits_all_even_digits
+FAILED user_tests/mistral_instruct/easy/human_eval_131_test.py::TestDigits::test_digits_single_odd_digit
+FAILED user_tests/mistral_instruct/easy/human_eval_131_test.py::TestDigits::test_negative_number_raises_value_error
+FAILED user_tests/mistral_instruct/easy/human_eval_131_test.py::TestDigits::test_zero_raises_value_error
+FAILED user_tests/mistral_instruct/easy/human_eval_27_test.py::TestFlipCase::test_flip_lowercase
+FAILED user_tests/mistral_instruct/easy/human_eval_27_test.py::TestFlipCase::test_flip_mixed_case
+FAILED user_tests/mistral_instruct/easy/human_eval_27_test.py::TestFlipCase::test_flip_special_characters
+FAILED user_tests/mistral_instruct/easy/human_eval_27_test.py::TestFlipCase::test_flip_uppercase
+FAILED user_tests/mistral_instruct/easy/human_eval_2_test.py::TestTruncateNumber::test_truncate_multiple_negatives
+FAILED user_tests/mistral_instruct/easy/human_eval_2_test.py::TestTruncateNumber::test_truncate_zero1
+FAILED user_tests/mistral_instruct/easy/human_eval_2_test.py::TestTruncateNumber::test_truncate_zero2
+FAILED user_tests/mistral_instruct/easy/human_eval_45_test.py::TestTriangleArea::test_triangle_area_negative_base
+FAILED user_tests/mistral_instruct/easy/human_eval_45_test.py::TestTriangleArea::test_triangle_area_negative_height
+FAILED user_tests/mistral_instruct/easy/human_eval_70_test.py::TestStrangeSortList::test_strange_sort_list_cases
+FAILED user_tests/mistral_instruct/easy/human_eval_70_test.py::TestStrangeSortList::test_strange_sort_list_two_elements
+FAILED user_tests/mistral_instruct/easy/human_eval_86_test.py::TestAntiShuffle::test_anti_shuffle_multiple_spaces
+FAILED user_tests/mistral_instruct/easy/human_eval_86_test.py::TestAntiShuffle::test_anti_shuffle_only_spaces
+FAILED user_tests/mistral_instruct/easy/human_eval_98_test.py::TestCountUpper::test_count_upper_long_string
+FAILED user_tests/mistral_instruct/easy/human_eval_98_test.py::TestCountUpper::test_count_upper_mixed_case
+FAILED user_tests/mistral_instruct/easy/human_eval_98_test.py::TestCountUpper::test_count_upper_no_vowels
+FAILED user_tests/mistral_instruct/easy/human_eval_98_test.py::TestCountUpper::test_count_upper_odd_number_of_letters
+FAILED user_tests/mistral_instruct/easy/human_eval_98_test.py::TestCountUpper::test_count_upper_single_uppercase_vowel_even_index
+FAILED user_tests/mistral_instruct/easy/human_eval_98_test.py::TestCountUpper::test_count_upper_vowels_but_lowercase
+FAILED user_tests/mistral_instruct/easy/human_eval_98_test.py::TestCountUpper::test_count_upper_with_non_alpha_chars
+======================== 39 failed, 29 passed in 0.07s =========================

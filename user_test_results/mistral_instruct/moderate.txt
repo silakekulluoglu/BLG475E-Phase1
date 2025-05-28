@@ -1,0 +1,431 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.10, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/silakekulluoglu/Desktop/hey/BLG475E-Phase1
+collected 85 items
+
+user_tests/mistral_instruct/moderate/human_eval_107_test.py FF..FFFF     [  9%]
+user_tests/mistral_instruct/moderate/human_eval_115_test.py ..........   [ 21%]
+user_tests/mistral_instruct/moderate/human_eval_132_test.py FF.F....F.F  [ 34%]
+user_tests/mistral_instruct/moderate/human_eval_13_test.py .......       [ 42%]
+user_tests/mistral_instruct/moderate/human_eval_148_test.py FF....FFFF   [ 54%]
+user_tests/mistral_instruct/moderate/human_eval_21_test.py F.......      [ 63%]
+user_tests/mistral_instruct/moderate/human_eval_36_test.py .F.F...       [ 71%]
+user_tests/mistral_instruct/moderate/human_eval_51_test.py ..........    [ 83%]
+user_tests/mistral_instruct/moderate/human_eval_68_test.py ..F.FFF..F    [ 95%]
+user_tests/mistral_instruct/moderate/human_eval_75_test.py .FFF          [100%]
+
+=================================== FAILURES ===================================
+_________________ TestEvenOddPalindrome.test_all_single_digit __________________
+
+self = <human_eval_107_test.TestEvenOddPalindrome testMethod=test_all_single_digit>
+
+    def test_all_single_digit(self):
+>       self.assertEqual(even_odd_palindrome(9), (4, 5))
+E       AssertionError: Tuples differ: (4, 4) != (4, 5)
+E       
+E       First differing element 1:
+E       4
+E       5
+E       
+E       - (4, 4)
+E       ?     ^
+E       
+E       + (4, 5)
+E       ?     ^
+
+user_tests/mistral_instruct/moderate/human_eval_107_test.py:29: AssertionError
+_____________________ TestEvenOddPalindrome.test_example_1 _____________________
+
+self = <human_eval_107_test.TestEvenOddPalindrome testMethod=test_example_1>
+
+    def test_example_1(self):
+>       self.assertEqual(even_odd_palindrome(3), (1, 2))
+E       AssertionError: Tuples differ: (1, 1) != (1, 2)
+E       
+E       First differing element 1:
+E       1
+E       2
+E       
+E       - (1, 1)
+E       ?     ^
+E       
+E       + (1, 2)
+E       ?     ^
+
+user_tests/mistral_instruct/moderate/human_eval_107_test.py:13: AssertionError
+___________________ TestEvenOddPalindrome.test_minimum_input ___________________
+
+self = <human_eval_107_test.TestEvenOddPalindrome testMethod=test_minimum_input>
+
+    def test_minimum_input(self):
+>       self.assertEqual(even_odd_palindrome(1), (0, 1))
+E       AssertionError: Tuples differ: (0, 0) != (0, 1)
+E       
+E       First differing element 1:
+E       0
+E       1
+E       
+E       - (0, 0)
+E       ?     ^
+E       
+E       + (0, 1)
+E       ?     ^
+
+user_tests/mistral_instruct/moderate/human_eval_107_test.py:19: AssertionError
+__________________ TestEvenOddPalindrome.test_no_palindromes ___________________
+
+self = <human_eval_107_test.TestEvenOddPalindrome testMethod=test_no_palindromes>
+
+    def test_no_palindromes(self):
+>       with self.assertRaises(Exception):
+E       AssertionError: Exception not raised
+
+user_tests/mistral_instruct/moderate/human_eval_107_test.py:22: AssertionError
+___________ TestEvenOddPalindrome.test_palindrome_with_double_digits ___________
+
+self = <human_eval_107_test.TestEvenOddPalindrome testMethod=test_palindrome_with_double_digits>
+
+    def test_palindrome_with_double_digits(self):
+>       self.assertEqual(even_odd_palindrome(22), (5, 6))  # 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22 are palindromes
+E       AssertionError: Tuples differ: (4, 6) != (5, 6)
+E       
+E       First differing element 0:
+E       4
+E       5
+E       
+E       - (4, 6)
+E       ?  ^
+E       
+E       + (5, 6)
+E       ?  ^
+
+user_tests/mistral_instruct/moderate/human_eval_107_test.py:32: AssertionError
+______________ TestEvenOddPalindrome.test_single_even_palindrome _______________
+
+self = <human_eval_107_test.TestEvenOddPalindrome testMethod=test_single_even_palindrome>
+
+    def test_single_even_palindrome(self):
+>       self.assertEqual(even_odd_palindrome(2), (1, 1))
+E       AssertionError: Tuples differ: (0, 1) != (1, 1)
+E       
+E       First differing element 0:
+E       0
+E       1
+E       
+E       - (0, 1)
+E       ?  ^
+E       
+E       + (1, 1)
+E       ?  ^
+
+user_tests/mistral_instruct/moderate/human_eval_107_test.py:26: AssertionError
+_________________ TestIsNested.test_adjacent_pairs_no_nesting __________________
+
+self = <human_eval_132_test.TestIsNested testMethod=test_adjacent_pairs_no_nesting>
+
+    def test_adjacent_pairs_no_nesting(self):
+>       self.assertFalse(is_nested('[][]'))  # Multiple pairs but no nesting
+E       AssertionError: True is not false
+
+user_tests/mistral_instruct/moderate/human_eval_132_test.py:20: AssertionError
+________________________ TestIsNested.test_empty_string ________________________
+
+self = <human_eval_132_test.TestIsNested testMethod=test_empty_string>
+
+    def test_empty_string(self):
+>       self.assertFalse(is_nested(''))  # No brackets at all
+E       AssertionError: True is not false
+
+user_tests/mistral_instruct/moderate/human_eval_132_test.py:32: AssertionError
+______________________ TestIsNested.test_long_no_nesting _______________________
+
+self = <human_eval_132_test.TestIsNested testMethod=test_long_no_nesting>
+
+    def test_long_no_nesting(self):
+>       self.assertFalse(is_nested('[][][][][][]'))  # Many pairs but no nesting
+E       AssertionError: True is not false
+
+user_tests/mistral_instruct/moderate/human_eval_132_test.py:44: AssertionError
+_______________________ TestIsNested.test_partial_nested _______________________
+
+self = <human_eval_132_test.TestIsNested testMethod=test_partial_nested>
+
+    def test_partial_nested(self):
+>       self.assertTrue(is_nested('[[]][['))  # Nested subsequence exists
+E       AssertionError: False is not true
+
+user_tests/mistral_instruct/moderate/human_eval_132_test.py:29: AssertionError
+________________________ TestIsNested.test_single_pair _________________________
+
+self = <human_eval_132_test.TestIsNested testMethod=test_single_pair>
+
+    def test_single_pair(self):
+>       self.assertFalse(is_nested('[]'))  # Single pair, no nesting
+E       AssertionError: True is not false
+
+user_tests/mistral_instruct/moderate/human_eval_132_test.py:23: AssertionError
+_________________________ TestBF.test_adjacent_planets _________________________
+
+self = <human_eval_148_test.TestBF testMethod=test_adjacent_planets>
+
+    def test_adjacent_planets(self):
+>       self.assertEqual(
+            bf("Venus", "Earth"),
+            ()
+        )
+E       AssertionError: [] != ()
+
+user_tests/mistral_instruct/moderate/human_eval_148_test.py:55: AssertionError
+____________________________ TestBF.test_full_range ____________________________
+
+self = <human_eval_148_test.TestBF testMethod=test_full_range>
+
+    def test_full_range(self):
+>       self.assertEqual(
+            bf("Mercury", "Neptune"),
+            ("Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus")
+        )
+E       AssertionError: ['Earth', 'Jupiter', 'Mars', 'Saturn', 'Venus'] != ('Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus')
+
+user_tests/mistral_instruct/moderate/human_eval_148_test.py:61: AssertionError
+_____________________ TestBF.test_multiple_planets_between _____________________
+
+self = <human_eval_148_test.TestBF testMethod=test_multiple_planets_between>
+
+    def test_multiple_planets_between(self):
+>       self.assertEqual(
+            bf("Mercury", "Uranus"),
+            ("Venus", "Earth", "Mars", "Jupiter", "Saturn")
+        )
+E       AssertionError: ['Earth', 'Jupiter', 'Mars', 'Venus'] != ('Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn')
+
+user_tests/mistral_instruct/moderate/human_eval_148_test.py:25: AssertionError
+_________________________ TestBF.test_planets_in_order _________________________
+
+self = <human_eval_148_test.TestBF testMethod=test_planets_in_order>
+
+    def test_planets_in_order(self):
+>       self.assertEqual(
+            bf("Jupiter", "Neptune"),
+            ("Saturn", "Uranus")
+        )
+E       AssertionError: ['Saturn'] != ('Saturn', 'Uranus')
+
+user_tests/mistral_instruct/moderate/human_eval_148_test.py:13: AssertionError
+______________________ TestBF.test_planets_reverse_order _______________________
+
+self = <human_eval_148_test.TestBF testMethod=test_planets_reverse_order>
+
+    def test_planets_reverse_order(self):
+>       self.assertEqual(
+            bf("Earth", "Mercury"),
+            ("Venus",)
+        )
+E       AssertionError: ['Jupiter', 'Mars', 'Saturn', 'Uranus'] != ('Venus',)
+
+user_tests/mistral_instruct/moderate/human_eval_148_test.py:19: AssertionError
+___________________________ TestBF.test_same_planet ____________________________
+
+self = <human_eval_148_test.TestBF testMethod=test_same_planet>
+
+    def test_same_planet(self):
+>       self.assertEqual(
+            bf("Earth", "Earth"),
+            ()
+        )
+E       AssertionError: [] != ()
+
+user_tests/mistral_instruct/moderate/human_eval_148_test.py:31: AssertionError
+_______________________ TestRescale.test_all_same_values _______________________
+
+self = <human_eval_21_test.TestRescale testMethod=test_all_same_values>
+
+    def test_all_same_values(self):
+        self.assertEqual(
+>           rescale_to_unit([3.3, 3.3, 3.3]),
+            [0.0, 0.0, 0.0]
+        )
+
+user_tests/mistral_instruct/moderate/human_eval_21_test.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+numbers = [3.3, 3.3, 3.3]
+
+    def rescale_to_unit(numbers: List[float]) -> List[float]:
+        if not numbers:
+            return []
+    
+        smallest = min(numbers)
+        largest = max(numbers)
+        range_size = largest - smallest
+    
+>       scaled = [(x - smallest) / range_size for x in numbers]
+E       ZeroDivisionError: float division by zero
+
+source/mistral_instruct/moderate/human_eval_21.py:17: ZeroDivisionError
+__________________________ TestFizzBuzz.test_examples __________________________
+
+self = <human_eval_36_test.TestFizzBuzz testMethod=test_examples>
+
+    def test_examples(self):
+        self.assertEqual(fizz_buzz(50), 0)
+>       self.assertEqual(fizz_buzz(78), 2)
+E       AssertionError: 1 != 2
+
+user_tests/mistral_instruct/moderate/human_eval_36_test.py:14: AssertionError
+____________________ TestFizzBuzz.test_multiple_occurrences ____________________
+
+self = <human_eval_36_test.TestFizzBuzz testMethod=test_multiple_occurrences>
+
+    def test_multiple_occurrences(self):
+>       self.assertEqual(fizz_buzz(140), 4)  # 77, 78, 117
+E       AssertionError: 2 != 4
+
+user_tests/mistral_instruct/moderate/human_eval_36_test.py:26: AssertionError
+__________________________ TestPluck.test_even_at_end __________________________
+
+self = <human_eval_68_test.TestPluck testMethod=test_even_at_end>
+
+    def test_even_at_end(self):
+>       self.assertEqual(pluck([9, 7, 5, 3, 2]), [2, 4])
+E       AssertionError: Lists differ: [2, 0] != [2, 4]
+E       
+E       First differing element 1:
+E       0
+E       4
+E       
+E       - [2, 0]
+E       ?     ^
+E       
+E       + [2, 4]
+E       ?     ^
+
+user_tests/mistral_instruct/moderate/human_eval_68_test.py:37: AssertionError
+_________________________ TestPluck.test_large_values __________________________
+
+self = <human_eval_68_test.TestPluck testMethod=test_large_values>
+
+    def test_large_values(self):
+>       self.assertEqual(pluck([9999, 8888, 7777, 6666]), [6666, 3])
+E       AssertionError: Lists differ: [8888, 0] != [6666, 3]
+E       
+E       First differing element 0:
+E       8888
+E       6666
+E       
+E       - [8888, 0]
+E       + [6666, 3]
+
+user_tests/mistral_instruct/moderate/human_eval_68_test.py:31: AssertionError
+_____________________ TestPluck.test_multiple_even_numbers _____________________
+
+self = <human_eval_68_test.TestPluck testMethod=test_multiple_even_numbers>
+
+    def test_multiple_even_numbers(self):
+>       self.assertEqual(pluck([4, 2, 8]), [2, 1])
+E       AssertionError: Lists differ: [4, 0] != [2, 1]
+E       
+E       First differing element 0:
+E       4
+E       2
+E       
+E       - [4, 0]
+E       + [2, 1]
+
+user_tests/mistral_instruct/moderate/human_eval_68_test.py:16: AssertionError
+__________________ TestPluck.test_multiple_same_smallest_even __________________
+
+self = <human_eval_68_test.TestPluck testMethod=test_multiple_same_smallest_even>
+
+    def test_multiple_same_smallest_even(self):
+>       self.assertEqual(pluck([5, 0, 3, 0, 4, 2]), [0, 1])
+E       AssertionError: Lists differ: [0, 0] != [0, 1]
+E       
+E       First differing element 1:
+E       0
+E       1
+E       
+E       - [0, 0]
+E       ?     ^
+E       
+E       + [0, 1]
+E       ?     ^
+
+user_tests/mistral_instruct/moderate/human_eval_68_test.py:19: AssertionError
+_________________________ TestPluck.test_zero_is_even __________________________
+
+self = <human_eval_68_test.TestPluck testMethod=test_zero_is_even>
+
+    def test_zero_is_even(self):
+>       self.assertEqual(pluck([9, 0, 2]), [0, 1])
+E       AssertionError: Lists differ: [0, 0] != [0, 1]
+E       
+E       First differing element 1:
+E       0
+E       1
+E       
+E       - [0, 0]
+E       ?     ^
+E       
+E       + [0, 1]
+E       ?     ^
+
+user_tests/mistral_instruct/moderate/human_eval_68_test.py:40: AssertionError
+_____________________ TestIsMultiplyPrime.test_false_cases _____________________
+
+self = <human_eval_75_test.TestIsMultiplyPrime testMethod=test_false_cases>
+
+    def test_false_cases(self):
+>       self.assertFalse(is_multiply_prime(60))  # 2 * 2 * 3 * 5 → 4 primes
+E       AssertionError: True is not false
+
+user_tests/mistral_instruct/moderate/human_eval_75_test.py:18: AssertionError
+_____________________ TestIsMultiplyPrime.test_true_cases ______________________
+
+self = <human_eval_75_test.TestIsMultiplyPrime testMethod=test_true_cases>
+
+    def test_true_cases(self):
+        self.assertTrue(is_multiply_prime(30))
+>       self.assertTrue(is_multiply_prime(105))
+E       AssertionError: False is not true
+
+user_tests/mistral_instruct/moderate/human_eval_75_test.py:14: AssertionError
+________________ TestIsMultiplyPrime.test_with_repeated_primes _________________
+
+self = <human_eval_75_test.TestIsMultiplyPrime testMethod=test_with_repeated_primes>
+
+    def test_with_repeated_primes(self):
+>       self.assertTrue(is_multiply_prime(27))   # 3 * 3 * 3
+E       AssertionError: False is not true
+
+user_tests/mistral_instruct/moderate/human_eval_75_test.py:30: AssertionError
+=========================== short test summary info ============================
+FAILED user_tests/mistral_instruct/moderate/human_eval_107_test.py::TestEvenOddPalindrome::test_all_single_digit
+FAILED user_tests/mistral_instruct/moderate/human_eval_107_test.py::TestEvenOddPalindrome::test_example_1
+FAILED user_tests/mistral_instruct/moderate/human_eval_107_test.py::TestEvenOddPalindrome::test_minimum_input
+FAILED user_tests/mistral_instruct/moderate/human_eval_107_test.py::TestEvenOddPalindrome::test_no_palindromes
+FAILED user_tests/mistral_instruct/moderate/human_eval_107_test.py::TestEvenOddPalindrome::test_palindrome_with_double_digits
+FAILED user_tests/mistral_instruct/moderate/human_eval_107_test.py::TestEvenOddPalindrome::test_single_even_palindrome
+FAILED user_tests/mistral_instruct/moderate/human_eval_132_test.py::TestIsNested::test_adjacent_pairs_no_nesting
+FAILED user_tests/mistral_instruct/moderate/human_eval_132_test.py::TestIsNested::test_empty_string
+FAILED user_tests/mistral_instruct/moderate/human_eval_132_test.py::TestIsNested::test_long_no_nesting
+FAILED user_tests/mistral_instruct/moderate/human_eval_132_test.py::TestIsNested::test_partial_nested
+FAILED user_tests/mistral_instruct/moderate/human_eval_132_test.py::TestIsNested::test_single_pair
+FAILED user_tests/mistral_instruct/moderate/human_eval_148_test.py::TestBF::test_adjacent_planets
+FAILED user_tests/mistral_instruct/moderate/human_eval_148_test.py::TestBF::test_full_range
+FAILED user_tests/mistral_instruct/moderate/human_eval_148_test.py::TestBF::test_multiple_planets_between
+FAILED user_tests/mistral_instruct/moderate/human_eval_148_test.py::TestBF::test_planets_in_order
+FAILED user_tests/mistral_instruct/moderate/human_eval_148_test.py::TestBF::test_planets_reverse_order
+FAILED user_tests/mistral_instruct/moderate/human_eval_148_test.py::TestBF::test_same_planet
+FAILED user_tests/mistral_instruct/moderate/human_eval_21_test.py::TestRescale::test_all_same_values
+FAILED user_tests/mistral_instruct/moderate/human_eval_36_test.py::TestFizzBuzz::test_examples
+FAILED user_tests/mistral_instruct/moderate/human_eval_36_test.py::TestFizzBuzz::test_multiple_occurrences
+FAILED user_tests/mistral_instruct/moderate/human_eval_68_test.py::TestPluck::test_even_at_end
+FAILED user_tests/mistral_instruct/moderate/human_eval_68_test.py::TestPluck::test_large_values
+FAILED user_tests/mistral_instruct/moderate/human_eval_68_test.py::TestPluck::test_multiple_even_numbers
+FAILED user_tests/mistral_instruct/moderate/human_eval_68_test.py::TestPluck::test_multiple_same_smallest_even
+FAILED user_tests/mistral_instruct/moderate/human_eval_68_test.py::TestPluck::test_zero_is_even
+FAILED user_tests/mistral_instruct/moderate/human_eval_75_test.py::TestIsMultiplyPrime::test_false_cases
+FAILED user_tests/mistral_instruct/moderate/human_eval_75_test.py::TestIsMultiplyPrime::test_true_cases
+FAILED user_tests/mistral_instruct/moderate/human_eval_75_test.py::TestIsMultiplyPrime::test_with_repeated_primes
+======================== 28 failed, 57 passed in 0.15s =========================
