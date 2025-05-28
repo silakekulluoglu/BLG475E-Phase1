@@ -4,6 +4,7 @@ Student Names: Feray Lina Yence, Fitnete Guni, Sıla Keküllüoğlu
 Student IDs: 150190007, 150200913, 150210084
 '''
 
+import operator
 def anti_shuffle(s):
     words = s.split()
     result = []

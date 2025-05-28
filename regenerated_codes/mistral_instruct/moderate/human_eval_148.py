@@ -4,13 +4,29 @@ Student Names: Feray Lina Yence, Fitnete Guni, Sıla Keküllüoğlu
 Student IDs: 150190007, 150200913, 150210084
 '''
 
-def bf(planet1, planet2):
-    planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", 
-"Neptune"]
-    planet_indices = {planet: i for i, planet in enumerate(planets)}
+planets = {
+    "Mercury": 0,
+    "Venus": 1,
+    "Earth": 2,
+    "Mars": 3,
+    "Jupiter": 4,
+    "Saturn": 5,
+    "Uranus": 6,
+    "Neptune": 7
+}
 
-    if planet1 not in planet_indices or planet2 not in planet_indices:
+def bf(planet1, planet2):
+    if planet1 not in planets or planet2 not in planets:
         return tuple()
 
-    planet1_index, planet2_index = planet_indices[planet1], planet_indices[planet2]
-    return sorted(planets[(planet1_index + 1):(planet2_index - 1)])
+    index1 = planets[planet1]
+    index2 = planets[planet2]
+
+    if index1 > index2:
+        index1, index2 = index2, index1
+
+    result = []
+    for planet_index in range(index1 + 1, index2):
+        result.append(list(planets.keys())[planet_index])
+
+    return tuple(result) if result else tuple()

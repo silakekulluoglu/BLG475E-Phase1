@@ -5,15 +5,21 @@ Student IDs: 150190007, 150200913, 150210084
 '''
 
 def strange_sort_list(lst):
-    result = [min(lst)]
+    if not lst:
+        return []
+
+    results_list = []
+    min_val = min(lst)
+    results_list.append(min_val)
+    lst.remove(min_val)
+
     while lst:
-        if len(result) % 2 == 0:
-            max_num = max(lst)
-            index = lst.index(max_num)
-            del lst[index]
-        else:
-            min_num = min(lst)
-            index = lst.index(min_num)
-            del lst[index]
-        result.append(min(lst) if len(result) % 2 == 0 else max(lst))
-    return result
+        max_val = max(lst)
+        results_list.append(max_val)
+        lst.remove(max_val)
+
+        min_val = min(lst)
+        results_list.append(min_val)
+        lst.remove(min_val)
+
+    return results_list

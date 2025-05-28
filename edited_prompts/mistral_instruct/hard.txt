@@ -3,7 +3,7 @@ human_eval_10: couldn't fix errors
 human_eval_20:
 "from typing import List, Tuple\n\n\ndef find_closest_elements(numbers: List [float]) -> Tuple[float, float]:\n    \"\"\" From a supplied list of numbers (of length at least two) select and return two that are the closest to each \n    other and return them in order (smaller number, larger number). After finding the closest tuple, check if the first one is smaller than the other  one. If not swap them.  Put the smaller one first, and the large one after.  If all elements have same difference between them ([1.2, 1.4, 1.6, 1.8, 2.0, 2.2]), return the tuple that consists minimum of the list. Prevent the floating-point precision errors when calculating the difference, you can 'use' an epsilon value when comparing the minimum difference and the current one. ([1.2, 1.4])\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.2])\n    (2.0, 2.2)\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])\n    (2.0, 2.0)\n    \"\"\"\n"
 
-human_eval_32: couldn't fix errors
+human_eval_32: could not fix errors
 "import math\n\n\ndef poly(xs: list, x: float):\n    \"\"\"\n    Evaluates polynomial with coefficients xs at point x.\n    return xs[0] + xs[1] * x + xs[1] * x^2 + .... xs[n] * x^n\n    \"\"\"\n    return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])\n\n\ndef find_zero(xs: list):\n    \"\"\" xs are coefficients of a polynomial.\n    find_zero find x such that poly(x) = 0.\n    find_zero returns only only zero point, even if there are many.\n    Moreover, find_zero only takes list xs having even number of coefficients\n    and largest non zero coefficient as it guarantees\n    a solution. Use Newton-Raphson or bisect method. \n    Notes: 1. All coefficients can not be zero, assert ValueError. 2. The highest degree coefficient can not be zero (which is the last element in the list), assert ValueError 3. >>> round(find_zero([1, 2]), 2) # f(x) = 1 + 2x\n    -0.5\n    >>> round(find_zero([-6, 11, -6, 1]), 2) # (x - 1) * (x - 2) * (x - 3) = -6 + 11x - 6x^2 + x^3\n    1.0\n    \"\"\"\n"
 
 human_eval_58:
@@ -15,13 +15,13 @@ human_eval_78:
 human_eval_85:
 "\ndef add(lst):\n    \"\"\"Given a non-empty list of integers lst. add the even elements that are at odd indices..\n\n\n    Examples:\n        add([4, 2, 6, 7]) ==> 2 \n    \"\"\"\n",
 
-human_eval_93: couldn't fix errors
+human_eval_93: could not fix errors
 "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. You can create a map that maps upper and lowercase vowels to the letter that appears 2 places after that vowel in english alphabet. Note: If there is a vowel, you need to swap it with the letter 2 places after that vowel and you also need to convert it to lowercase if it is uppercase and visa versa. You need to do both. For example if the input is "aS" you need to make it: "Cs", both converting 'a' to 'c' and making it upper from lower . \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n",
 
 human_eval_94: 
 "\n\ndef skjkasdkd(lst):\n    \"\"\"You are given a list of integers.\n    You need to find the largest prime value and return the sum of its digits. Prime value means a natural number greater than 1 whose only factors are 1 and the number itself. Set maximum prime value as 0 in the beginning. Use the function name given, don't make a new function name. Check the list if it is empty before iterating on it. If it is empty, return 0. If there is no prime value, set maximum prime value as zero and return zero. \n\n    Examples:\n    For lst = [0,3,2,1,3,5,7,4,5,5,5,2,181,32,4,32,3,2,32,324,4,3] the output should be 10\n    For lst = [1,0,1,8,2,4597,2,1,3,40,1,2,1,2,4,2,5,1] the output should be 25\n    For lst = [1,3,1,32,5107,34,83278,109,163,23,2323,32,30,1,9,3] the output should be 13\n    For lst = [0,724,32,71,99,32,6,0,5,91,83,0,5,6] the output should be 11\n    For lst = [0,81,12,3,1,21] the output should be 3\n    For lst = [0,8,1,2,1,7] the output should be 7\n    \"\"\"\n",
 
-human_eval_121: couldn't fix errors
+human_eval_121: could not fix errors
 "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n.   Give type error if the list contains elements that are not integers. Elements that are not integers: float, string, char, None, and others. \n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n"
 
 human_eval_149:

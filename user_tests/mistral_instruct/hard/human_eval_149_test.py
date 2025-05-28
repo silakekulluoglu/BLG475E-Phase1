@@ -6,7 +6,7 @@ Student IDs: 150190007, 150200913, 150210084
 
 import unittest
 from typing import List, Union
-from source.mistral_instruct.hard.human_eval_149 import sorted_list_sum
+from regenerated_codes.mistral_instruct.hard.human_eval_149 import sorted_list_sum
 
 class TestSortedListSum(unittest.TestCase):
     def test_basic_case(self):
