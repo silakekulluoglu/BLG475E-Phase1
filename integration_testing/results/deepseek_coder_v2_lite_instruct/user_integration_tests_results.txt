@@ -1,0 +1,9 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.0, pytest-8.3.5, pluggy-1.5.0
+rootdir: C:\Users\Neti\Documents\GitHub\BLG475E-Phase1
+plugins: anyio-3.6.2
+collected 1 item
+
+integration_testing\user_generated_tests\deepseek_coder_v2_lite_instruct\test_integration_class.py . [100%]
+
+============================== 1 passed in 0.07s ==============================
