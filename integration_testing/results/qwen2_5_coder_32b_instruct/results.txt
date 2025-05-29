@@ -1,0 +1,26 @@
+..F.
+======================================================================
+FAIL: test_process_numbers (test_number_processor.TestNumberProcessor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/integration_testing/llm_generated_tests/qwen2_5_coder_32b_instruct/test_number_processor.py", line 40, in test_process_numbers
+    self.assertEqual(processor.process_numbers(), [0.0, 0.5, 1.0])  # Plucked 2, GCD=2, filtered=[4, 8, 6], rescaled=[0.0, 0.5, 1.0]
+AssertionError: Lists differ: [0.0, 1.0] != [0.0, 0.5, 1.0]
+
+First differing element 1:
+1.0
+0.5
+
+Second list contains 1 additional elements.
+First extra element 2:
+1.0
+
+- [0.0, 1.0]
++ [0.0, 0.5, 1.0]
+?       +++++
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=1)
