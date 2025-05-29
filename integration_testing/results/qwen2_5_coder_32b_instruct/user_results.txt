@@ -1,20 +1,35 @@
-E
+......F........F........
 ======================================================================
-ERROR: test_number_processor (unittest.loader._FailedTest)
+FAIL: test_process_numbers_all_coprime (test_number_processor.TestNumberProcessor)
 ----------------------------------------------------------------------
-ImportError: Failed to import test module: test_number_processor
 Traceback (most recent call last):
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/loader.py", line 436, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/loader.py", line 377, in _get_module_from_name
-    __import__(name)
-  File "/Users/25200398/Desktop/BLG475E-Phase1/integration_testing/user_generated_tests/qwen2_5_coder_32b_instruct/test_number_processor.py", line 113
-    result = NumberProcessor.rescale_to_unit([10, 20, 30])
-    ^
-IndentationError: expected an indented block
+  File "/Users/25200398/Desktop/BLG475E-Phase1/integration_testing/user_generated_tests/qwen2_5_coder_32b_instruct/test_number_processor.py", line 57, in test_process_numbers_all_coprime
+    self.assertEqual(processor.process_numbers(), [0.0, 0.5, 1.0])
+AssertionError: Lists differ: [] != [0.0, 0.5, 1.0]
 
+Second list contains 3 additional elements.
+First extra element 0:
+0.0
+
+- []
++ [0.0, 0.5, 1.0]
+
+======================================================================
+FAIL: test_process_numbers_no_even (test_number_processor.TestNumberProcessor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/25200398/Desktop/BLG475E-Phase1/integration_testing/user_generated_tests/qwen2_5_coder_32b_instruct/test_number_processor.py", line 37, in test_process_numbers_no_even
+    self.assertEqual(processor.process_numbers(), [0.0, 0.5, 1.0])
+AssertionError: Lists differ: [] != [0.0, 0.5, 1.0]
+
+Second list contains 3 additional elements.
+First extra element 0:
+0.0
+
+- []
++ [0.0, 0.5, 1.0]
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.000s
+Ran 24 tests in 0.001s
 
-FAILED (errors=1)
+FAILED (failures=2)
