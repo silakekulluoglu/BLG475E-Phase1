@@ -11,9 +11,15 @@ The project focuses on evaluating Large Language Models (LLMs) for code and test
   - Qwen2.5-Coder-32B-Instruct
   - DeepSeek-Coder-v2-Lite-Instruct
 - All generated outputs were executed and validated using pytest to assess correctness.
+- Through manual inspection, missing edge cases and boundaries in the LLM-generated tests were identified. Additional unit tests were written to enhance test coverage and reveal logical errors in the generated outputs.
+- For outputs that were incorrect or incomplete, the original prompts (but not the code) were clarified or extended to address the issues. These revised prompts were then re-submitted to the same LLMs, and all tests—both human-written and LLM-generated—were re-executed to evaluate the effectiveness of the modifications.
 
 ## Results
-- Detailed evaluation is available in the final project report.
+- LLM-generated tests often lacked boundary coverage and inter-method logic validation, which were uncovered by human-written tests.
+- Integration testing highlighted that even when unit tests pass, combined logic may fail in real scenarios.
+- For algorithmically complex tasks, Qwen and Deepseek are superior.
+- Mistral is not yet reliable for autonomous code generation.
+- More detailed evaluation is available in the final project report.
 
 ## Team Members
 - Feray Lina Yence
