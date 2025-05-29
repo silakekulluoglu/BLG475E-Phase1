@@ -1,0 +1,119 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.10, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/silakekulluoglu/Desktop/hey/BLG475E-Phase1
+collected 68 items
+
+user_tests/mistral_instruct/easy/human_eval_103_test.py ...........      [ 16%]
+user_tests/mistral_instruct/easy/human_eval_125_test.py ......           [ 25%]
+user_tests/mistral_instruct/easy/human_eval_131_test.py .........        [ 38%]
+user_tests/mistral_instruct/easy/human_eval_27_test.py .....             [ 45%]
+user_tests/mistral_instruct/easy/human_eval_2_test.py .....              [ 52%]
+user_tests/mistral_instruct/easy/human_eval_30_test.py .....             [ 60%]
+user_tests/mistral_instruct/easy/human_eval_45_test.py .....             [ 67%]
+user_tests/mistral_instruct/easy/human_eval_70_test.py F...F             [ 75%]
+user_tests/mistral_instruct/easy/human_eval_86_test.py ..F.F...          [ 86%]
+user_tests/mistral_instruct/easy/human_eval_98_test.py .........         [100%]
+
+=================================== FAILURES ===================================
+_______________ TestStrangeSortList.test_strange_sort_list_cases _______________
+
+self = <human_eval_70_test.TestStrangeSortList testMethod=test_strange_sort_list_cases>
+
+    def test_strange_sort_list_cases(self): # Test case for a list with mixed positive and negative integers
+        test_cases = [
+            ([5, 2, -3, 7], [-3, 7, 2, 5]),
+            ([10, -4, 2, 6, 8], [-4, 10, 2, 8, 6]),
+            ([3, 1, 5, -2, 4], [-2, 5, 1, 4, 3]),
+            ([2, 2, 4, 4, 5], [2, 5, 2, 4, 4]),
+            ([1000000, -1000000, 0], [-1000000, 1000000, 0])
+        ]
+    
+        for input_list, expected_output in test_cases:  # Loop through each test case
+            with self.subTest(input=input_list):
+>               result = strange_sort_list(input_list)
+
+user_tests/mistral_instruct/easy/human_eval_70_test.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lst = []
+
+    def strange_sort_list(lst):
+        if not lst:
+            return []
+    
+        results_list = []
+        min_val = min(lst)
+        results_list.append(min_val)
+        lst.remove(min_val)
+    
+        while lst:
+            max_val = max(lst)
+            results_list.append(max_val)
+            lst.remove(max_val)
+    
+>           min_val = min(lst)
+E           ValueError: min() iterable argument is empty
+
+regenerated_codes/mistral_instruct/easy/human_eval_70.py:21: ValueError
+___________ TestStrangeSortList.test_strange_sort_list_two_elements ____________
+
+self = <human_eval_70_test.TestStrangeSortList testMethod=test_strange_sort_list_two_elements>
+
+    def test_strange_sort_list_two_elements(self): # Test case for a list with two elements
+>       result = strange_sort_list([3, 1])
+
+user_tests/mistral_instruct/easy/human_eval_70_test.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lst = []
+
+    def strange_sort_list(lst):
+        if not lst:
+            return []
+    
+        results_list = []
+        min_val = min(lst)
+        results_list.append(min_val)
+        lst.remove(min_val)
+    
+        while lst:
+            max_val = max(lst)
+            results_list.append(max_val)
+            lst.remove(max_val)
+    
+>           min_val = min(lst)
+E           ValueError: min() iterable argument is empty
+
+regenerated_codes/mistral_instruct/easy/human_eval_70.py:21: ValueError
+______________ TestAntiShuffle.test_anti_shuffle_multiple_spaces _______________
+
+self = <human_eval_86_test.TestAntiShuffle testMethod=test_anti_shuffle_multiple_spaces>
+
+    def test_anti_shuffle_multiple_spaces(self): # Test case for multiple spaces
+        result = anti_shuffle("  double   space ")
+        expected_output = "  bdelou   aceps "
+>       self.assertEqual(result, expected_output)
+E       AssertionError: 'bdelou aceps' != '  bdelou   aceps '
+E       - bdelou aceps
+E       +   bdelou   aceps 
+E       ? ++       ++     +
+
+user_tests/mistral_instruct/easy/human_eval_86_test.py:38: AssertionError
+________________ TestAntiShuffle.test_anti_shuffle_only_spaces _________________
+
+self = <human_eval_86_test.TestAntiShuffle testMethod=test_anti_shuffle_only_spaces>
+
+    def test_anti_shuffle_only_spaces(self):  # Test case for a string with only spaces
+        result = anti_shuffle("     ")
+        expected_output = "     "
+>       self.assertEqual(result, expected_output)
+E       AssertionError: '' != '     '
+E       +
+
+user_tests/mistral_instruct/easy/human_eval_86_test.py:48: AssertionError
+=========================== short test summary info ============================
+FAILED user_tests/mistral_instruct/easy/human_eval_70_test.py::TestStrangeSortList::test_strange_sort_list_cases
+FAILED user_tests/mistral_instruct/easy/human_eval_70_test.py::TestStrangeSortList::test_strange_sort_list_two_elements
+FAILED user_tests/mistral_instruct/easy/human_eval_86_test.py::TestAntiShuffle::test_anti_shuffle_multiple_spaces
+FAILED user_tests/mistral_instruct/easy/human_eval_86_test.py::TestAntiShuffle::test_anti_shuffle_only_spaces
+========================= 4 failed, 64 passed in 0.04s =========================

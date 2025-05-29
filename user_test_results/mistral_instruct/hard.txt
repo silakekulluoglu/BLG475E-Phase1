@@ -1,0 +1,385 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.10, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/silakekulluoglu/Desktop/hey/BLG475E-Phase1
+collected 102 items
+
+user_tests/mistral_instruct/hard/human_eval_10_test.py .......FF.FF      [ 11%]
+user_tests/mistral_instruct/hard/human_eval_121_test.py ..F.....         [ 19%]
+user_tests/mistral_instruct/hard/human_eval_149_test.py ...........      [ 30%]
+user_tests/mistral_instruct/hard/human_eval_20_test.py .F.......F...     [ 43%]
+user_tests/mistral_instruct/hard/human_eval_32_test.py F.FF.F....        [ 52%]
+user_tests/mistral_instruct/hard/human_eval_58_test.py .........         [ 61%]
+user_tests/mistral_instruct/hard/human_eval_78_test.py FF.F.FFF          [ 69%]
+user_tests/mistral_instruct/hard/human_eval_85_test.py ...........       [ 80%]
+user_tests/mistral_instruct/hard/human_eval_93_test.py .FFFFFF.F.FF      [ 92%]
+user_tests/mistral_instruct/hard/human_eval_94_test.py .FF..FF.          [100%]
+
+=================================== FAILURES ===================================
+_________ TestPalindromeFunctions.test_make_palindrome_numeric_string __________
+
+self = <human_eval_10_test.TestPalindromeFunctions testMethod=test_make_palindrome_numeric_string>
+
+    def test_make_palindrome_numeric_string(self):
+>       self.assertEqual(make_palindrome('123'), '12321')
+E       AssertionError: '321' != '12321'
+E       - 321
+E       + 12321
+E       ? ++
+
+user_tests/mistral_instruct/hard/human_eval_10_test.py:51: AssertionError
+_________ TestPalindromeFunctions.test_make_palindrome_repeated_chars __________
+
+self = <human_eval_10_test.TestPalindromeFunctions testMethod=test_make_palindrome_repeated_chars>
+
+    def test_make_palindrome_repeated_chars(self):
+        self.assertEqual(make_palindrome('aaaa'), 'aaaa')
+>       self.assertEqual(make_palindrome('aaab'), 'aaabaaa')
+E       AssertionError: 'baaa' != 'aaabaaa'
+E       - baaa
+E       + aaabaaa
+E       ? +++
+
+user_tests/mistral_instruct/hard/human_eval_10_test.py:60: AssertionError
+__________ TestPalindromeFunctions.test_make_palindrome_special_chars __________
+
+self = <human_eval_10_test.TestPalindromeFunctions testMethod=test_make_palindrome_special_chars>
+
+    def test_make_palindrome_special_chars(self):
+>       self.assertEqual(make_palindrome('a!'), 'a!a')
+E       AssertionError: '!a' != 'a!a'
+E       - !a
+E       + a!a
+E       ? +
+
+user_tests/mistral_instruct/hard/human_eval_10_test.py:55: AssertionError
+_____________ TestPalindromeFunctions.test_make_palindrome_typical _____________
+
+self = <human_eval_10_test.TestPalindromeFunctions testMethod=test_make_palindrome_typical>
+
+    def test_make_palindrome_typical(self):
+>       self.assertEqual(make_palindrome('cat'), 'catac')
+E       AssertionError: 'tac' != 'catac'
+E       - tac
+E       + catac
+E       ? ++
+
+user_tests/mistral_instruct/hard/human_eval_10_test.py:46: AssertionError
+_________________________ TestSolution.test_empty_list _________________________
+
+self = <human_eval_121_test.TestSolution testMethod=test_empty_list>
+
+    def test_empty_list(self):
+>       self.assertEqual(solution([]), 0)
+
+user_tests/mistral_instruct/hard/human_eval_121_test.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lst = []
+
+    def solution(lst):
+        if not lst or any(isinstance(num, (float, str)) for num in lst):
+>           raise TypeError("List must contain only integers")
+E           TypeError: List must contain only integers
+
+source/mistral_instruct/hard/human_eval_121.py:9: TypeError
+___ TestFindClosestElements.test_find_closest_elements_already_sorted_input ____
+
+self = <human_eval_20_test.TestFindClosestElements testMethod=test_find_closest_elements_already_sorted_input>
+
+    def test_find_closest_elements_already_sorted_input(self):
+>       self.assertEqual(find_closest_elements([1.0, 1.1, 1.2, 1.3]), (1.0, 1.1))
+E       AssertionError: Tuples differ: (1.1, 1.2) != (1.0, 1.1)
+E       
+E       First differing element 0:
+E       1.1
+E       1.0
+E       
+E       - (1.1, 1.2)
+E       ?    ^    ^
+E       
+E       + (1.0, 1.1)
+E       ?    ^    ^
+
+user_tests/mistral_instruct/hard/human_eval_20_test.py:53: AssertionError
+______ TestFindClosestElements.test_find_closest_elements_unordered_input ______
+
+self = <human_eval_20_test.TestFindClosestElements testMethod=test_find_closest_elements_unordered_input>
+
+    def test_find_closest_elements_unordered_input(self):
+>       self.assertEqual(find_closest_elements([7.1, 1.3, 4.4, 4.3, 2.2]), (4.3, 4.4))
+E       AssertionError: Tuples differ: (4.4, 4.3) != (4.3, 4.4)
+E       
+E       First differing element 0:
+E       4.4
+E       4.3
+E       
+E       - (4.4, 4.3)
+E       ?    ^    ^
+E       
+E       + (4.3, 4.4)
+E       ?    ^    ^
+
+user_tests/mistral_instruct/hard/human_eval_20_test.py:43: AssertionError
+_______________ TestPolynomialFunctions.test_find_zero_all_zeros _______________
+
+self = <human_eval_32_test.TestPolynomialFunctions testMethod=test_find_zero_all_zeros>
+
+    def test_find_zero_all_zeros(self):
+>       with self.assertRaises(ValueError):
+E       AssertionError: ValueError not raised
+
+user_tests/mistral_instruct/hard/human_eval_32_test.py:43: AssertionError
+________________ TestPolynomialFunctions.test_find_zero_linear _________________
+
+self = <human_eval_32_test.TestPolynomialFunctions testMethod=test_find_zero_linear>
+
+    def test_find_zero_linear(self):
+>       self.assertAlmostEqual(find_zero([1, 2]), -0.5, places=2)  # 1 + 2x = 0 -> x = -0.5
+E       AssertionError: 1.0 != -0.5 within 2 places (1.5 difference)
+
+user_tests/mistral_instruct/hard/human_eval_32_test.py:28: AssertionError
+_____________ TestPolynomialFunctions.test_find_zero_negative_root _____________
+
+self = <human_eval_32_test.TestPolynomialFunctions testMethod=test_find_zero_negative_root>
+
+    def test_find_zero_negative_root(self):
+        root = find_zero([3, 0, 0, -1])  # x^3 - 3 = 0 → root ≈ 1.4422, but this polynomial has negative root too
+>       self.assertAlmostEqual(poly([3, 0, 0, -1], root), 0.0, places=5)
+E       AssertionError: -5.0 != 0.0 within 5 places (5.0 difference)
+
+user_tests/mistral_instruct/hard/human_eval_32_test.py:36: AssertionError
+___________ TestPolynomialFunctions.test_find_zero_zero_leading_term ___________
+
+self = <human_eval_32_test.TestPolynomialFunctions testMethod=test_find_zero_zero_leading_term>
+
+    def test_find_zero_zero_leading_term(self):
+>       with self.assertRaises(ValueError):
+E       AssertionError: ValueError not raised
+
+user_tests/mistral_instruct/hard/human_eval_32_test.py:47: AssertionError
+______________________ TestHexKey.test_hex_key_all_digits ______________________
+
+self = <human_eval_78_test.TestHexKey testMethod=test_hex_key_all_digits>
+
+    def test_hex_key_all_digits(self):
+>       self.assertEqual(hex_key("0123456789ABCDEF"), 6)
+E       AssertionError: 4 != 6
+
+user_tests/mistral_instruct/hard/human_eval_78_test.py:26: AssertionError
+______________________ TestHexKey.test_hex_key_all_primes ______________________
+
+self = <human_eval_78_test.TestHexKey testMethod=test_hex_key_all_primes>
+
+    def test_hex_key_all_primes(self):
+>       self.assertEqual(hex_key("2357BD"), 6)
+E       AssertionError: 4 != 6
+
+user_tests/mistral_instruct/hard/human_eval_78_test.py:20: AssertionError
+________________ TestHexKey.test_hex_key_mixed_case_sensitivity ________________
+
+self = <human_eval_78_test.TestHexKey testMethod=test_hex_key_mixed_case_sensitivity>
+
+    def test_hex_key_mixed_case_sensitivity(self):
+        # The spec says input is always uppercase, but let's be defensive
+>       self.assertEqual(hex_key("bD"), 1)  # lowercase should not count
+E       AssertionError: 0 != 1
+
+user_tests/mistral_instruct/hard/human_eval_78_test.py:43: AssertionError
+___________________ TestHexKey.test_hex_key_repeating_primes ___________________
+
+self = <human_eval_78_test.TestHexKey testMethod=test_hex_key_repeating_primes>
+
+    def test_hex_key_repeating_primes(self):
+        self.assertEqual(hex_key("222222"), 6)
+>       self.assertEqual(hex_key("BBBB"), 4)
+E       AssertionError: 0 != 4
+
+user_tests/mistral_instruct/hard/human_eval_78_test.py:30: AssertionError
+__________________ TestHexKey.test_hex_key_single_char_inputs __________________
+
+self = <human_eval_78_test.TestHexKey testMethod=test_hex_key_single_char_inputs>
+
+    def test_hex_key_single_char_inputs(self):
+>       self.assertEqual(hex_key("B"), 1)
+E       AssertionError: 0 != 1
+
+user_tests/mistral_instruct/hard/human_eval_78_test.py:36: AssertionError
+____________________ TestHexKey.test_hex_key_typical_cases _____________________
+
+self = <human_eval_78_test.TestHexKey testMethod=test_hex_key_typical_cases>
+
+    def test_hex_key_typical_cases(self):
+>       self.assertEqual(hex_key("AB"), 1)
+E       AssertionError: 0 != 1
+
+user_tests/mistral_instruct/hard/human_eval_78_test.py:13: AssertionError
+___________________ TestEncode.test_all_consonants_uppercase ___________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_all_consonants_uppercase>
+
+    def test_all_consonants_uppercase(self):
+>       self.assertEqual(encode("BCDFG"), "bcdfg")
+E       AssertionError: 'BCDFG' != 'bcdfg'
+E       - BCDFG
+E       + bcdfg
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:41: AssertionError
+_____________________ TestEncode.test_all_vowels_lowercase _____________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_all_vowels_lowercase>
+
+    def test_all_vowels_lowercase(self):
+>       self.assertEqual(encode("aeiou"), "CGKQW")
+E       AssertionError: 'IOUAE' != 'CGKQW'
+E       - IOUAE
+E       + CGKQW
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:16: AssertionError
+_____________________ TestEncode.test_all_vowels_uppercase _____________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_all_vowels_uppercase>
+
+    def test_all_vowels_uppercase(self):
+>       self.assertEqual(encode("AEIOU"), "cgkqw")
+E       AssertionError: 'IOUAE' != 'cgkqw'
+E       - IOUAE
+E       + cgkqw
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:19: AssertionError
+________________________ TestEncode.test_basic_examples ________________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_basic_examples>
+
+    def test_basic_examples(self):
+>       self.assertEqual(encode("test"), "TGST")
+E       AssertionError: 'TOST' != 'TGST'
+E       - TOST
+E       ?  ^
+E       + TGST
+E       ?  ^
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:31: AssertionError
+________________________ TestEncode.test_case_sensitive ________________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_case_sensitive>
+
+    def test_case_sensitive(self):
+>       self.assertEqual(encode("Hello World!"), "hFLLQ wQRLD!")
+E       AssertionError: 'HOLLA WARLD!' != 'hFLLQ wQRLD!'
+E       - HOLLA WARLD!
+E       + hFLLQ wQRLD!
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:25: AssertionError
+____________________ TestEncode.test_combination_of_letters ____________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_combination_of_letters>
+
+    def test_combination_of_letters(self):
+>       self.assertEqual(encode("HeLl0WorLd!"), "hFlL0wQRlD!")
+E       AssertionError: 'HOLL0WARLD!' != 'hFlL0wQRlD!'
+E       - HOLL0WARLD!
+E       + hFlL0wQRlD!
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:28: AssertionError
+__________________________ TestEncode.test_mixed_case __________________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_mixed_case>
+
+    def test_mixed_case(self):
+>       self.assertEqual(encode("ApPlE"), "cPpLG")
+E       AssertionError: 'IPPLO' != 'cPpLG'
+E       - IPPLO
+E       + cPpLG
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:35: AssertionError
+___________________ TestEncode.test_single_letter_consonant ____________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_single_letter_consonant>
+
+    def test_single_letter_consonant(self):
+        self.assertEqual(encode("b"), "B")
+>       self.assertEqual(encode("Z"), "z")
+E       AssertionError: 'Z' != 'z'
+E       - Z
+E       + z
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:52: AssertionError
+_____________________ TestEncode.test_single_letter_vowel ______________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_single_letter_vowel>
+
+    def test_single_letter_vowel(self):
+>       self.assertEqual(encode("a"), "C")
+E       AssertionError: 'I' != 'C'
+E       - I
+E       + C
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:47: AssertionError
+________________________ TestSkjkasdkd.test_empty_list _________________________
+
+self = <human_eval_94_test.TestSkjkasdkd testMethod=test_empty_list>
+
+    def test_empty_list(self):
+>       self.assertEqual(skjkasdkd([]), 0)
+E       AssertionError: 2 != 0
+
+user_tests/mistral_instruct/hard/human_eval_94_test.py:21: AssertionError
+______________________ TestSkjkasdkd.test_given_examples _______________________
+
+self = <human_eval_94_test.TestSkjkasdkd testMethod=test_given_examples>
+
+    def test_given_examples(self):
+>       self.assertEqual(skjkasdkd([0,3,2,1,3,5,7,4,5,5,5,2,181,32,4,32,3,2,32,324,4,3]), 10)
+E       AssertionError: 3 != 10
+
+user_tests/mistral_instruct/hard/human_eval_94_test.py:13: AssertionError
+_____________________ TestSkjkasdkd.test_negative_numbers ______________________
+
+self = <human_eval_94_test.TestSkjkasdkd testMethod=test_negative_numbers>
+
+    def test_negative_numbers(self):
+>       self.assertEqual(skjkasdkd([-3, -2, -5, -7, 2, 3]), 3)
+E       AssertionError: 2 != 3
+
+user_tests/mistral_instruct/hard/human_eval_94_test.py:33: AssertionError
+_________________________ TestSkjkasdkd.test_no_primes _________________________
+
+self = <human_eval_94_test.TestSkjkasdkd testMethod=test_no_primes>
+
+    def test_no_primes(self):
+>       self.assertEqual(skjkasdkd([0, 1, 4, 6, 8, 9, 10, 12, 15]), 0)
+E       AssertionError: 2 != 0
+
+user_tests/mistral_instruct/hard/human_eval_94_test.py:24: AssertionError
+=========================== short test summary info ============================
+FAILED user_tests/mistral_instruct/hard/human_eval_10_test.py::TestPalindromeFunctions::test_make_palindrome_numeric_string
+FAILED user_tests/mistral_instruct/hard/human_eval_10_test.py::TestPalindromeFunctions::test_make_palindrome_repeated_chars
+FAILED user_tests/mistral_instruct/hard/human_eval_10_test.py::TestPalindromeFunctions::test_make_palindrome_special_chars
+FAILED user_tests/mistral_instruct/hard/human_eval_10_test.py::TestPalindromeFunctions::test_make_palindrome_typical
+FAILED user_tests/mistral_instruct/hard/human_eval_121_test.py::TestSolution::test_empty_list
+FAILED user_tests/mistral_instruct/hard/human_eval_20_test.py::TestFindClosestElements::test_find_closest_elements_already_sorted_input
+FAILED user_tests/mistral_instruct/hard/human_eval_20_test.py::TestFindClosestElements::test_find_closest_elements_unordered_input
+FAILED user_tests/mistral_instruct/hard/human_eval_32_test.py::TestPolynomialFunctions::test_find_zero_all_zeros
+FAILED user_tests/mistral_instruct/hard/human_eval_32_test.py::TestPolynomialFunctions::test_find_zero_linear
+FAILED user_tests/mistral_instruct/hard/human_eval_32_test.py::TestPolynomialFunctions::test_find_zero_negative_root
+FAILED user_tests/mistral_instruct/hard/human_eval_32_test.py::TestPolynomialFunctions::test_find_zero_zero_leading_term
+FAILED user_tests/mistral_instruct/hard/human_eval_78_test.py::TestHexKey::test_hex_key_all_digits
+FAILED user_tests/mistral_instruct/hard/human_eval_78_test.py::TestHexKey::test_hex_key_all_primes
+FAILED user_tests/mistral_instruct/hard/human_eval_78_test.py::TestHexKey::test_hex_key_mixed_case_sensitivity
+FAILED user_tests/mistral_instruct/hard/human_eval_78_test.py::TestHexKey::test_hex_key_repeating_primes
+FAILED user_tests/mistral_instruct/hard/human_eval_78_test.py::TestHexKey::test_hex_key_single_char_inputs
+FAILED user_tests/mistral_instruct/hard/human_eval_78_test.py::TestHexKey::test_hex_key_typical_cases
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_all_consonants_uppercase
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_all_vowels_lowercase
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_all_vowels_uppercase
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_basic_examples
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_case_sensitive
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_combination_of_letters
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_mixed_case
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_single_letter_consonant
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_single_letter_vowel
+FAILED user_tests/mistral_instruct/hard/human_eval_94_test.py::TestSkjkasdkd::test_empty_list
+FAILED user_tests/mistral_instruct/hard/human_eval_94_test.py::TestSkjkasdkd::test_given_examples
+FAILED user_tests/mistral_instruct/hard/human_eval_94_test.py::TestSkjkasdkd::test_negative_numbers
+FAILED user_tests/mistral_instruct/hard/human_eval_94_test.py::TestSkjkasdkd::test_no_primes
+======================== 30 failed, 72 passed in 0.08s =========================

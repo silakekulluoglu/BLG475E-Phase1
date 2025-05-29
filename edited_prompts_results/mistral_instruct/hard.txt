@@ -1,0 +1,411 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.10, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/silakekulluoglu/Desktop/hey/BLG475E-Phase1
+collected 102 items
+
+user_tests/mistral_instruct/hard/human_eval_10_test.py ......FFF.FF      [ 11%]
+user_tests/mistral_instruct/hard/human_eval_121_test.py .....F..         [ 19%]
+user_tests/mistral_instruct/hard/human_eval_149_test.py ...........      [ 30%]
+user_tests/mistral_instruct/hard/human_eval_20_test.py .............     [ 43%]
+user_tests/mistral_instruct/hard/human_eval_32_test.py .FFF......        [ 52%]
+user_tests/mistral_instruct/hard/human_eval_58_test.py .........         [ 61%]
+user_tests/mistral_instruct/hard/human_eval_78_test.py ........          [ 69%]
+user_tests/mistral_instruct/hard/human_eval_85_test.py ...........       [ 80%]
+user_tests/mistral_instruct/hard/human_eval_93_test.py ..FFFFF.F..F      [ 92%]
+user_tests/mistral_instruct/hard/human_eval_94_test.py ........          [100%]
+
+=================================== FAILURES ===================================
+_________ TestPalindromeFunctions.test_make_palindrome_full_palindrome _________
+
+self = <human_eval_10_test.TestPalindromeFunctions testMethod=test_make_palindrome_full_palindrome>
+
+    def test_make_palindrome_full_palindrome(self):
+>       self.assertEqual(make_palindrome('madam'), 'madam')
+E       AssertionError: None != 'madam'
+
+user_tests/mistral_instruct/hard/human_eval_10_test.py:42: AssertionError
+_________ TestPalindromeFunctions.test_make_palindrome_numeric_string __________
+
+self = <human_eval_10_test.TestPalindromeFunctions testMethod=test_make_palindrome_numeric_string>
+
+    def test_make_palindrome_numeric_string(self):
+>       self.assertEqual(make_palindrome('123'), '12321')
+E       AssertionError: '123' != '12321'
+E       - 123
+E       + 12321
+E       ?    ++
+
+user_tests/mistral_instruct/hard/human_eval_10_test.py:51: AssertionError
+_________ TestPalindromeFunctions.test_make_palindrome_repeated_chars __________
+
+self = <human_eval_10_test.TestPalindromeFunctions testMethod=test_make_palindrome_repeated_chars>
+
+    def test_make_palindrome_repeated_chars(self):
+>       self.assertEqual(make_palindrome('aaaa'), 'aaaa')
+E       AssertionError: None != 'aaaa'
+
+user_tests/mistral_instruct/hard/human_eval_10_test.py:59: AssertionError
+__________ TestPalindromeFunctions.test_make_palindrome_special_chars __________
+
+self = <human_eval_10_test.TestPalindromeFunctions testMethod=test_make_palindrome_special_chars>
+
+    def test_make_palindrome_special_chars(self):
+>       self.assertEqual(make_palindrome('a!'), 'a!a')
+E       AssertionError: 'a!' != 'a!a'
+E       - a!
+E       + a!a
+E       ?   +
+
+user_tests/mistral_instruct/hard/human_eval_10_test.py:55: AssertionError
+_____________ TestPalindromeFunctions.test_make_palindrome_typical _____________
+
+self = <human_eval_10_test.TestPalindromeFunctions testMethod=test_make_palindrome_typical>
+
+    def test_make_palindrome_typical(self):
+>       self.assertEqual(make_palindrome('cat'), 'catac')
+E       AssertionError: 'cat' != 'catac'
+E       - cat
+E       + catac
+E       ?    ++
+
+user_tests/mistral_instruct/hard/human_eval_10_test.py:46: AssertionError
+____________________ TestSolution.test_non_integer_elements ____________________
+
+self = <human_eval_121_test.TestSolution testMethod=test_non_integer_elements>
+
+    def test_non_integer_elements(self):
+        with self.assertRaises(TypeError):
+            solution(['a', 3, 5])
+    
+>       with self.assertRaises(TypeError):
+E       AssertionError: TypeError not raised
+
+user_tests/mistral_instruct/hard/human_eval_121_test.py:36: AssertionError
+_________________ TestPolynomialFunctions.test_find_zero_cubic _________________
+
+self = <human_eval_32_test.TestPolynomialFunctions testMethod=test_find_zero_cubic>
+
+    def test_find_zero_cubic(self):
+>       root = find_zero([-6, 11, -6, 1])  # Known root at x = 1
+
+user_tests/mistral_instruct/hard/human_eval_32_test.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+xs = [-6, 11, -6, 1]
+
+    def find_zero(xs: list):
+        if len(xs) <= 0:
+            raise ValueError("All coefficients must not be zero.")
+        elif len(xs) % 2 == 1:
+            raise ValueError("The given coefficients list must have an even number of elements.")
+        elif xs[-1] == 0:
+            raise ValueError("The largest non-zero coefficient can not be zero.")
+    
+        n = len(xs) // 2 - 1
+        a = xs[n]
+        b = sum([xs[i] for i in range(n)])
+    
+        if b != 0:
+            discr = (b**2) - (4 * a * poly([-b, 0], n))
+        else:
+            discr = None
+    
+        if discr is not None and discr >= 0:
+            sqrt_discr = math.sqrt(discr)
+            x1 = (-b + sqrt_discr) / (2 * a)
+            x2 = (-b - sqrt_discr) / (2 * a)
+        else:
+            x1, x2 = None, None
+    
+        if x1 is not None:
+            def f(x):
+                return poly([1,], x - x1)
+    
+            def df(x):
+                return 1 - f(x)
+    
+            def ddf(x):
+                return -f(x)
+    
+            x_new = x1 - poly([0, 1 / df(x1)], n)
+            while abs(poly([x_new, 1 / ddf(x_new)], n)) > 0.00001:
+                x_old = x_new
+                x_new -= poly([0, 1 / df(x_old)], n)
+        elif x2 is not None:
+            def f(x):
+                return poly([1,], x - x2)
+    
+            def df(x):
+                return 1 - f(x)
+    
+            def ddf(x):
+                return -f(x)
+    
+            x_new = x2 - poly([0, 1 / df(x2)], n)
+            while abs(poly([x_new, 1 / ddf(x_new)], n)) > 0.00001:
+                x_old = x_new
+                x_new -= poly([0, 1 / df(x_old)], n)
+        else:
+>           raise ValueError("No real root found.")
+E           ValueError: No real root found.
+
+regenerated_codes/mistral_instruct/hard/human_eval_32.py:65: ValueError
+________________ TestPolynomialFunctions.test_find_zero_linear _________________
+
+self = <human_eval_32_test.TestPolynomialFunctions testMethod=test_find_zero_linear>
+
+    def test_find_zero_linear(self):
+>       self.assertAlmostEqual(find_zero([1, 2]), -0.5, places=2)  # 1 + 2x = 0 -> x = -0.5
+
+user_tests/mistral_instruct/hard/human_eval_32_test.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+xs = [1, 2]
+
+    def find_zero(xs: list):
+        if len(xs) <= 0:
+            raise ValueError("All coefficients must not be zero.")
+        elif len(xs) % 2 == 1:
+            raise ValueError("The given coefficients list must have an even number of elements.")
+        elif xs[-1] == 0:
+            raise ValueError("The largest non-zero coefficient can not be zero.")
+    
+        n = len(xs) // 2 - 1
+        a = xs[n]
+        b = sum([xs[i] for i in range(n)])
+    
+        if b != 0:
+            discr = (b**2) - (4 * a * poly([-b, 0], n))
+        else:
+            discr = None
+    
+        if discr is not None and discr >= 0:
+            sqrt_discr = math.sqrt(discr)
+            x1 = (-b + sqrt_discr) / (2 * a)
+            x2 = (-b - sqrt_discr) / (2 * a)
+        else:
+            x1, x2 = None, None
+    
+        if x1 is not None:
+            def f(x):
+                return poly([1,], x - x1)
+    
+            def df(x):
+                return 1 - f(x)
+    
+            def ddf(x):
+                return -f(x)
+    
+            x_new = x1 - poly([0, 1 / df(x1)], n)
+            while abs(poly([x_new, 1 / ddf(x_new)], n)) > 0.00001:
+                x_old = x_new
+                x_new -= poly([0, 1 / df(x_old)], n)
+        elif x2 is not None:
+            def f(x):
+                return poly([1,], x - x2)
+    
+            def df(x):
+                return 1 - f(x)
+    
+            def ddf(x):
+                return -f(x)
+    
+            x_new = x2 - poly([0, 1 / df(x2)], n)
+            while abs(poly([x_new, 1 / ddf(x_new)], n)) > 0.00001:
+                x_old = x_new
+                x_new -= poly([0, 1 / df(x_old)], n)
+        else:
+>           raise ValueError("No real root found.")
+E           ValueError: No real root found.
+
+regenerated_codes/mistral_instruct/hard/human_eval_32.py:65: ValueError
+_____________ TestPolynomialFunctions.test_find_zero_negative_root _____________
+
+self = <human_eval_32_test.TestPolynomialFunctions testMethod=test_find_zero_negative_root>
+
+    def test_find_zero_negative_root(self):
+>       root = find_zero([3, 0, 0, -1])  # x^3 - 3 = 0 → root ≈ 1.4422, but this polynomial has negative root too
+
+user_tests/mistral_instruct/hard/human_eval_32_test.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+xs = [3, 0, 0, -1]
+
+    def find_zero(xs: list):
+        if len(xs) <= 0:
+            raise ValueError("All coefficients must not be zero.")
+        elif len(xs) % 2 == 1:
+            raise ValueError("The given coefficients list must have an even number of elements.")
+        elif xs[-1] == 0:
+            raise ValueError("The largest non-zero coefficient can not be zero.")
+    
+        n = len(xs) // 2 - 1
+        a = xs[n]
+        b = sum([xs[i] for i in range(n)])
+    
+        if b != 0:
+            discr = (b**2) - (4 * a * poly([-b, 0], n))
+        else:
+            discr = None
+    
+        if discr is not None and discr >= 0:
+            sqrt_discr = math.sqrt(discr)
+>           x1 = (-b + sqrt_discr) / (2 * a)
+E           ZeroDivisionError: float division by zero
+
+regenerated_codes/mistral_instruct/hard/human_eval_32.py:31: ZeroDivisionError
+_____________________ TestEncode.test_all_vowels_lowercase _____________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_all_vowels_lowercase>
+
+    def test_all_vowels_lowercase(self):
+>       self.assertEqual(encode("aeiou"), "CGKQW")
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'aeiou'
+
+    def encode(message):
+        encoded_message = ''
+        for char in message:
+            if char.isalpha():
+                if char in VOWEL_MAP:
+                    vowel_pos = list(VOWEL_MAP).index(char) + 2
+                    encoded_char = VOWEL_MAP[VOWEL_MAP[(list(VOWEL_MAP)[vowel_pos % len(VOWEL_MAP)]
+>   if vowel_pos > len(VOWEL_MAP) else VOWEL_MAP[0])]]
+E                   KeyError: 0
+
+regenerated_codes/mistral_instruct/hard/human_eval_93.py:17: KeyError
+_____________________ TestEncode.test_all_vowels_uppercase _____________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_all_vowels_uppercase>
+
+    def test_all_vowels_uppercase(self):
+>       self.assertEqual(encode("AEIOU"), "cgkqw")
+E       AssertionError: 'aeiou' != 'cgkqw'
+E       - aeiou
+E       + cgkqw
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:19: AssertionError
+________________________ TestEncode.test_basic_examples ________________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_basic_examples>
+
+    def test_basic_examples(self):
+>       self.assertEqual(encode("test"), "TGST")
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'test'
+
+    def encode(message):
+        encoded_message = ''
+        for char in message:
+            if char.isalpha():
+                if char in VOWEL_MAP:
+                    vowel_pos = list(VOWEL_MAP).index(char) + 2
+                    encoded_char = VOWEL_MAP[VOWEL_MAP[(list(VOWEL_MAP)[vowel_pos % len(VOWEL_MAP)]
+>   if vowel_pos > len(VOWEL_MAP) else VOWEL_MAP[0])]]
+E                   KeyError: 0
+
+regenerated_codes/mistral_instruct/hard/human_eval_93.py:17: KeyError
+________________________ TestEncode.test_case_sensitive ________________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_case_sensitive>
+
+    def test_case_sensitive(self):
+>       self.assertEqual(encode("Hello World!"), "hFLLQ wQRLD!")
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'Hello World!'
+
+    def encode(message):
+        encoded_message = ''
+        for char in message:
+            if char.isalpha():
+                if char in VOWEL_MAP:
+                    vowel_pos = list(VOWEL_MAP).index(char) + 2
+                    encoded_char = VOWEL_MAP[VOWEL_MAP[(list(VOWEL_MAP)[vowel_pos % len(VOWEL_MAP)]
+>   if vowel_pos > len(VOWEL_MAP) else VOWEL_MAP[0])]]
+E                   KeyError: 0
+
+regenerated_codes/mistral_instruct/hard/human_eval_93.py:17: KeyError
+____________________ TestEncode.test_combination_of_letters ____________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_combination_of_letters>
+
+    def test_combination_of_letters(self):
+>       self.assertEqual(encode("HeLl0WorLd!"), "hFlL0wQRlD!")
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'HeLl0WorLd!'
+
+    def encode(message):
+        encoded_message = ''
+        for char in message:
+            if char.isalpha():
+                if char in VOWEL_MAP:
+                    vowel_pos = list(VOWEL_MAP).index(char) + 2
+                    encoded_char = VOWEL_MAP[VOWEL_MAP[(list(VOWEL_MAP)[vowel_pos % len(VOWEL_MAP)]
+>   if vowel_pos > len(VOWEL_MAP) else VOWEL_MAP[0])]]
+E                   KeyError: 0
+
+regenerated_codes/mistral_instruct/hard/human_eval_93.py:17: KeyError
+__________________________ TestEncode.test_mixed_case __________________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_mixed_case>
+
+    def test_mixed_case(self):
+>       self.assertEqual(encode("ApPlE"), "cPpLG")
+E       AssertionError: 'aPpLe' != 'cPpLG'
+E       - aPpLe
+E       + cPpLG
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:35: AssertionError
+_____________________ TestEncode.test_single_letter_vowel ______________________
+
+self = <human_eval_93_test.TestEncode testMethod=test_single_letter_vowel>
+
+    def test_single_letter_vowel(self):
+>       self.assertEqual(encode("a"), "C")
+
+user_tests/mistral_instruct/hard/human_eval_93_test.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'a'
+
+    def encode(message):
+        encoded_message = ''
+        for char in message:
+            if char.isalpha():
+                if char in VOWEL_MAP:
+                    vowel_pos = list(VOWEL_MAP).index(char) + 2
+                    encoded_char = VOWEL_MAP[VOWEL_MAP[(list(VOWEL_MAP)[vowel_pos % len(VOWEL_MAP)]
+>   if vowel_pos > len(VOWEL_MAP) else VOWEL_MAP[0])]]
+E                   KeyError: 0
+
+regenerated_codes/mistral_instruct/hard/human_eval_93.py:17: KeyError
+=========================== short test summary info ============================
+FAILED user_tests/mistral_instruct/hard/human_eval_10_test.py::TestPalindromeFunctions::test_make_palindrome_full_palindrome
+FAILED user_tests/mistral_instruct/hard/human_eval_10_test.py::TestPalindromeFunctions::test_make_palindrome_numeric_string
+FAILED user_tests/mistral_instruct/hard/human_eval_10_test.py::TestPalindromeFunctions::test_make_palindrome_repeated_chars
+FAILED user_tests/mistral_instruct/hard/human_eval_10_test.py::TestPalindromeFunctions::test_make_palindrome_special_chars
+FAILED user_tests/mistral_instruct/hard/human_eval_10_test.py::TestPalindromeFunctions::test_make_palindrome_typical
+FAILED user_tests/mistral_instruct/hard/human_eval_121_test.py::TestSolution::test_non_integer_elements
+FAILED user_tests/mistral_instruct/hard/human_eval_32_test.py::TestPolynomialFunctions::test_find_zero_cubic
+FAILED user_tests/mistral_instruct/hard/human_eval_32_test.py::TestPolynomialFunctions::test_find_zero_linear
+FAILED user_tests/mistral_instruct/hard/human_eval_32_test.py::TestPolynomialFunctions::test_find_zero_negative_root
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_all_vowels_lowercase
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_all_vowels_uppercase
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_basic_examples
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_case_sensitive
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_combination_of_letters
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_mixed_case
+FAILED user_tests/mistral_instruct/hard/human_eval_93_test.py::TestEncode::test_single_letter_vowel
+======================== 16 failed, 86 passed in 0.09s =========================
