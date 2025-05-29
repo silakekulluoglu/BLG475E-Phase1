@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.10, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/silakekulluoglu/Desktop/hey/BLG475E-Phase1
+collected 3 items
+
+integration_testing/llm_generated_tests/mistral_instruct/test_integration_llmtest.py . [ 33%]
+..                                                                       [100%]
+
+============================== 3 passed in 0.01s ===============================
