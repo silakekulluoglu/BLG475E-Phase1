@@ -1,4 +1,4 @@
-# BLG475E-Phase1 - Software Quality and Testing Project
+# BLG475E-Phase 1&2 - Software Quality and Testing Project
 
 ## Project Description
 This repository is for the project of Software Quality and Testing class, ITU 2025, Spring.
